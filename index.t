@@ -40,9 +40,8 @@ SUBTITLE(Feedback/Questions/Bugreports)
  href="http://cool.haxx.se/mailman/listinfo/c-ares">c-ares mailing
 list</a>. Please, do not mail volunteers privately about c-ares.
 
-<p> Mailing list archives at <a
-href="/mail.cgi">c-ares.haxx.se</a> and <a
-href="http://news.gmane.org/gmane.network.dns.c-ares">gmane.org</a>!
+<p>
+<a href="/mail.cgi">Mailing list archive</a>
 
 SUBTITLE(Source code)
 <p>
@@ -62,17 +61,17 @@ href="http://github.com/c-ares/c-ares/blob/master/AUTHORS">these friendly
 people</a>.
 
 <p> c-ares is being used by <a
-href="http://curl.haxx.se/libcurl/">libcurl</a>, <a
-href="http://www.unrealircd.com/">UnreadlIRCd</a>, <a
+href="https://curl.haxx.se/libcurl/">libcurl</a>, <a
+href="https://www.unrealircd.com/">UnreadlIRCd</a>, <a
 href="http://www.bzflag.org/">BZFlag</a>, <a
 href="http://xymon.sourceforge.net/">Xymon</a>,
 <a href="http://www.25thandclement.com/~william/projects/libevnet.html">libevnet</a>,
 <a href="http://glite.web.cern.ch/glite/">gLite</a>,
-<a href="http://aria2.sourceforge.net/">aria2</a>,
+<a href="https://aria2.github.io/">aria2</a>,
 <a href="http://sipsak.org/">sipsak</a>,
 <a href="http://secondlife.com/">Second Life</a>,
-<a href="http://www.wireshark.org/">Wireshark</a>,
-<a href="http://nodejs.org/">node.js</a>
+<a href="https://www.wireshark.org/">Wireshark</a>,
+<a href="https://nodejs.org/">node.js</a>
 and more
 
 <p>
