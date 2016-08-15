@@ -24,14 +24,14 @@ SUBTITLE(Download)
 <p>
  <a href="/download/c-ares-1.11.0.tar.gz">c-ares 1.11.0</a> (19-feb-2016)
 <a href="/download/c-ares-1.11.0.tar.gz.asc">GPG</a> <a
-href="http://github.com/c-ares/c-ares/raw/cares-1_11_0/RELEASE-NOTES">RELEASE-NOTES</a>
+href="https://github.com/c-ares/c-ares/raw/cares-1_11_0/RELEASE-NOTES">RELEASE-NOTES</a>
 <p>
  You can also <a href="download/">download old packages</a>
 
 #if 0
 SUBTITLE(Changelog)
 <p> Browse the <a
- href="http://github.com/c-ares/c-ares/blob/master/CHANGES">changelog</a>.
+ href="https://github.com/c-ares/c-ares/blob/master/CHANGES">changelog</a>.
 #endif
 
 SUBTITLE(Feedback/Questions/Bugreports)
@@ -46,18 +46,18 @@ list</a>. Please, do not mail volunteers privately about c-ares.
 SUBTITLE(Source code)
 <p>
  Browse the git repository on <a
-href="http://github.com/c-ares/c-ares">github</a>.
+href="https://github.com/c-ares/c-ares">github</a>.
 
 <p>
  Check out from git like this:
 <pre>
- git clone git://github.com/c-ares/c-ares.git
+ git clone https://github.com/c-ares/c-ares.git
 </pre>
 
 SUBTITLE(Who c-ares?)
 
 <p> Contributions have been made by <a
-href="http://github.com/c-ares/c-ares/blob/master/AUTHORS">these friendly
+href="https://github.com/c-ares/c-ares/blob/master/AUTHORS">these friendly
 people</a>.
 
 <p> c-ares is being used by <a
