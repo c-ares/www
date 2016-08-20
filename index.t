@@ -38,7 +38,11 @@ SUBTITLE(Feedback/Questions/Bugreports)
 
 <p> Discussions around c-ares, its use and its development, are held on the <a
  href="http://cool.haxx.se/mailman/listinfo/c-ares">c-ares mailing
-list</a>. Please, do not mail volunteers privately about c-ares.
+ list</a>. Please, do not mail volunteers privately about c-ares.
+
+<p> Security vulnerabilities are treated according to our <a
+ href="security.html">security procedure</a>, please email c-ares-security at
+ haxx.se if you suspect one.
 
 <p>
 <a href="/mail.cgi">Mailing list archive</a>
