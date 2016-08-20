@@ -5,7 +5,9 @@ MAINPARTS= $(ROOT)/doctype.t body.t footer.t $(ROOT)/setup.t \
 OPTS=-WWW -Uunix -H -C -V -I$(ROOT) -LL
 FCPP=fcpp 
 ACTION=$(FCPP) $(OPTS) $< $@
-MAN2HTML= roffit --bare --mandir=ares-cvs --hrefdir=.
+SRCDIR=ares-cvs
+MAN2HTML= roffit --bare --mandir=$(SRCDIR) --hrefdir=.
+MARKDOWN=markdown
 
 all:	index.html license.html ares_init.html ares_destroy.html \
 	ares_expand_name.html ares_fds.html old.html \
@@ -21,11 +23,18 @@ all:	index.html license.html ares_init.html ares_destroy.html \
 	ares_save_options.html ares_parse_ns_reply.html \
 	ares_library_init.html ares_library_cleanup.html \
 	ares_parse_srv_reply.html ares_parse_txt_reply.html \
-	ares_parse_soa_reply.html ares_inet_ntop.html ares_inet_pton.html
+	ares_parse_soa_reply.html ares_inet_ntop.html ares_inet_pton.html \
+	security.html
 	make -C download
 
 index.html: index.t $(MAINPARTS)
 	$(ACTION)
+
+security.html: security.t $(MAINPARTS) security.gen
+	$(ACTION)
+
+security.gen: $(SRCDIR)/SECURITY.md
+	$(MARKDOWN) < $< > $@
 
 old.html: old.t $(MAINPARTS)
 	$(ACTION)
@@ -125,71 +134,71 @@ ares_inet_ntop.html: ares_func.t ares_inet_ntop.raw $(MAINPARTS)
 
 
 
-ares_init.raw: ares-cvs/ares_init.3
+ares_init.raw: $(SRCDIR)/ares_init.3
 	$(MAN2HTML) < $< >$@
-ares_mkquery.raw: ares-cvs/ares_mkquery.3
+ares_mkquery.raw: $(SRCDIR)/ares_mkquery.3
 	$(MAN2HTML) < $< >$@
-ares_parse_a_reply.raw: ares-cvs/ares_parse_a_reply.3
+ares_parse_a_reply.raw: $(SRCDIR)/ares_parse_a_reply.3
 	$(MAN2HTML) < $< >$@
-ares_parse_aaaa_reply.raw: ares-cvs/ares_parse_aaaa_reply.3
+ares_parse_aaaa_reply.raw: $(SRCDIR)/ares_parse_aaaa_reply.3
 	$(MAN2HTML) < $< >$@
-ares_parse_ptr_reply.raw: ares-cvs/ares_parse_ptr_reply.3
+ares_parse_ptr_reply.raw: $(SRCDIR)/ares_parse_ptr_reply.3
 	$(MAN2HTML) < $< >$@
-ares_process.raw: ares-cvs/ares_process.3
+ares_process.raw: $(SRCDIR)/ares_process.3
 	$(MAN2HTML) < $< >$@
-ares_query.raw: ares-cvs/ares_query.3
+ares_query.raw: $(SRCDIR)/ares_query.3
 	$(MAN2HTML) < $< >$@
-ares_search.raw: ares-cvs/ares_search.3
+ares_search.raw: $(SRCDIR)/ares_search.3
 	$(MAN2HTML) < $< >$@
-ares_send.raw: ares-cvs/ares_send.3
+ares_send.raw: $(SRCDIR)/ares_send.3
 	$(MAN2HTML) < $< >$@
-ares_strerror.raw: ares-cvs/ares_strerror.3
+ares_strerror.raw: $(SRCDIR)/ares_strerror.3
 	$(MAN2HTML) < $< >$@
-ares_timeout.raw: ares-cvs/ares_timeout.3
+ares_timeout.raw: $(SRCDIR)/ares_timeout.3
 	$(MAN2HTML) < $< >$@
-ares_version.raw: ares-cvs/ares_version.3
+ares_version.raw: $(SRCDIR)/ares_version.3
 	$(MAN2HTML) < $< >$@
-ares_free_string.raw: ares-cvs/ares_free_string.3
+ares_free_string.raw: $(SRCDIR)/ares_free_string.3
 	$(MAN2HTML) < $< >$@
-ares_gethostbyaddr.raw: ares-cvs/ares_gethostbyaddr.3
+ares_gethostbyaddr.raw: $(SRCDIR)/ares_gethostbyaddr.3
 	$(MAN2HTML) < $< >$@
-ares_gethostbyname.raw: ares-cvs/ares_gethostbyname.3
+ares_gethostbyname.raw: $(SRCDIR)/ares_gethostbyname.3
 	$(MAN2HTML) < $< >$@
-ares_getnameinfo.raw: ares-cvs/ares_getnameinfo.3
+ares_getnameinfo.raw: $(SRCDIR)/ares_getnameinfo.3
 	$(MAN2HTML) < $< >$@
-ares_free_hostent.raw: ares-cvs/ares_free_hostent.3
+ares_free_hostent.raw: $(SRCDIR)/ares_free_hostent.3
 	$(MAN2HTML) < $< >$@
-ares_fds.raw: ares-cvs/ares_fds.3
+ares_fds.raw: $(SRCDIR)/ares_fds.3
 	$(MAN2HTML) < $< >$@
-ares_getsock.raw: ares-cvs/ares_getsock.3
+ares_getsock.raw: $(SRCDIR)/ares_getsock.3
 	$(MAN2HTML) < $< >$@
-ares_destroy.raw: ares-cvs/ares_destroy.3
+ares_destroy.raw: $(SRCDIR)/ares_destroy.3
 	$(MAN2HTML) < $< >$@
-ares_cancel.raw: ares-cvs/ares_cancel.3
+ares_cancel.raw: $(SRCDIR)/ares_cancel.3
 	$(MAN2HTML) < $< >$@
-ares_expand_name.raw: ares-cvs/ares_expand_name.3
+ares_expand_name.raw: $(SRCDIR)/ares_expand_name.3
 	$(MAN2HTML) < $< >$@
-ares_expand_string.raw: ares-cvs/ares_expand_string.3
+ares_expand_string.raw: $(SRCDIR)/ares_expand_string.3
 	$(MAN2HTML) < $< >$@
-ares_destroy_options.raw: ares-cvs/ares_destroy_options.3
+ares_destroy_options.raw: $(SRCDIR)/ares_destroy_options.3
 	$(MAN2HTML) < $< >$@
-ares_save_options.raw: ares-cvs/ares_save_options.3
+ares_save_options.raw: $(SRCDIR)/ares_save_options.3
 	$(MAN2HTML) < $< >$@
-ares_parse_ns_reply.raw: ares-cvs/ares_parse_ns_reply.3
+ares_parse_ns_reply.raw: $(SRCDIR)/ares_parse_ns_reply.3
 	$(MAN2HTML) < $< >$@
-ares_library_cleanup.raw: ares-cvs/ares_library_cleanup.3
+ares_library_cleanup.raw: $(SRCDIR)/ares_library_cleanup.3
 	$(MAN2HTML) < $< >$@
-ares_library_init.raw: ares-cvs/ares_library_init.3
+ares_library_init.raw: $(SRCDIR)/ares_library_init.3
 	$(MAN2HTML) < $< >$@
-ares_parse_soa_reply.raw: ares-cvs/ares_parse_soa_reply.3
+ares_parse_soa_reply.raw: $(SRCDIR)/ares_parse_soa_reply.3
 	$(MAN2HTML) < $< >$@
-ares_parse_srv_reply.raw: ares-cvs/ares_parse_srv_reply.3
+ares_parse_srv_reply.raw: $(SRCDIR)/ares_parse_srv_reply.3
 	$(MAN2HTML) < $< >$@
-ares_parse_txt_reply.raw: ares-cvs/ares_parse_txt_reply.3
+ares_parse_txt_reply.raw: $(SRCDIR)/ares_parse_txt_reply.3
 	$(MAN2HTML) < $< >$@
-ares_inet_pton.raw: ares-cvs/ares_inet_pton.3
+ares_inet_pton.raw: $(SRCDIR)/ares_inet_pton.3
 	$(MAN2HTML) < $< >$@
-ares_inet_ntop.raw: ares-cvs/ares_inet_ntop.3
+ares_inet_ntop.raw: $(SRCDIR)/ares_inet_ntop.3
 	$(MAN2HTML) < $< >$@
 
 clean:
