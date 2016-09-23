@@ -28,16 +28,10 @@ href="https://github.com/c-ares/c-ares/raw/cares-1_11_0/RELEASE-NOTES">RELEASE-N
 <p>
  You can also <a href="download/">download old packages</a>
 
-#if 0
-SUBTITLE(Changelog)
-<p> Browse the <a
- href="https://github.com/c-ares/c-ares/blob/master/CHANGES">changelog</a>.
-#endif
-
 SUBTITLE(Feedback/Questions/Bugreports)
 
 <p> Discussions around c-ares, its use and its development, are held on the <a
- href="http://cool.haxx.se/mailman/listinfo/c-ares">c-ares mailing
+ href="https://cool.haxx.se/mailman/listinfo/c-ares">c-ares mailing
  list</a>. Please, do not mail volunteers privately about c-ares.
 
 <p> Security vulnerabilities are treated according to our <a
