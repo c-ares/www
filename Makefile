@@ -24,7 +24,7 @@ all:	index.html license.html ares_init.html ares_destroy.html \
 	ares_library_init.html ares_library_cleanup.html \
 	ares_parse_srv_reply.html ares_parse_txt_reply.html \
 	ares_parse_soa_reply.html ares_inet_ntop.html ares_inet_pton.html \
-	security.html
+	ares_create_query.html security.html
 	make -C download
 
 index.html: index.t $(MAINPARTS)
@@ -67,6 +67,8 @@ ares_init.html: ares_func.t ares_init.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_init -Ddocs_ares_init -Dfuncinc=\"ares_init.raw\" $< $@
 ares_mkquery.html: ares_func.t ares_mkquery.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_mkquery -Ddocs_ares_mkquery -Dfuncinc=\"ares_mkquery.raw\" $< $@
+ares_create_query.html: ares_func.t ares_create_query.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_create_query -Ddocs_ares_create_query -Dfuncinc=\"ares_create_query.raw\" $< $@
 ares_parse_a_reply.html: ares_func.t ares_parse_a_reply.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_parse_a_reply -Ddocs_ares_parse_a_reply -Dfuncinc=\"ares_parse_a_reply.raw\" $< $@
 ares_parse_aaaa_reply.html: ares_func.t ares_parse_aaaa_reply.raw $(MAINPARTS)
@@ -137,6 +139,8 @@ ares_inet_ntop.html: ares_func.t ares_inet_ntop.raw $(MAINPARTS)
 ares_init.raw: $(SRCDIR)/ares_init.3
 	$(MAN2HTML) < $< >$@
 ares_mkquery.raw: $(SRCDIR)/ares_mkquery.3
+	$(MAN2HTML) < $< >$@
+ares_create_query.raw: $(SRCDIR)/ares_create_query.3
 	$(MAN2HTML) < $< >$@
 ares_parse_a_reply.raw: $(SRCDIR)/ares_parse_a_reply.3
 	$(MAN2HTML) < $< >$@

@@ -7,6 +7,12 @@ class="itemselect"
 ><a href="ares_cancel.html">ares_cancel()</a></div>
 
 <div
+#ifdef docs_ares_create_query
+class="itemselect"
+#endif
+><a href="ares_create_query.html">ares_create_query()</a></div>
+
+<div
 #ifdef docs_ares_destroy
 class="itemselect"
 #endif
