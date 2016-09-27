@@ -24,13 +24,16 @@ all:	index.html license.html ares_init.html ares_destroy.html \
 	ares_library_init.html ares_library_cleanup.html \
 	ares_parse_srv_reply.html ares_parse_txt_reply.html \
 	ares_parse_soa_reply.html ares_inet_ntop.html ares_inet_pton.html \
-	ares_create_query.html security.html changelog.html
+	ares_create_query.html security.html changelog.html vulns.html
 	make -C download
 
 index.html: index.t $(MAINPARTS)
 	$(ACTION)
 
 changelog.html: changelog.t $(MAINPARTS)
+	$(ACTION)
+
+vulns.html: vulns.t $(MAINPARTS)
 	$(ACTION)
 
 security.html: security.t $(MAINPARTS) security.gen
