@@ -31,7 +31,7 @@ BOXTOP
 <li> <a href="ares_inet_ntop.html">ares_inet_ntop()</a>
 <li> <a href="ares_inet_pton.html">ares_inet_pton()</a>
 <li> <a href="ares_init.html">ares_init()</a>
-<li> <a href="ares_init.html">ares_init_options()</a>
+<li> <a href="ares_init_options.html">ares_init_options()</a>
 <li> <a href="ares_library_cleanup.html">ares_library_cleanup()</a>
 <li> <a href="ares_library_init.html">ares_library_init()</a>
 <li> <a href="ares_mkquery.html">ares_mkquery()</a>

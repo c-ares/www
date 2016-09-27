@@ -9,22 +9,22 @@ SRCDIR=ares-cvs
 MAN2HTML= roffit --bare --mandir=$(SRCDIR) --hrefdir=.
 MARKDOWN=markdown
 
-all:	index.html license.html ares_init.html ares_destroy.html \
-	ares_expand_name.html ares_fds.html old.html \
-	ares_free_hostent.html ares_free_string.html ares_gethostbyaddr.html \
-	ares_gethostbyname.html ares_mkquery.html ares_parse_a_reply.html \
-	ares_parse_ptr_reply.html ares_process.html ares_query.html \
-	ares_search.html ares_send.html ares_strerror.html ares_timeout.html \
-	ares_version.html ares_parse_ptr_reply.html ares_expand_string.html \
-	ares_cancel.html docs.html ares_parse_aaaa_reply.html mailhead.html \
-	mailtop.html mailbot.html indextop.html indexbot.html \
-	otherlibs.html why.html ares_getnameinfo.html ares_getsock.html \
-	ares_process_fd.html ares_destroy_options.html \
-	ares_save_options.html ares_parse_ns_reply.html \
-	ares_library_init.html ares_library_cleanup.html \
-	ares_parse_srv_reply.html ares_parse_txt_reply.html \
-	ares_parse_soa_reply.html ares_inet_ntop.html ares_inet_pton.html \
-	ares_create_query.html security.html changelog.html vulns.html
+all:    index.html license.html ares_init.html ares_init_options.html		\
+	ares_destroy.html ares_expand_name.html ares_fds.html old.html		\
+	ares_free_hostent.html ares_free_string.html ares_gethostbyaddr.html	\
+	ares_gethostbyname.html ares_mkquery.html ares_parse_a_reply.html	\
+	ares_parse_ptr_reply.html ares_process.html ares_query.html		\
+	ares_search.html ares_send.html ares_strerror.html ares_timeout.html	\
+	ares_version.html ares_parse_ptr_reply.html ares_expand_string.html	\
+	ares_cancel.html docs.html ares_parse_aaaa_reply.html mailhead.html	\
+	mailtop.html mailbot.html indextop.html indexbot.html otherlibs.html	\
+	why.html ares_getnameinfo.html ares_getsock.html ares_process_fd.html	\
+	ares_destroy_options.html ares_save_options.html			\
+	ares_parse_ns_reply.html ares_library_init.html				\
+	ares_library_cleanup.html ares_parse_srv_reply.html			\
+	ares_parse_txt_reply.html ares_parse_soa_reply.html			\
+	ares_inet_ntop.html ares_inet_pton.html ares_create_query.html		\
+	security.html changelog.html vulns.html
 	make -C download
 
 index.html: index.t $(MAINPARTS)
@@ -71,6 +71,8 @@ indexbot.html: indexbot.t $(MAINPARTS)
 
 ares_init.html: ares_func.t ares_init.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_init -Ddocs_ares_init -Dfuncinc=\"ares_init.raw\" $< $@
+ares_init_options.html: ares_func.t ares_init_options.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_init_options -Ddocs_ares_init_options -Dfuncinc=\"ares_init_options.raw\" $< $@
 ares_mkquery.html: ares_func.t ares_mkquery.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_mkquery -Ddocs_ares_mkquery -Dfuncinc=\"ares_mkquery.raw\" $< $@
 ares_create_query.html: ares_func.t ares_create_query.raw $(MAINPARTS)
@@ -143,6 +145,8 @@ ares_inet_ntop.html: ares_func.t ares_inet_ntop.raw $(MAINPARTS)
 
 
 ares_init.raw: $(SRCDIR)/ares_init.3
+	$(MAN2HTML) < $< >$@
+ares_init_options.raw: $(SRCDIR)/ares_init_options.3
 	$(MAN2HTML) < $< >$@
 ares_mkquery.raw: $(SRCDIR)/ares_mkquery.3
 	$(MAN2HTML) < $< >$@
