@@ -6,5 +6,5 @@
 <a href="https://c-ares.haxx.se/mail.cgi">mail archive</a> &middot;
 <a href="https://c-ares.haxx.se/why.html">why</a> &middot;
 <a href="https://c-ares.haxx.se/otherlibs.html">other libs</a>
+<a href="https://github.com/c-ares/c-ares">github</a>
 </div>
-
