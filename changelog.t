@@ -119,7 +119,7 @@ Fixed:
  <li> include the ares_parse_soa_reply.* files in the tarball
 </ul>
 
-SUBTITLE(c-ares version 1.9.0 - Jun 17 2016)
+SUBTITLE(c-ares version 1.9.0 - Jun 17 2012)
 <p>
 Changed:
 <p><ul>
