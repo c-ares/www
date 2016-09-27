@@ -1,4 +1,4 @@
-include "doctype.t"
+#include "doctype.t"
 <head>
 <title>c-ares: library for asynchronous name resolves</title>
 #include "css.t"
