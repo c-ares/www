@@ -1,4 +1,4 @@
-#include "doctype.t"
+include "doctype.t"
 <head>
 <title>c-ares: library for asynchronous name resolves</title>
 #include "css.t"
@@ -23,8 +23,7 @@ resolves)
 SUBTITLE(Download)
 <p>
  <a href="/download/c-ares-1.11.0.tar.gz">c-ares 1.11.0</a> (19-feb-2016)
-<a href="/download/c-ares-1.11.0.tar.gz.asc">GPG</a> <a
-href="https://github.com/c-ares/c-ares/raw/cares-1_11_0/RELEASE-NOTES">RELEASE-NOTES</a>
+<a href="/download/c-ares-1.11.0.tar.gz.asc">GPG</a> <a href="changelog.html">Changelog</a>
 <p>
  You can also <a href="download/">download old packages</a>
 
