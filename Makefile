@@ -24,7 +24,7 @@ all:    index.html license.html ares_init.html ares_init_options.html		\
 	ares_library_cleanup.html ares_parse_srv_reply.html			\
 	ares_parse_txt_reply.html ares_parse_soa_reply.html			\
 	ares_inet_ntop.html ares_inet_pton.html ares_create_query.html		\
-	security.html changelog.html vulns.html
+	security.html changelog.html vulns.html ares_dup.html
 	make -C download
 
 index.html: index.t $(MAINPARTS)
@@ -71,6 +71,8 @@ indexbot.html: indexbot.t $(MAINPARTS)
 
 ares_init.html: ares_func.t ares_init.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_init -Ddocs_ares_init -Dfuncinc=\"ares_init.raw\" $< $@
+ares_dup.html: ares_func.t ares_dup.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_dup -Ddocs_ares_dup -Dfuncinc=\"ares_dup.raw\" $< $@
 ares_init_options.html: ares_func.t ares_init_options.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_init_options -Ddocs_ares_init_options -Dfuncinc=\"ares_init_options.raw\" $< $@
 ares_mkquery.html: ares_func.t ares_mkquery.raw $(MAINPARTS)
@@ -145,6 +147,8 @@ ares_inet_ntop.html: ares_func.t ares_inet_ntop.raw $(MAINPARTS)
 
 
 ares_init.raw: $(SRCDIR)/ares_init.3
+	$(MAN2HTML) < $< >$@
+ares_dup.raw: $(SRCDIR)/ares_dup.3
 	$(MAN2HTML) < $< >$@
 ares_init_options.raw: $(SRCDIR)/ares_init_options.3
 	$(MAN2HTML) < $< >$@

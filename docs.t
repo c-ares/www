@@ -19,6 +19,7 @@ BOXTOP
 <li> <a href="ares_create_query.html">ares_create_query()</a>
 <li> <a href="ares_destroy.html">ares_destroy()</a>
 <li> <a href="ares_destroy_options.html">ares_destroy_options()</a>
+<li> <a href="ares_dup.html">ares_dup()</a>
 <li> <a href="ares_expand_name.html">ares_expand_name()</a>
 <li> <a href="ares_expand_string.html">ares_expand_string()</a>
 <li> <a href="ares_fds.html">ares_fds()</a>
