@@ -7,7 +7,6 @@
 #include "setup.t"
 #include "menu.t"
 
-TITLE(c-ares)
 BOXTOP
 <p>
 <center><img src="cares-big.png"></center>
@@ -27,19 +26,18 @@ SUBTITLE(Download)
 <p>
  You can also <a href="download/">download old packages</a>
 
-SUBTITLE(Feedback/Questions/Bugreports)
+SUBTITLE(Communication)
 
 <p> Discussions around c-ares, its use and its development, are held on the <a
  href="https://cool.haxx.se/mailman/listinfo/c-ares">c-ares mailing
- list</a>. Please, do not mail volunteers privately about c-ares.
+ list</a>. Please, do not mail volunteers privately about c-ares. 
+<a href="/mail.cgi">Mailing list archive</a>
 
 <p> Security vulnerabilities are treated according to our <a
  href="security.html">security procedure</a>, please email c-ares-security at
  haxx.se if you suspect one. <a href="vulns.html">Previous security
  vulnerabilities</a>.
 
-<p>
-<a href="/mail.cgi">Mailing list archive</a>
 
 SUBTITLE(Source code)
 <p>
