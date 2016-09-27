@@ -10,7 +10,7 @@
 TITLE(c-ares vulnerabilities)
 BOXTOP
 
- This is all known and public c-ares vulnerabilities to date. See also ourt <a
+ This is all known and public c-ares vulnerabilities to date. See also our <a
  href="security.html">security incident process</a>.
 
 <p>
