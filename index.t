@@ -35,7 +35,8 @@ SUBTITLE(Feedback/Questions/Bugreports)
 
 <p> Security vulnerabilities are treated according to our <a
  href="security.html">security procedure</a>, please email c-ares-security at
- haxx.se if you suspect one.
+ haxx.se if you suspect one. <a href="vulns.html">Previous security
+ vulnerabilities</a>.
 
 <p>
 <a href="/mail.cgi">Mailing list archive</a>
