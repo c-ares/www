@@ -1,5 +1,8 @@
 BODY {
- background-color: #e0e0ff;
+ background-color: #ffffff;
+ max-width: 50em;
+ margin-left: auto;
+ margin-right: auto;
 }
 
 P {
@@ -10,27 +13,20 @@ P {
 }
 
 .title {
- background-color: #e0e0ff; 
+ padding-bottom: 10px;
  font-family: arial, helvetica, ariel, sans-serif;
  color: black;
- font-size: 150%;
+ font-size: 200%;
  font-weight: bold;
 }
 
 .subtitle {
- background-color: #e0e0ff; 
+ border-bottom: solid 1px black;
  font-family: arial, helvetica, ariel, sans-serif;
- color: #000000;
- font-size: 120%;
- padding-left: 5px;
+ font-size: 140%;
 }
 
 .box {
-  border-width: 1px;
-  border-style: solid;
-  border-color: #000000;
-  padding: 2px 2px 2px 2px;
-  background-color: #ffffff;
 }
 
 /* the left-side menu */

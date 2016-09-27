@@ -23,7 +23,7 @@ span.manpage {
 }
 
 h2.nroffsh {
- background-color: #e0e0ff;
+ border-bottom: solid 1px black;
  font-family: sans-serif;
 }
 
