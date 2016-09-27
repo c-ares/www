@@ -1,3 +1,4 @@
+#if 0
 #undef ITEM
 <div class="funcmenu">
 <div
@@ -217,4 +218,4 @@ class="itemselect"
 ><a href="ares_version.html">ares_version()</a></div>
 
 </div>
-
+#endif
