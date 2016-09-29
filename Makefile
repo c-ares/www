@@ -24,7 +24,8 @@ all:    index.html license.html ares_init.html ares_init_options.html		\
 	ares_library_cleanup.html ares_parse_srv_reply.html			\
 	ares_parse_txt_reply.html ares_parse_soa_reply.html			\
 	ares_inet_ntop.html ares_inet_pton.html ares_create_query.html		\
-	security.html changelog.html vulns.html ares_dup.html
+	security.html changelog.html vulns.html ares_dup.html \
+	adv_20160929.html
 	make -C download
 
 index.html: index.t $(MAINPARTS)
@@ -40,6 +41,11 @@ security.html: security.t $(MAINPARTS) security.gen
 	$(ACTION)
 
 security.gen: $(SRCDIR)/SECURITY.md
+	$(MARKDOWN) < $< > $@
+
+adv_20160929.html: adv_20160929.t $(MAINPARTS) adv_20160929.gen
+	$(ACTION)
+adv_20160929.gen: adv_20160929.md
 	$(MARKDOWN) < $< > $@
 
 old.html: old.t $(MAINPARTS)
