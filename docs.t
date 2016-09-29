@@ -35,6 +35,7 @@ BOXTOP
 <li> <a href="ares_init_options.html">ares_init_options()</a>
 <li> <a href="ares_library_cleanup.html">ares_library_cleanup()</a>
 <li> <a href="ares_library_init.html">ares_library_init()</a>
+<li> <a href="ares_library_init.html">ares_library_init_mem()</a>
 <li> <a href="ares_mkquery.html">ares_mkquery()</a>
 <li> <a href="ares_parse_a_reply.html">ares_parse_a_reply()</a>
 <li> <a href="ares_parse_aaaa_reply.html">ares_parse_aaaa_reply()</a>
@@ -43,6 +44,7 @@ BOXTOP
 <li> <a href="ares_parse_soa_reply.html">ares_parse_soa_reply()</a>
 <li> <a href="ares_parse_srv_reply.html">ares_parse_srv_reply()</a>
 <li> <a href="ares_parse_txt_reply.html">ares_parse_txt_reply()</a>
+<li> <a href="ares_parse_txt_reply.html">ares_parse_txt_reply_ext()</a>
 <li> <a href="ares_process.html">ares_process()</a>
 <li> <a href="ares_process_fd.html">ares_process_fd()</a>
 <li> <a href="ares_query.html">ares_query()</a>
