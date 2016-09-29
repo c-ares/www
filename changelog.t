@@ -13,6 +13,45 @@ BOXTOP
 The full changelog of the c-ares project's history.
 
 <p>
+<a name="1_12_0"></a>
+SUBTITLE(c-ares version 1.12.0 - Sep 29 2016)
+<p>
+Changes:
+<ul>
+ <li> api: add ARES_OPT_NOROTATE optmask value
+</ul>
+<p>
+Bug fixes:
+<ul>
+ <li> <a href="https://c-ares.haxx.se/adv_20160929.html">CVE-2016-5180: ares_create_query single byte out of buffer write</a>
+ <li> configure: acknowledge --disable-tests [1]
+ <li> man pages: fix typos detected by Lintian
+ <li> test: add missing #includes for dns-proto.cc
+ <li> test: avoid in6addr_* constants
+ <li> test: Build with MinGW on AppVeyor
+ <li> Makefile.m32: add support for extra flags
+ <li> Makefile.m32: add support for CROSSPREFIX
+ <li> configure: check if tests can get built before enabled
+ <li> ares_library_cleanup: reset ares_realloc too
+ <li> ahost.c: add cast to fix C++ compile
+ <li> test: Only pass unused args to GoogleTest
+ <li> build: commonize MSVC version detection
+ <li> msvc_ver.inc: support Visual Studio 2015 Update 1, 2, 3
+ <li> test: for AF_UNSPEC, return CNAME only for AAAA, but valid A record
+ <li> ares_getnameinfo: explicitly clear struct servent before use
+ <li> test: Update fuzzing function prototype
+ <li> init: fix nsort initialization
+ <li> test: add fuzzing check script to tests
+ <li> web: http => https
+ <li> read_tcp_data: remove superfluous NULL check
+ <li> LICENSE.md: add a stand-alone license file
+ <li> SECURITY.md: suggested "security process" for the project
+ <li> ares_init_options: only propagate init failures from options [2]
+ <li> headers: remove checks for and defines of variable sizes
+ <li> test: fix gMock to work with gcc >= 6.x [3]
+</ul>
+
+<p>
 <a name="1_11_0"></a>
 SUBTITLE(c-ares version 1.11.0 - Feb 19 2016)
 <p>
