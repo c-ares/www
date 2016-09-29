@@ -25,7 +25,14 @@ all:    index.html license.html ares_init.html ares_init_options.html		\
 	ares_parse_txt_reply.html ares_parse_soa_reply.html			\
 	ares_inet_ntop.html ares_inet_pton.html ares_create_query.html		\
 	security.html changelog.html vulns.html ares_dup.html \
-	adv_20160929.html ares_library_initialized.html
+	adv_20160929.html ares_library_initialized.html \
+	ares_get_servers.html ares_get_servers_ports.html \
+	ares_set_servers.html ares_set_servers_ports.html \
+	ares_set_servers_ports_csv.html ares_set_servers_csv.html \
+	ares_free_data.html ares_gethostbyname_file.html \
+	ares_set_socket_callback.html ares_set_socket_configure_callback.html \
+	ares_set_sortlist.html ares_parse_mx_reply.html \
+	ares_parse_naptr_reply.html
 	make -C download
 
 index.html: index.t $(MAINPARTS)
@@ -87,6 +94,10 @@ ares_create_query.html: ares_func.t ares_create_query.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_create_query -Ddocs_ares_create_query -Dfuncinc=\"ares_create_query.raw\" $< $@
 ares_parse_a_reply.html: ares_func.t ares_parse_a_reply.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_parse_a_reply -Ddocs_ares_parse_a_reply -Dfuncinc=\"ares_parse_a_reply.raw\" $< $@
+ares_parse_mx_reply.html: ares_func.t ares_parse_mx_reply.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_parse_mx_reply -Ddocs_ares_parse_mx_reply -Dfuncinc=\"ares_parse_mx_reply.raw\" $< $@
+ares_parse_naptr_reply.html: ares_func.t ares_parse_naptr_reply.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_parse_naptr_reply -Ddocs_ares_parse_naptr_reply -Dfuncinc=\"ares_parse_naptr_reply.raw\" $< $@
 ares_parse_aaaa_reply.html: ares_func.t ares_parse_aaaa_reply.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_parse_aaaa_reply -Ddocs_ares_parse_aaaa_reply -Dfuncinc=\"ares_parse_aaaa_reply.raw\" $< $@
 ares_parse_ptr_reply.html: ares_func.t ares_parse_ptr_reply.raw $(MAINPARTS)
@@ -107,10 +118,14 @@ ares_version.html: ares_func.t ares_version.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_version -Ddocs_ares_version -Dfuncinc=\"ares_version.raw\" $< $@
 ares_free_string.html: ares_func.t ares_free_string.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_free_string -Ddocs_ares_free_string -Dfuncinc=\"ares_free_string.raw\" $< $@
+ares_free_data.html: ares_func.t ares_free_data.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_free_data -Ddocs_ares_free_data -Dfuncinc=\"ares_free_data.raw\" $< $@
 ares_gethostbyaddr.html: ares_func.t ares_gethostbyaddr.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_gethostbyaddr -Ddocs_ares_gethostbyaddr -Dfuncinc=\"ares_gethostbyaddr.raw\" $< $@
 ares_gethostbyname.html: ares_func.t ares_gethostbyname.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_gethostbyname -Ddocs_ares_gethostbyname -Dfuncinc=\"ares_gethostbyname.raw\" $< $@
+ares_gethostbyname_file.html: ares_func.t ares_gethostbyname_file.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_gethostbyname_file -Ddocs_ares_gethostbyname_file -Dfuncinc=\"ares_gethostbyname_file.raw\" $< $@
 ares_getnameinfo.html: ares_func.t ares_getnameinfo.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_getnameinfo -Ddocs_ares_getnameinfo -Dfuncinc=\"ares_getnameinfo.raw\" $< $@
 ares_fds.html: ares_func.t ares_fds.raw $(MAINPARTS)
@@ -151,7 +166,24 @@ ares_inet_pton.html: ares_func.t ares_inet_pton.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_inet_pton -Ddocs_ares_inet_pton -Dfuncinc=\"ares_inet_pton.raw\" $< $@
 ares_inet_ntop.html: ares_func.t ares_inet_ntop.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_inet_ntop -Ddocs_ares_inet_ntop -Dfuncinc=\"ares_inet_ntop.raw\" $< $@
-
+ares_get_servers.html: ares_func.t ares_get_servers.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_get_servers -Ddocs_ares_get_servers -Dfuncinc=\"ares_get_servers.raw\" $< $@
+ares_get_servers_ports.html: ares_func.t ares_get_servers.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_get_servers_ports -Ddocs_ares_get_servers_ports -Dfuncinc=\"ares_get_servers.raw\" $< $@
+ares_set_servers.html: ares_func.t ares_set_servers.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_set_servers -Ddocs_ares_set_servers -Dfuncinc=\"ares_set_servers.raw\" $< $@
+ares_set_servers_ports.html: ares_func.t ares_set_servers.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_set_servers_ports -Ddocs_ares_set_servers_ports -Dfuncinc=\"ares_set_servers.raw\" $< $@
+ares_set_servers_csv.html: ares_func.t ares_set_servers.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_set_servers_csv -Ddocs_ares_set_servers_csv -Dfuncinc=\"ares_set_servers.raw\" $< $@
+ares_set_servers_ports_csv.html: ares_func.t ares_set_servers_csv.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_set_servers_ports_csv -Ddocs_ares_set_servers_ports_csv -Dfuncinc=\"ares_set_servers_csv.raw\" $< $@
+ares_set_socket_callback.html: ares_func.t ares_set_socket_callback.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_set_socket_callback -Ddocs_ares_set_socket_callback -Dfuncinc=\"ares_set_socket_callback.raw\" $< $@
+ares_set_socket_configure_callback.html: ares_func.t ares_set_socket_configure_callback.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_set_socket_configure_callback -Ddocs_ares_set_socket_configure_callback -Dfuncinc=\"ares_set_socket_configure_callback.raw\" $< $@
+ares_set_sortlist.html: ares_func.t ares_set_sortlist.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_set_sortlist -Ddocs_ares_set_sortlist -Dfuncinc=\"ares_set_sortlist.raw\" $< $@
 
 
 ares_init.raw: $(SRCDIR)/ares_init.3
@@ -165,6 +197,10 @@ ares_mkquery.raw: $(SRCDIR)/ares_mkquery.3
 ares_create_query.raw: $(SRCDIR)/ares_create_query.3
 	$(MAN2HTML) < $< >$@
 ares_parse_a_reply.raw: $(SRCDIR)/ares_parse_a_reply.3
+	$(MAN2HTML) < $< >$@
+ares_parse_mx_reply.raw: $(SRCDIR)/ares_parse_mx_reply.3
+	$(MAN2HTML) < $< >$@
+ares_parse_naptr_reply.raw: $(SRCDIR)/ares_parse_naptr_reply.3
 	$(MAN2HTML) < $< >$@
 ares_parse_aaaa_reply.raw: $(SRCDIR)/ares_parse_aaaa_reply.3
 	$(MAN2HTML) < $< >$@
@@ -186,9 +222,13 @@ ares_version.raw: $(SRCDIR)/ares_version.3
 	$(MAN2HTML) < $< >$@
 ares_free_string.raw: $(SRCDIR)/ares_free_string.3
 	$(MAN2HTML) < $< >$@
+ares_free_data.raw: $(SRCDIR)/ares_free_data.3
+	$(MAN2HTML) < $< >$@
 ares_gethostbyaddr.raw: $(SRCDIR)/ares_gethostbyaddr.3
 	$(MAN2HTML) < $< >$@
 ares_gethostbyname.raw: $(SRCDIR)/ares_gethostbyname.3
+	$(MAN2HTML) < $< >$@
+ares_gethostbyname_file.raw: $(SRCDIR)/ares_gethostbyname_file.3
 	$(MAN2HTML) < $< >$@
 ares_getnameinfo.raw: $(SRCDIR)/ares_getnameinfo.3
 	$(MAN2HTML) < $< >$@
@@ -227,6 +267,18 @@ ares_parse_txt_reply.raw: $(SRCDIR)/ares_parse_txt_reply.3
 ares_inet_pton.raw: $(SRCDIR)/ares_inet_pton.3
 	$(MAN2HTML) < $< >$@
 ares_inet_ntop.raw: $(SRCDIR)/ares_inet_ntop.3
+	$(MAN2HTML) < $< >$@
+ares_get_servers.raw: $(SRCDIR)/ares_get_servers.3
+	$(MAN2HTML) < $< >$@
+ares_set_servers.raw: $(SRCDIR)/ares_set_servers.3
+	$(MAN2HTML) < $< >$@
+ares_set_servers_csv.raw: $(SRCDIR)/ares_set_servers_csv.3
+	$(MAN2HTML) < $< >$@
+ares_set_socket_callback.raw: $(SRCDIR)/ares_set_socket_callback.3
+	$(MAN2HTML) < $< >$@
+ares_set_socket_configure_callback.raw: $(SRCDIR)/ares_set_socket_configure_callback.3
+	$(MAN2HTML) < $< >$@
+ares_set_sortlist.raw: $(SRCDIR)/ares_set_sortlist.3
 	$(MAN2HTML) < $< >$@
 
 clean:
