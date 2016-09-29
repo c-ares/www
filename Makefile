@@ -25,7 +25,7 @@ all:    index.html license.html ares_init.html ares_init_options.html		\
 	ares_parse_txt_reply.html ares_parse_soa_reply.html			\
 	ares_inet_ntop.html ares_inet_pton.html ares_create_query.html		\
 	security.html changelog.html vulns.html ares_dup.html \
-	adv_20160929.html
+	adv_20160929.html ares_library_initialized.html
 	make -C download
 
 index.html: index.t $(MAINPARTS)
@@ -137,6 +137,8 @@ ares_parse_ns_reply.html: ares_func.t ares_parse_ns_reply.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_parse_ns_reply -Ddocs_ares_parse_ns_reply -Dfuncinc=\"ares_parse_ns_reply.raw\" $< $@
 ares_library_init.html: ares_func.t ares_library_init.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_library_init -Ddocs_ares_library_init -Dfuncinc=\"ares_library_init.raw\" $< $@
+ares_library_initialized.html: ares_func.t ares_library_initialized.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_library_initialized -Ddocs_ares_library_initialized -Dfuncinc=\"ares_library_initialized.raw\" $< $@
 ares_library_cleanup.html: ares_func.t ares_library_cleanup.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_library_cleanup -Ddocs_ares_library_cleanup -Dfuncinc=\"ares_library_cleanup.raw\" $< $@
 ares_parse_srv_reply.html: ares_func.t ares_parse_srv_reply.raw $(MAINPARTS)
@@ -213,6 +215,8 @@ ares_parse_ns_reply.raw: $(SRCDIR)/ares_parse_ns_reply.3
 ares_library_cleanup.raw: $(SRCDIR)/ares_library_cleanup.3
 	$(MAN2HTML) < $< >$@
 ares_library_init.raw: $(SRCDIR)/ares_library_init.3
+	$(MAN2HTML) < $< >$@
+ares_library_initialized.raw: $(SRCDIR)/ares_library_initialized.3
 	$(MAN2HTML) < $< >$@
 ares_parse_soa_reply.raw: $(SRCDIR)/ares_parse_soa_reply.3
 	$(MAN2HTML) < $< >$@
