@@ -32,7 +32,7 @@ all:    index.html license.html ares_init.html ares_init_options.html		\
 	ares_free_data.html ares_gethostbyname_file.html \
 	ares_set_socket_callback.html ares_set_socket_configure_callback.html \
 	ares_set_sortlist.html ares_parse_mx_reply.html \
-	ares_parse_naptr_reply.html
+	ares_parse_naptr_reply.html ares_set_local_dev.html
 	make -C download
 
 index.html: index.t $(MAINPARTS)
@@ -170,6 +170,8 @@ ares_get_servers.html: ares_func.t ares_get_servers.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_get_servers -Ddocs_ares_get_servers -Dfuncinc=\"ares_get_servers.raw\" $< $@
 ares_get_servers_ports.html: ares_func.t ares_get_servers.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_get_servers_ports -Ddocs_ares_get_servers_ports -Dfuncinc=\"ares_get_servers.raw\" $< $@
+ares_set_local_dev.html: ares_func.t ares_set_local_dev.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_set_local_dev -Ddocs_ares_set_local_dev -Dfuncinc=\"ares_set_local_dev.raw\" $< $@
 ares_set_servers.html: ares_func.t ares_set_servers.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_set_servers -Ddocs_ares_set_servers -Dfuncinc=\"ares_set_servers.raw\" $< $@
 ares_set_servers_ports.html: ares_func.t ares_set_servers.raw $(MAINPARTS)
@@ -269,6 +271,8 @@ ares_inet_pton.raw: $(SRCDIR)/ares_inet_pton.3
 ares_inet_ntop.raw: $(SRCDIR)/ares_inet_ntop.3
 	$(MAN2HTML) < $< >$@
 ares_get_servers.raw: $(SRCDIR)/ares_get_servers.3
+	$(MAN2HTML) < $< >$@
+ares_set_local_dev.raw: $(SRCDIR)/ares_set_local_dev.3
 	$(MAN2HTML) < $< >$@
 ares_set_servers.raw: $(SRCDIR)/ares_set_servers.3
 	$(MAN2HTML) < $< >$@
