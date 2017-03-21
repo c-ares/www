@@ -14,7 +14,10 @@ BOXTOP
  useful. Please consider always getting and using the most recent
  version. We're a small project, we can't provide "support" for old releases.
 <p>
- <a href="/download/c-ares-1.11.0.tar.gz">c-ares 1.11.0</a> (19-feb-2016)
+ <a href="/download/c-ares-1.12.0.tar.gz">c-ares 1.12.0</a> (29-sep-2016)
+<a href="/download/c-ares-1.12.0.tar.gz.asc">GPG</a> <a href="/changelog.html#1_12_0">Changelog</a>
+<br>
+<a href="/download/c-ares-1.11.0.tar.gz">c-ares 1.11.0</a> (19-feb-2016)
 <a href="/download/c-ares-1.11.0.tar.gz.asc">GPG</a> <a
 href="https://github.com/c-ares/c-ares/raw/cares-1_11_0/RELEASE-NOTES">RELEASE-NOTES</a>
 <br>
@@ -87,7 +90,7 @@ href="https://github.com/bagder/c-ares/raw/cares-1_7_0/RELEASE-NOTES">RELEASE-NO
 
 SUBTITLE(ares)
 <p>
- The c-ares project started of from the ares code base:
+ The c-ares project started off from the ares code base:
 <p>
 <a href="ares-1.1.1.tar.gz">ares 1.1.1</a> (18-may-2001)
 
