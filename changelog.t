@@ -13,6 +13,40 @@ BOXTOP
 The full changelog of the c-ares project's history.
 
 <p>
+<a name="1_13_0"></a>
+SUBTITLE(c-ares version 1.13.0 - June 20 2017)
+<p>
+Changes:
+<ul>
+ <li> cmake build system support added
+ <li> Add virtual function set for socket IO: ares_set_socket_functions
+</ul>
+<p>
+Bug fixes:
+<ul>
+ <li> <a href="https://c-ares.haxx.se/adv_20170620.html">CVE-2017-1000381: c-ares NAPTR parser out of bounds access</a>
+ <li> macos: do not set HAVE_CLOCK_GETTIME_MONOTONIC
+ <li> test: check ares_create_query with too-long name
+ <li> dist: add ares_library_initialized.* to the tarball
+ <li> fix build on OpenBSD
+ <li> dist: ship msvc_ver.inc too
+ <li> test: Add gTest/gMock files to SOURCES
+ <li> test: add fuzz entrypoint for ares_create_query()
+ <li> configure: clock_gettime workaround
+ <li> docs: convert INSTALL to MarkDown & tweak
+ <li> ares_process: fix return type of socket_create function (win32 warning)
+ <li> docs: fixed references to ares_set_local_ip4 and ares_set_local_ip6
+ <li> Windows DNS server sorting
+ <li> Use ares_socklen_t instead of socket_t
+ <li> ares_create_query: use ares_free not naked free
+ <li> msvc_ver.inc support most recent Visual Studio 2017
+ <li> acountry: Convert char from ISO-8859-1 to UTF-8
+ <li> ares_expand_name: limit number of indirections
+ <li> configure: do not check for ar if specified manually
+ <li> Added support for Windows DNS Suffix Search List
+ <li> ares.h: support compiling with QNX
+</ul>
+<p>
 <a name="1_12_0"></a>
 SUBTITLE(c-ares version 1.12.0 - Sep 29 2016)
 <p>

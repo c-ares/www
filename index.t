@@ -21,8 +21,8 @@ resolves)
 
 SUBTITLE(Download)
 <p>
- <a href="/download/c-ares-1.12.0.tar.gz">c-ares 1.12.0</a> (29-sep-2016)
-<a href="/download/c-ares-1.12.0.tar.gz.asc">GPG</a> <a href="changelog.html">Changelog</a>
+ <a href="/download/c-ares-1.13.0.tar.gz">c-ares 1.13.0</a> (20-jun-2017)
+<a href="/download/c-ares-1.13.0.tar.gz.asc">GPG</a> <a href="changelog.html">Changelog</a>
 <p>
  You can also <a href="download/">download old packages</a>
 
@@ -72,29 +72,6 @@ and more
 
 <p>
   Please let us know if you use it!
-
-#if 0
-SUBTITLE(Differences from ares)
-<p> Some noticable changes from ares include:
-<ul>
-<li> IPv6 support
-<li> Many bug fixes
-<li> Extended portability (Mac OS X, RISC OS, Windows, DOS and more)
-<li> 64bit cleaned sources
-<li> New functions (ares_cancel(), ares_expand_string(), ares_version() and more)
-</ul>
-<p>
- Note that c-ares is continuously being developed and worked on, while ares is
-not, so the changes and differences between the two projects will only expand
-over time. The above list is just some of the changes.
-
-SUBTITLE(ares)
-<p>
- The c-ares fork was made on ares 1.1.1.
-<p>
- You can download the original ares at <a href="ftp://athena-dist.mit.edu/pub/ATHENA/ares">ftp://athena-dist.mit.edu/pub/ATHENA/ares</a>.
-
-#endif
 
 BOXBOT
 
