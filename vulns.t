@@ -14,6 +14,11 @@ BOXTOP
  href="security.html">security incident process</a>.
 
 <p>
+SUBTITLE(CVE-2017-1000381 - June 20 2017)
+<p>
+ <a href="adv_20170620.html">NAPTR parser out of bounds access</a>
+
+<p>
 SUBTITLE(CVE-2016-5180 - Sep 29 2016)
 <p>
  <a href="adv_20160929.html">ares_create_query single byte out of buffer write</a>

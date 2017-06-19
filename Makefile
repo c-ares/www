@@ -32,7 +32,8 @@ all: index.html license.html ares_init.html ares_init_options.html	\
  ares_gethostbyname_file.html ares_set_socket_callback.html		\
  ares_set_socket_configure_callback.html ares_set_sortlist.html		\
  ares_parse_mx_reply.html ares_parse_naptr_reply.html			\
- ares_set_local_dev.html ares_set_socket_functions.html
+ ares_set_local_dev.html ares_set_socket_functions.html \
+ adv_20170620.html
 	make -C download
 
 index.html: index.t $(MAINPARTS)
@@ -53,6 +54,11 @@ security.gen: $(SRCDIR)/SECURITY.md
 adv_20160929.html: adv_20160929.t $(MAINPARTS) adv_20160929.gen
 	$(ACTION)
 adv_20160929.gen: adv_20160929.md
+	$(MARKDOWN) < $< > $@
+
+adv_20170620.html: adv_20170620.t $(MAINPARTS) adv_20170620.gen
+	$(ACTION)
+adv_20170620.gen: adv_20170620.md
 	$(MARKDOWN) < $< > $@
 
 old.html: old.t $(MAINPARTS)
