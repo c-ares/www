@@ -9,30 +9,30 @@ SRCDIR=ares-cvs
 MAN2HTML= roffit --bare --mandir=$(SRCDIR) --hrefdir=.
 MARKDOWN=markdown
 
-all:    index.html license.html ares_init.html ares_init_options.html		\
-	ares_destroy.html ares_expand_name.html ares_fds.html old.html		\
-	ares_free_hostent.html ares_free_string.html ares_gethostbyaddr.html	\
-	ares_gethostbyname.html ares_mkquery.html ares_parse_a_reply.html	\
-	ares_parse_ptr_reply.html ares_process.html ares_query.html		\
-	ares_search.html ares_send.html ares_strerror.html ares_timeout.html	\
-	ares_version.html ares_parse_ptr_reply.html ares_expand_string.html	\
-	ares_cancel.html docs.html ares_parse_aaaa_reply.html mailhead.html	\
-	mailtop.html mailbot.html indextop.html indexbot.html otherlibs.html	\
-	why.html ares_getnameinfo.html ares_getsock.html ares_process_fd.html	\
-	ares_destroy_options.html ares_save_options.html			\
-	ares_parse_ns_reply.html ares_library_init.html				\
-	ares_library_cleanup.html ares_parse_srv_reply.html			\
-	ares_parse_txt_reply.html ares_parse_soa_reply.html			\
-	ares_inet_ntop.html ares_inet_pton.html ares_create_query.html		\
-	security.html changelog.html vulns.html ares_dup.html \
-	adv_20160929.html ares_library_initialized.html \
-	ares_get_servers.html ares_get_servers_ports.html \
-	ares_set_servers.html ares_set_servers_ports.html \
-	ares_set_servers_ports_csv.html ares_set_servers_csv.html \
-	ares_free_data.html ares_gethostbyname_file.html \
-	ares_set_socket_callback.html ares_set_socket_configure_callback.html \
-	ares_set_sortlist.html ares_parse_mx_reply.html \
-	ares_parse_naptr_reply.html ares_set_local_dev.html
+all: index.html license.html ares_init.html ares_init_options.html	\
+ ares_destroy.html ares_expand_name.html ares_fds.html old.html		\
+ ares_free_hostent.html ares_free_string.html ares_gethostbyaddr.html	\
+ ares_gethostbyname.html ares_mkquery.html ares_parse_a_reply.html	\
+ ares_parse_ptr_reply.html ares_process.html ares_query.html		\
+ ares_search.html ares_send.html ares_strerror.html ares_timeout.html	\
+ ares_version.html ares_parse_ptr_reply.html ares_expand_string.html	\
+ ares_cancel.html docs.html ares_parse_aaaa_reply.html mailhead.html	\
+ mailtop.html mailbot.html indextop.html indexbot.html otherlibs.html	\
+ why.html ares_getnameinfo.html ares_getsock.html ares_process_fd.html	\
+ ares_destroy_options.html ares_save_options.html			\
+ ares_parse_ns_reply.html ares_library_init.html			\
+ ares_library_cleanup.html ares_parse_srv_reply.html			\
+ ares_parse_txt_reply.html ares_parse_soa_reply.html			\
+ ares_inet_ntop.html ares_inet_pton.html ares_create_query.html		\
+ security.html changelog.html vulns.html ares_dup.html			\
+ adv_20160929.html ares_library_initialized.html ares_get_servers.html	\
+ ares_get_servers_ports.html ares_set_servers.html			\
+ ares_set_servers_ports.html ares_set_servers_ports_csv.html		\
+ ares_set_servers_csv.html ares_free_data.html				\
+ ares_gethostbyname_file.html ares_set_socket_callback.html		\
+ ares_set_socket_configure_callback.html ares_set_sortlist.html		\
+ ares_parse_mx_reply.html ares_parse_naptr_reply.html			\
+ ares_set_local_dev.html ares_set_socket_functions.html
 	make -C download
 
 index.html: index.t $(MAINPARTS)
@@ -186,6 +186,8 @@ ares_set_socket_configure_callback.html: ares_func.t ares_set_socket_configure_c
 	$(FCPP) $(OPTS) -Dfunc=ares_set_socket_configure_callback -Ddocs_ares_set_socket_configure_callback -Dfuncinc=\"ares_set_socket_configure_callback.raw\" $< $@
 ares_set_sortlist.html: ares_func.t ares_set_sortlist.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_set_sortlist -Ddocs_ares_set_sortlist -Dfuncinc=\"ares_set_sortlist.raw\" $< $@
+ares_set_socket_functions.html: ares_func.t ares_set_socket_functions.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_set_socket_functions -Ddocs_ares_set_socket_functions -Dfuncinc=\"ares_set_socket_functions.raw\" $< $@
 
 
 ares_init.raw: $(SRCDIR)/ares_init.3
@@ -283,6 +285,8 @@ ares_set_socket_callback.raw: $(SRCDIR)/ares_set_socket_callback.3
 ares_set_socket_configure_callback.raw: $(SRCDIR)/ares_set_socket_configure_callback.3
 	$(MAN2HTML) < $< >$@
 ares_set_sortlist.raw: $(SRCDIR)/ares_set_sortlist.3
+	$(MAN2HTML) < $< >$@
+ares_set_socket_functions.raw: $(SRCDIR)/ares_set_socket_functions.3
 	$(MAN2HTML) < $< >$@
 
 clean:

@@ -65,6 +65,7 @@ BOXTOP
 <li> <a href="ares_set_servers_ports_csv.html">ares_set_servers_ports_csv</a>
 <li> <a href="ares_set_socket_callback.html">ares_set_socket_callback</a>
 <li> <a href="ares_set_socket_configure_callback.html">ares_set_socket_configure_callback</a>
+<li> <a href="ares_set_socket_functions.html">ares_set_socket_functions</a>
 <li> <a href="ares_set_sortlist.html">ares_set_sortlist</a>
 <li> <a href="ares_strerror.html">ares_strerror</a>
 <li> <a href="ares_timeout.html">ares_timeout</a>
