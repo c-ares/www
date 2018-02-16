@@ -13,6 +13,32 @@ BOXTOP
 The full changelog of the c-ares project's history.
 
 <p>
+<a name="1_14_0"></a>
+SUBTITLE(c-ares version 1.14.0 - February 16 2018)
+<p>
+Changes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/148">android: Introduce new ares_library_init_android() call for Oreo support</a>
+</ul>
+
+<p>
+Bug fixes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/18ea99">Fix patch for CVE-2017-1000381 to not be overly aggressive</a>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/150">win32: Preserve DNS server order returned by Windows when sorting and exclude DNS servers in legacy subnets</a>
+ <li> win32: Support most recent Visual Studio 2017
+ <li> <a href="https://github.com/c-ares/c-ares/pull/138">gethostbyaddr should fail with ECANCELLED not ENOTFOUND when ares_cancel is called</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/144">win32: Exclude legacy ipv6 subnets</a>
+ <li> <a href=https://github.com/c-ares/c-ares/pull/175"">android: Applications compiled for Oreo can no longer use __system_property_get and must use Java calls to retrieve DNS servers</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/142">win32: Force use of ANSI functions</a>
+ <li> CMake minimum version is now 3.1
+ <li> <a href="https://c-ares.haxx.se/mail/c-ares-archive-2011-06/0012.shtml">ares_gethostbyname.3: fix callback status values</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/180">docs: Document WSAStartup requirement</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/160">Fix a typo in init_by_resolv_conf</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/175">Android JNI code leaks local references in some cases</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/142">Force using the ANSI versions of WinAPI functions</a>
+</ul>
+<p>
 <a name="1_13_0"></a>
 SUBTITLE(c-ares version 1.13.0 - June 20 2017)
 <p>
