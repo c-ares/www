@@ -13,16 +13,22 @@ BOXTOP
  These packages are provided as a service to whoever might find these
  useful. Please consider always getting and using the most recent
  version. We're a small project, we can't provide "support" for old releases.
+
 <p>
- <a href="/download/c-ares-1.12.0.tar.gz">c-ares 1.12.0</a> (29-sep-2016)
+<a href="/download/c-ares-1.14.0.tar.gz">c-ares 1.14.0</a> (16-feb-2018)
+<a href="/download/c-ares-1.14.0.tar.gz.asc">GPG</a> <a href="/changelog.html#1_14_0">Changelog</a>
+<br>
+<a href="/download/c-ares-1.13.0.tar.gz">c-ares 1.13.0</a> (20-jun-2017)
+<a href="/download/c-ares-1.13.0.tar.gz.asc">GPG</a> <a href="/changelog.html#1_13_0">Changelog</a>
+<br>
+<a href="/download/c-ares-1.12.0.tar.gz">c-ares 1.12.0</a> (29-sep-2016)
 <a href="/download/c-ares-1.12.0.tar.gz.asc">GPG</a> <a href="/changelog.html#1_12_0">Changelog</a>
 <br>
 <a href="/download/c-ares-1.11.0.tar.gz">c-ares 1.11.0</a> (19-feb-2016)
 <a href="/download/c-ares-1.11.0.tar.gz.asc">GPG</a> <a
 href="https://github.com/c-ares/c-ares/raw/cares-1_11_0/RELEASE-NOTES">RELEASE-NOTES</a>
 <br>
-
- <a href="/download/c-ares-1.10.0.tar.gz">c-ares 1.10.0</a>, 791KB (12-may-2013)
+<a href="/download/c-ares-1.10.0.tar.gz">c-ares 1.10.0</a>, 791KB (12-may-2013)
 <a href="/download/c-ares-1.10.0.tar.gz.asc">GPG</a> <a
 href="https://github.com/bagder/c-ares/raw/cares-1_10_0/RELEASE-NOTES">RELEASE-NOTES</a>
 <br>
