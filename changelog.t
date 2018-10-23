@@ -13,6 +13,33 @@ BOXTOP
 The full changelog of the c-ares project's history.
 
 <p>
+<a name="1_15_0"></a>
+SUBTITLE(c-ares version 1.15.0 - October 23 2018)
+<p>
+Changes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/220">Add ares_init_options() configurability for path to resolv.conf file</a>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/200">Ability to exclude building of tools (adig, ahost, acountry) in CMake</a>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/207">Android: Support for domain search suffix</a>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/196">Report ARES_ENOTFOUND for .onion domain names as per RFC7686</a>
+</ul>
+
+<p>
+Bug fixes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/224">AIX build fix for trying to include both nameser_compat.h and onameser_compat.h</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/202">Windows: Improve DNS suffixes extracting from WinNT registry</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/201">Fix modern GCC warnings</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/193">Apply the IPv6 server blacklist to all nameserver sources, not just Windows</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/192">Fix warnings emitted by MSVC when using -W4</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/191">Prevent changing name servers while queries are outstanding</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/187">Harden and rationalize c-ares timeout computation</a>
+ <li> <a href="https://c-ares.haxx.se/mail/c-ares-archive-2018-04/0000.shtml">Distribute ares_android.h</a>
+ <li> <a href="https://c-ares.haxx.se/mail/c-ares-archive-2018-03/0000.shtml">ares_set_servers_csv() on failure should not leave channel in a bad state</a>
+ <li> Add missing docs to distribution
+</ul>
+
+<p>
 <a name="1_14_0"></a>
 SUBTITLE(c-ares version 1.14.0 - February 16 2018)
 <p>
