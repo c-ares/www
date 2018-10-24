@@ -32,8 +32,8 @@ all: index.html license.html ares_init.html ares_init_options.html	\
  ares_gethostbyname_file.html ares_set_socket_callback.html		\
  ares_set_socket_configure_callback.html ares_set_sortlist.html		\
  ares_parse_mx_reply.html ares_parse_naptr_reply.html			\
- ares_set_local_dev.html ares_set_socket_functions.html \
- adv_20170620.html
+ ares_set_local_dev.html ares_set_socket_functions.html 		\
+ ares_library_init_android.html adv_20170620.html
 	make -C download
 
 index.html: index.t $(MAINPARTS)
@@ -158,6 +158,8 @@ ares_parse_ns_reply.html: ares_func.t ares_parse_ns_reply.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_parse_ns_reply -Ddocs_ares_parse_ns_reply -Dfuncinc=\"ares_parse_ns_reply.raw\" $< $@
 ares_library_init.html: ares_func.t ares_library_init.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_library_init -Ddocs_ares_library_init -Dfuncinc=\"ares_library_init.raw\" $< $@
+ares_library_init_android.html: ares_func.t ares_library_init_android.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_library_init -Ddocs_ares_library_init -Dfuncinc=\"ares_library_init_android.raw\" $< $@
 ares_library_initialized.html: ares_func.t ares_library_initialized.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_library_initialized -Ddocs_ares_library_initialized -Dfuncinc=\"ares_library_initialized.raw\" $< $@
 ares_library_cleanup.html: ares_func.t ares_library_cleanup.raw $(MAINPARTS)
@@ -265,6 +267,8 @@ ares_parse_ns_reply.raw: $(SRCDIR)/ares_parse_ns_reply.3
 ares_library_cleanup.raw: $(SRCDIR)/ares_library_cleanup.3
 	$(MAN2HTML) < $< >$@
 ares_library_init.raw: $(SRCDIR)/ares_library_init.3
+	$(MAN2HTML) < $< >$@
+ares_library_init_android.raw: $(SRCDIR)/ares_library_init_android.3
 	$(MAN2HTML) < $< >$@
 ares_library_initialized.raw: $(SRCDIR)/ares_library_initialized.3
 	$(MAN2HTML) < $< >$@
