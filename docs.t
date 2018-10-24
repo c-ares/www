@@ -39,6 +39,7 @@ BOXTOP
 <li> <a href="ares_init_options.html">ares_init_options</a>
 <li> <a href="ares_library_cleanup.html">ares_library_cleanup</a>
 <li> <a href="ares_library_init.html">ares_library_init</a>
+<li> <a href="ares_library_init_android.html">ares_library_init_android</a>
 <li> <a href="ares_library_init.html">ares_library_init_mem</a>
 <li> <a href="ares_library_initialized.html">ares_library_initialized</a>
 <li> <a href="ares_mkquery.html">ares_mkquery</a>
