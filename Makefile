@@ -159,7 +159,7 @@ ares_parse_ns_reply.html: ares_func.t ares_parse_ns_reply.raw $(MAINPARTS)
 ares_library_init.html: ares_func.t ares_library_init.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_library_init -Ddocs_ares_library_init -Dfuncinc=\"ares_library_init.raw\" $< $@
 ares_library_init_android.html: ares_func.t ares_library_init_android.raw $(MAINPARTS)
-	$(FCPP) $(OPTS) -Dfunc=ares_library_init -Ddocs_ares_library_init -Dfuncinc=\"ares_library_init_android.raw\" $< $@
+	$(FCPP) $(OPTS) -Dfunc=ares_library_init_android -Ddocs_ares_library_init_android -Dfuncinc=\"ares_library_init_android.raw\" $< $@
 ares_library_initialized.html: ares_func.t ares_library_initialized.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_library_initialized -Ddocs_ares_library_initialized -Dfuncinc=\"ares_library_initialized.raw\" $< $@
 ares_library_cleanup.html: ares_func.t ares_library_cleanup.raw $(MAINPARTS)
