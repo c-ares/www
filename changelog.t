@@ -13,6 +13,41 @@ BOXTOP
 The full changelog of the c-ares project's history.
 
 <p>
+<a name="1_16_0"></a>
+SUBTITLE(c-ares version 1.16.0 - March 13 2020)
+<p>
+Changes:
+<ul>
+ <li> Introduction of ares_getaddrinfo() API which provides similar output 
+   (including proper sorting as per RFC 6724) to the system native API, but
+   utilizes different data structures in order to provide additional information
+   such as TTLs and all aliases.  Please reference the respective man pages for
+   usage details.
+ <li> Parse SOA records from ns_t_any response
+ <li> CMake: Provide c-ares version in package export file
+ <li> CMake: Add CPACK functionality for DEB and RPM
+ <li> CMake: Generate PDB files during build
+ <li> CMake: Support manpage installation
+</ul>
+<p>
+Bug fixes:
+<ul>
+ <li> Fix bad expectation in IPv6 localhost test.
+ <li> AutoTools: use XC_CHECK_BUILD_FLAGS instead of XC_CHECK_USER_FLAGS to prevent
+   complaints about CPPFLAGS in CFLAGS.
+ <li> Fix .onion handling
+ <li> Command line usage was out of date for adig and ahost.
+ <li> Typos in manpages
+ <li> If ares_getenv is defined, it must return a value on all platforms
+ <li> If /etc/resolv.conf has invalid lookup values, use the defaults.
+ <li> Tests: Separate live tests from SetServers* tests as only live tests should require internet access.
+ <li> ares_gethostbyname() should return ENODATA if no valid A or AAAA record is found, but a CNAME was found.
+ <li> CMake: Rework library function checking to prevent unintended linking with
+   system libraries that aren't needed.
+ <li> Due to use of inet_addr() it was not possible to return 255.255.255.255 from ares_gethostbyname().
+ <li> CMake: Fix building of tests on Windows
+</ul>
+
 <a name="1_15_0"></a>
 SUBTITLE(c-ares version 1.15.0 - October 23 2018)
 <p>
