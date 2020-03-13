@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perl -I.
 
 require "date.pm";
 require "cares.pm";
