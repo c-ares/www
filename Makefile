@@ -3,7 +3,7 @@ ROOT=.
 MAINPARTS= $(ROOT)/doctype.t body.t footer.t $(ROOT)/setup.t \
  menu.t Makefile docmenu.t css.t
 OPTS=-WWW -Uunix -H -C -V -I$(ROOT) -LL
-FCPP=fcpp 
+FCPP=fcpp
 ACTION=$(FCPP) $(OPTS) $< $@
 SRCDIR=ares-cvs
 MAN2HTML= roffit --bare --mandir=$(SRCDIR) --hrefdir=.
@@ -11,7 +11,8 @@ MARKDOWN=markdown
 
 all: index.html license.html ares_init.html ares_init_options.html	\
  ares_destroy.html ares_expand_name.html ares_fds.html old.html		\
- ares_free_hostent.html ares_free_string.html ares_gethostbyaddr.html	\
+ ares_free_hostent.html ares_free_string.html ares_freeaddrinfo.html \
+ ares_getaddrinfo.html ares_gethostbyaddr.html	\
  ares_gethostbyname.html ares_mkquery.html ares_parse_a_reply.html	\
  ares_parse_ptr_reply.html ares_process.html ares_query.html		\
  ares_search.html ares_send.html ares_strerror.html ares_timeout.html	\
@@ -126,6 +127,10 @@ ares_free_string.html: ares_func.t ares_free_string.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_free_string -Ddocs_ares_free_string -Dfuncinc=\"ares_free_string.raw\" $< $@
 ares_free_data.html: ares_func.t ares_free_data.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_free_data -Ddocs_ares_free_data -Dfuncinc=\"ares_free_data.raw\" $< $@
+ares_freeaddrinfo.html: ares_func.t ares_freeaddrinfo.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_freeaddrinfo -Ddocs_ares_freeaddrinfo -Dfuncinc=\"ares_freeaddrinfo.raw\" $< $@
+ares_getaddrinfo.html: ares_func.t ares_getaddrinfo.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_getaddrinfo -Ddocs_ares_getaddrinfo -Dfuncinc=\"ares_getaddrinfo.raw\" $< $@
 ares_gethostbyaddr.html: ares_func.t ares_gethostbyaddr.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_gethostbyaddr -Ddocs_ares_gethostbyaddr -Dfuncinc=\"ares_gethostbyaddr.raw\" $< $@
 ares_gethostbyname.html: ares_func.t ares_gethostbyname.raw $(MAINPARTS)
@@ -235,6 +240,10 @@ ares_version.raw: $(SRCDIR)/ares_version.3
 ares_free_string.raw: $(SRCDIR)/ares_free_string.3
 	$(MAN2HTML) < $< >$@
 ares_free_data.raw: $(SRCDIR)/ares_free_data.3
+	$(MAN2HTML) < $< >$@
+ares_freeaddrinfo.raw: $(SRCDIR)/ares_freeaddrinfo.3
+	$(MAN2HTML) < $< >$@
+ares_getaddrinfo.raw: $(SRCDIR)/ares_getaddrinfo.3
 	$(MAN2HTML) < $< >$@
 ares_gethostbyaddr.raw: $(SRCDIR)/ares_gethostbyaddr.3
 	$(MAN2HTML) < $< >$@

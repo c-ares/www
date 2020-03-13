@@ -26,8 +26,10 @@ BOXTOP
 <li> <a href="ares_free_data.html">ares_free_data</a>
 <li> <a href="ares_free_hostent.html">ares_free_hostent</a>
 <li> <a href="ares_free_string.html">ares_free_string</a>
+<li> <a href="ares_freeaddrinfo.html">ares_freeaddrinfo</a>
 <li> <a href="ares_get_servers.html">ares_get_servers</a>
 <li> <a href="ares_get_servers.html">ares_get_servers_ports</a>
+<li> <a href="ares_getaddrinfo.html">ares_getaddrinfo</a>
 <li> <a href="ares_gethostbyaddr.html">ares_gethostbyaddr</a>
 <li> <a href="ares_gethostbyname.html">ares_gethostbyname</a>
 <li> <a href="ares_gethostbyname_file.html">ares_gethostbyname_file</a>
