@@ -13,6 +13,35 @@ BOXTOP
 The full changelog of the c-ares project's history.
 
 <p>
+<a name="1_16_1"></a>
+SUBTITLE(c-ares version 1.16.1 - May 11 2020)
+<p>
+Security:
+<ul>
+ <li> Prevent possible use-after-free and double-free in ares_getaddrinfo() if
+   ares_destroy() is called prior to ares_getaddrinfo() completing.  Reported
+   by Jann Horn at Google Project Zero.
+</ul>
+<p>
+Changes:
+<ul>
+ <li> Allow TXT records on CHAOS qclass.  Used for retriving things like
+   version.bind, version.server, authoris.bind, hostname.bind, and id.server.
+   [3]
+</ul>
+<p>
+  Bug fixes:
+<ul>
+ <li> Fix Windows Unicode incompatibilities with ares_getaddrinfo() [1]
+ <li> Silence false cast-align compiler warnings due to valid casts of
+   struct sockaddr to struct sockaddr_in and struct sockaddr_in6.
+ <li> MacOS should use libresolv for retrieving DNS servers, like iOS
+ <li> CMake build system should populate the INCLUDE_DIRECTORIES property of 
+   installed targets [2]
+ <li> Correct macros in use for the ares_getaddrinfo.3 man page
+</ul>
+ 
+<p>
 <a name="1_16_0"></a>
 SUBTITLE(c-ares version 1.16.0 - March 13 2020)
 <p>
