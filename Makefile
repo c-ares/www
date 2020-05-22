@@ -34,7 +34,7 @@ all: index.html license.html ares_init.html ares_init_options.html	\
  ares_set_socket_configure_callback.html ares_set_sortlist.html		\
  ares_parse_mx_reply.html ares_parse_naptr_reply.html			\
  ares_set_local_dev.html ares_set_socket_functions.html 		\
- ares_library_init_android.html adv_20170620.html ares_getaddrinfo.html
+ ares_library_init_android.html adv_20170620.html
 	make -C download
 
 index.html: index.t $(MAINPARTS)
@@ -137,8 +137,6 @@ ares_gethostbyname.html: ares_func.t ares_gethostbyname.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_gethostbyname -Ddocs_ares_gethostbyname -Dfuncinc=\"ares_gethostbyname.raw\" $< $@
 ares_gethostbyname_file.html: ares_func.t ares_gethostbyname_file.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_gethostbyname_file -Ddocs_ares_gethostbyname_file -Dfuncinc=\"ares_gethostbyname_file.raw\" $< $@
-ares_getaddrinfo.html: ares_func.t ares_getaddrinfo.raw $(MAINPARTS)
-	$(FCPP) $(OPTS) -Dfunc=ares_getaddrinfo -Ddocs_ares_getaddrinfo -Dfuncinc=\"ares_getaddrinfo.raw\" $< $@
 ares_getnameinfo.html: ares_func.t ares_getnameinfo.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_getnameinfo -Ddocs_ares_getnameinfo -Dfuncinc=\"ares_getnameinfo.raw\" $< $@
 ares_fds.html: ares_func.t ares_fds.raw $(MAINPARTS)
@@ -252,8 +250,6 @@ ares_gethostbyaddr.raw: $(SRCDIR)/ares_gethostbyaddr.3
 ares_gethostbyname.raw: $(SRCDIR)/ares_gethostbyname.3
 	$(MAN2HTML) < $< >$@
 ares_gethostbyname_file.raw: $(SRCDIR)/ares_gethostbyname_file.3
-	$(MAN2HTML) < $< >$@
-ares_getaddrinfo.raw: $(SRCDIR)/ares_getaddrinfo.3
 	$(MAN2HTML) < $< >$@
 ares_getnameinfo.raw: $(SRCDIR)/ares_getnameinfo.3
 	$(MAN2HTML) < $< >$@
