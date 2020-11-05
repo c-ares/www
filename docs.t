@@ -62,6 +62,8 @@ BOXTOP
 <li> <a href="ares_search.html">ares_search</a>
 <li> <a href="ares_send.html">ares_send</a>
 <li> <a href="ares_set_local_dev.html">ares_set_local_dev</a>
+<li> <a href="ares_set_local_ip4.html">ares_set_local_ip4</a>
+<li> <a href="ares_set_local_ip6.html">ares_set_local_ip6</a>
 <li> <a href="ares_set_servers.html">ares_set_servers</a>
 <li> <a href="ares_set_servers_csv.html">ares_set_servers_csv</a>
 <li> <a href="ares_set_servers_ports.html">ares_set_servers_ports</a>

@@ -6,35 +6,88 @@ OPTS=-WWW -Uunix -H -C -V -I$(ROOT) -LL
 FCPP=fcpp
 ACTION=$(FCPP) $(OPTS) $< $@
 SRCDIR=ares-cvs
-MAN2HTML= roffit --bare --mandir=$(SRCDIR) --hrefdir=.
+DOCSDIR=$(SRCDIR)/docs
+MAN2HTML= roffit --bare --mandir=$(DOCSDIR) --hrefdir=.
 MARKDOWN=markdown
 
-all: index.html license.html ares_init.html ares_init_options.html	\
- ares_destroy.html ares_expand_name.html ares_fds.html old.html		\
- ares_free_hostent.html ares_free_string.html ares_freeaddrinfo.html \
- ares_getaddrinfo.html ares_gethostbyaddr.html	\
- ares_gethostbyname.html ares_mkquery.html ares_parse_a_reply.html	\
- ares_parse_ptr_reply.html ares_process.html ares_query.html		\
- ares_search.html ares_send.html ares_strerror.html ares_timeout.html	\
- ares_version.html ares_parse_ptr_reply.html ares_expand_string.html	\
- ares_cancel.html docs.html ares_parse_aaaa_reply.html mailhead.html	\
- mailtop.html mailbot.html indextop.html indexbot.html otherlibs.html	\
- why.html ares_getnameinfo.html ares_getsock.html ares_process_fd.html	\
- ares_destroy_options.html ares_save_options.html			\
- ares_parse_ns_reply.html ares_library_init.html			\
- ares_library_cleanup.html ares_parse_srv_reply.html			\
- ares_parse_txt_reply.html ares_parse_soa_reply.html			\
- ares_inet_ntop.html ares_inet_pton.html ares_create_query.html		\
- security.html changelog.html vulns.html ares_dup.html			\
- adv_20160929.html ares_library_initialized.html ares_get_servers.html	\
- ares_get_servers_ports.html ares_set_servers.html			\
- ares_set_servers_ports.html ares_set_servers_ports_csv.html		\
- ares_set_servers_csv.html ares_free_data.html				\
- ares_gethostbyname_file.html ares_set_socket_callback.html		\
- ares_set_socket_configure_callback.html ares_set_sortlist.html		\
- ares_parse_mx_reply.html ares_parse_naptr_reply.html			\
- ares_set_local_dev.html ares_set_socket_functions.html 		\
- ares_library_init_android.html adv_20170620.html
+PAGES = 					\
+ adv_20160929.html				\
+ adv_20170620.html				\
+ ares_cancel.html				\
+ ares_create_query.html				\
+ ares_destroy.html				\
+ ares_destroy_options.html			\
+ ares_dup.html					\
+ ares_expand_name.html				\
+ ares_expand_string.html			\
+ ares_fds.html					\
+ ares_free_data.html				\
+ ares_free_hostent.html				\
+ ares_free_string.html				\
+ ares_freeaddrinfo.html				\
+ ares_get_servers.html				\
+ ares_get_servers_ports.html			\
+ ares_getaddrinfo.html				\
+ ares_gethostbyaddr.html			\
+ ares_gethostbyname.html			\
+ ares_gethostbyname_file.html			\
+ ares_getnameinfo.html				\
+ ares_getsock.html				\
+ ares_inet_ntop.html				\
+ ares_inet_pton.html				\
+ ares_init.html					\
+ ares_init_options.html				\
+ ares_library_cleanup.html			\
+ ares_library_init.html				\
+ ares_library_init_android.html			\
+ ares_library_initialized.html			\
+ ares_mkquery.html				\
+ ares_parse_a_reply.html			\
+ ares_parse_aaaa_reply.html			\
+ ares_parse_mx_reply.html			\
+ ares_parse_naptr_reply.html			\
+ ares_parse_ns_reply.html			\
+ ares_parse_ptr_reply.html			\
+ ares_parse_ptr_reply.html			\
+ ares_parse_soa_reply.html			\
+ ares_parse_srv_reply.html			\
+ ares_parse_txt_reply.html			\
+ ares_process.html				\
+ ares_process_fd.html				\
+ ares_query.html				\
+ ares_save_options.html				\
+ ares_search.html				\
+ ares_send.html					\
+ ares_set_local_dev.html			\
+ ares_set_local_ip4.html			\
+ ares_set_local_ip6.html			\
+ ares_set_servers.html				\
+ ares_set_servers_csv.html			\
+ ares_set_servers_ports.html			\
+ ares_set_servers_ports_csv.html		\
+ ares_set_socket_callback.html			\
+ ares_set_socket_configure_callback.html	\
+ ares_set_socket_functions.html			\
+ ares_set_sortlist.html				\
+ ares_strerror.html				\
+ ares_timeout.html				\
+ ares_version.html				\
+ changelog.html					\
+ docs.html					\
+ index.html					\
+ indexbot.html					\
+ indextop.html					\
+ license.html					\
+ mailbot.html					\
+ mailhead.html					\
+ mailtop.html					\
+ old.html					\
+ otherlibs.html					\
+ security.html					\
+ vulns.html					\
+ why.html
+
+all: $(PAGES)
 	make -C download
 
 index.html: index.t $(MAINPARTS)
@@ -185,6 +238,10 @@ ares_get_servers_ports.html: ares_func.t ares_get_servers.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_get_servers_ports -Ddocs_ares_get_servers_ports -Dfuncinc=\"ares_get_servers.raw\" $< $@
 ares_set_local_dev.html: ares_func.t ares_set_local_dev.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_set_local_dev -Ddocs_ares_set_local_dev -Dfuncinc=\"ares_set_local_dev.raw\" $< $@
+ares_set_local_ip4.html: ares_func.t ares_set_local_ip4.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_set_local_ip4 -Ddocs_ares_set_local_ip4 -Dfuncinc=\"ares_set_local_ip4.raw\" $< $@
+ares_set_local_ip6.html: ares_func.t ares_set_local_ip6.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_set_local_ip6 -Ddocs_ares_set_local_ip6 -Dfuncinc=\"ares_set_local_ip6.raw\" $< $@
 ares_set_servers.html: ares_func.t ares_set_servers.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_set_servers -Ddocs_ares_set_servers -Dfuncinc=\"ares_set_servers.raw\" $< $@
 ares_set_servers_ports.html: ares_func.t ares_set_servers.raw $(MAINPARTS)
@@ -203,109 +260,113 @@ ares_set_socket_functions.html: ares_func.t ares_set_socket_functions.raw $(MAIN
 	$(FCPP) $(OPTS) -Dfunc=ares_set_socket_functions -Ddocs_ares_set_socket_functions -Dfuncinc=\"ares_set_socket_functions.raw\" $< $@
 
 
-ares_init.raw: $(SRCDIR)/ares_init.3
+ares_init.raw: $(DOCSDIR)/ares_init.3
 	$(MAN2HTML) < $< >$@
-ares_dup.raw: $(SRCDIR)/ares_dup.3
+ares_dup.raw: $(DOCSDIR)/ares_dup.3
 	$(MAN2HTML) < $< >$@
-ares_init_options.raw: $(SRCDIR)/ares_init_options.3
+ares_init_options.raw: $(DOCSDIR)/ares_init_options.3
 	$(MAN2HTML) < $< >$@
-ares_mkquery.raw: $(SRCDIR)/ares_mkquery.3
+ares_mkquery.raw: $(DOCSDIR)/ares_mkquery.3
 	$(MAN2HTML) < $< >$@
-ares_create_query.raw: $(SRCDIR)/ares_create_query.3
+ares_create_query.raw: $(DOCSDIR)/ares_create_query.3
 	$(MAN2HTML) < $< >$@
-ares_parse_a_reply.raw: $(SRCDIR)/ares_parse_a_reply.3
+ares_parse_a_reply.raw: $(DOCSDIR)/ares_parse_a_reply.3
 	$(MAN2HTML) < $< >$@
-ares_parse_mx_reply.raw: $(SRCDIR)/ares_parse_mx_reply.3
+ares_parse_mx_reply.raw: $(DOCSDIR)/ares_parse_mx_reply.3
 	$(MAN2HTML) < $< >$@
-ares_parse_naptr_reply.raw: $(SRCDIR)/ares_parse_naptr_reply.3
+ares_parse_naptr_reply.raw: $(DOCSDIR)/ares_parse_naptr_reply.3
 	$(MAN2HTML) < $< >$@
-ares_parse_aaaa_reply.raw: $(SRCDIR)/ares_parse_aaaa_reply.3
+ares_parse_aaaa_reply.raw: $(DOCSDIR)/ares_parse_aaaa_reply.3
 	$(MAN2HTML) < $< >$@
-ares_parse_ptr_reply.raw: $(SRCDIR)/ares_parse_ptr_reply.3
+ares_parse_ptr_reply.raw: $(DOCSDIR)/ares_parse_ptr_reply.3
 	$(MAN2HTML) < $< >$@
-ares_process.raw: $(SRCDIR)/ares_process.3
+ares_process.raw: $(DOCSDIR)/ares_process.3
 	$(MAN2HTML) < $< >$@
-ares_query.raw: $(SRCDIR)/ares_query.3
+ares_query.raw: $(DOCSDIR)/ares_query.3
 	$(MAN2HTML) < $< >$@
-ares_search.raw: $(SRCDIR)/ares_search.3
+ares_search.raw: $(DOCSDIR)/ares_search.3
 	$(MAN2HTML) < $< >$@
-ares_send.raw: $(SRCDIR)/ares_send.3
+ares_send.raw: $(DOCSDIR)/ares_send.3
 	$(MAN2HTML) < $< >$@
-ares_strerror.raw: $(SRCDIR)/ares_strerror.3
+ares_strerror.raw: $(DOCSDIR)/ares_strerror.3
 	$(MAN2HTML) < $< >$@
-ares_timeout.raw: $(SRCDIR)/ares_timeout.3
+ares_timeout.raw: $(DOCSDIR)/ares_timeout.3
 	$(MAN2HTML) < $< >$@
-ares_version.raw: $(SRCDIR)/ares_version.3
+ares_version.raw: $(DOCSDIR)/ares_version.3
 	$(MAN2HTML) < $< >$@
-ares_free_string.raw: $(SRCDIR)/ares_free_string.3
+ares_free_string.raw: $(DOCSDIR)/ares_free_string.3
 	$(MAN2HTML) < $< >$@
-ares_free_data.raw: $(SRCDIR)/ares_free_data.3
+ares_free_data.raw: $(DOCSDIR)/ares_free_data.3
 	$(MAN2HTML) < $< >$@
-ares_freeaddrinfo.raw: $(SRCDIR)/ares_freeaddrinfo.3
+ares_freeaddrinfo.raw: $(DOCSDIR)/ares_freeaddrinfo.3
 	$(MAN2HTML) < $< >$@
-ares_getaddrinfo.raw: $(SRCDIR)/ares_getaddrinfo.3
+ares_getaddrinfo.raw: $(DOCSDIR)/ares_getaddrinfo.3
 	$(MAN2HTML) < $< >$@
-ares_gethostbyaddr.raw: $(SRCDIR)/ares_gethostbyaddr.3
+ares_gethostbyaddr.raw: $(DOCSDIR)/ares_gethostbyaddr.3
 	$(MAN2HTML) < $< >$@
-ares_gethostbyname.raw: $(SRCDIR)/ares_gethostbyname.3
+ares_gethostbyname.raw: $(DOCSDIR)/ares_gethostbyname.3
 	$(MAN2HTML) < $< >$@
-ares_gethostbyname_file.raw: $(SRCDIR)/ares_gethostbyname_file.3
+ares_gethostbyname_file.raw: $(DOCSDIR)/ares_gethostbyname_file.3
 	$(MAN2HTML) < $< >$@
-ares_getnameinfo.raw: $(SRCDIR)/ares_getnameinfo.3
+ares_getnameinfo.raw: $(DOCSDIR)/ares_getnameinfo.3
 	$(MAN2HTML) < $< >$@
-ares_free_hostent.raw: $(SRCDIR)/ares_free_hostent.3
+ares_free_hostent.raw: $(DOCSDIR)/ares_free_hostent.3
 	$(MAN2HTML) < $< >$@
-ares_fds.raw: $(SRCDIR)/ares_fds.3
+ares_fds.raw: $(DOCSDIR)/ares_fds.3
 	$(MAN2HTML) < $< >$@
-ares_getsock.raw: $(SRCDIR)/ares_getsock.3
+ares_getsock.raw: $(DOCSDIR)/ares_getsock.3
 	$(MAN2HTML) < $< >$@
-ares_destroy.raw: $(SRCDIR)/ares_destroy.3
+ares_destroy.raw: $(DOCSDIR)/ares_destroy.3
 	$(MAN2HTML) < $< >$@
-ares_cancel.raw: $(SRCDIR)/ares_cancel.3
+ares_cancel.raw: $(DOCSDIR)/ares_cancel.3
 	$(MAN2HTML) < $< >$@
-ares_expand_name.raw: $(SRCDIR)/ares_expand_name.3
+ares_expand_name.raw: $(DOCSDIR)/ares_expand_name.3
 	$(MAN2HTML) < $< >$@
-ares_expand_string.raw: $(SRCDIR)/ares_expand_string.3
+ares_expand_string.raw: $(DOCSDIR)/ares_expand_string.3
 	$(MAN2HTML) < $< >$@
-ares_destroy_options.raw: $(SRCDIR)/ares_destroy_options.3
+ares_destroy_options.raw: $(DOCSDIR)/ares_destroy_options.3
 	$(MAN2HTML) < $< >$@
-ares_save_options.raw: $(SRCDIR)/ares_save_options.3
+ares_save_options.raw: $(DOCSDIR)/ares_save_options.3
 	$(MAN2HTML) < $< >$@
-ares_parse_ns_reply.raw: $(SRCDIR)/ares_parse_ns_reply.3
+ares_parse_ns_reply.raw: $(DOCSDIR)/ares_parse_ns_reply.3
 	$(MAN2HTML) < $< >$@
-ares_library_cleanup.raw: $(SRCDIR)/ares_library_cleanup.3
+ares_library_cleanup.raw: $(DOCSDIR)/ares_library_cleanup.3
 	$(MAN2HTML) < $< >$@
-ares_library_init.raw: $(SRCDIR)/ares_library_init.3
+ares_library_init.raw: $(DOCSDIR)/ares_library_init.3
 	$(MAN2HTML) < $< >$@
-ares_library_init_android.raw: $(SRCDIR)/ares_library_init_android.3
+ares_library_init_android.raw: $(DOCSDIR)/ares_library_init_android.3
 	$(MAN2HTML) < $< >$@
-ares_library_initialized.raw: $(SRCDIR)/ares_library_initialized.3
+ares_library_initialized.raw: $(DOCSDIR)/ares_library_initialized.3
 	$(MAN2HTML) < $< >$@
-ares_parse_soa_reply.raw: $(SRCDIR)/ares_parse_soa_reply.3
+ares_parse_soa_reply.raw: $(DOCSDIR)/ares_parse_soa_reply.3
 	$(MAN2HTML) < $< >$@
-ares_parse_srv_reply.raw: $(SRCDIR)/ares_parse_srv_reply.3
+ares_parse_srv_reply.raw: $(DOCSDIR)/ares_parse_srv_reply.3
 	$(MAN2HTML) < $< >$@
-ares_parse_txt_reply.raw: $(SRCDIR)/ares_parse_txt_reply.3
+ares_parse_txt_reply.raw: $(DOCSDIR)/ares_parse_txt_reply.3
 	$(MAN2HTML) < $< >$@
-ares_inet_pton.raw: $(SRCDIR)/ares_inet_pton.3
+ares_inet_pton.raw: $(DOCSDIR)/ares_inet_pton.3
 	$(MAN2HTML) < $< >$@
-ares_inet_ntop.raw: $(SRCDIR)/ares_inet_ntop.3
+ares_inet_ntop.raw: $(DOCSDIR)/ares_inet_ntop.3
 	$(MAN2HTML) < $< >$@
-ares_get_servers.raw: $(SRCDIR)/ares_get_servers.3
+ares_get_servers.raw: $(DOCSDIR)/ares_get_servers.3
 	$(MAN2HTML) < $< >$@
-ares_set_local_dev.raw: $(SRCDIR)/ares_set_local_dev.3
+ares_set_local_dev.raw: $(DOCSDIR)/ares_set_local_dev.3
 	$(MAN2HTML) < $< >$@
-ares_set_servers.raw: $(SRCDIR)/ares_set_servers.3
+ares_set_local_ip4.raw: $(DOCSDIR)/ares_set_local_ip4.3
 	$(MAN2HTML) < $< >$@
-ares_set_servers_csv.raw: $(SRCDIR)/ares_set_servers_csv.3
+ares_set_local_ip6.raw: $(DOCSDIR)/ares_set_local_ip6.3
 	$(MAN2HTML) < $< >$@
-ares_set_socket_callback.raw: $(SRCDIR)/ares_set_socket_callback.3
+ares_set_servers.raw: $(DOCSDIR)/ares_set_servers.3
 	$(MAN2HTML) < $< >$@
-ares_set_socket_configure_callback.raw: $(SRCDIR)/ares_set_socket_configure_callback.3
+ares_set_servers_csv.raw: $(DOCSDIR)/ares_set_servers_csv.3
 	$(MAN2HTML) < $< >$@
-ares_set_sortlist.raw: $(SRCDIR)/ares_set_sortlist.3
+ares_set_socket_callback.raw: $(DOCSDIR)/ares_set_socket_callback.3
 	$(MAN2HTML) < $< >$@
-ares_set_socket_functions.raw: $(SRCDIR)/ares_set_socket_functions.3
+ares_set_socket_configure_callback.raw: $(DOCSDIR)/ares_set_socket_configure_callback.3
+	$(MAN2HTML) < $< >$@
+ares_set_sortlist.raw: $(DOCSDIR)/ares_set_sortlist.3
+	$(MAN2HTML) < $< >$@
+ares_set_socket_functions.raw: $(DOCSDIR)/ares_set_socket_functions.3
 	$(MAN2HTML) < $< >$@
 
 clean:
