@@ -15,6 +15,15 @@ BOXTOP
  version. We're a small project, we can't provide "support" for old releases.
 
 <p>
+<a href="/download/c-ares-1.16.1.tar.gz">c-ares 1.16.1</a> (11-may-2020)
+<a href="/download/c-ares-1.16.1.tar.gz.asc">GPG</a> <a href="/changelog.html#1_16_1">Changelog</a>
+<br>
+<a href="/download/c-ares-1.16.0.tar.gz">c-ares 1.16.0</a> (13-mar-2020)
+<a href="/download/c-ares-1.16.0.tar.gz.asc">GPG</a> <a href="/changelog.html#1_16_0">Changelog</a>
+<br>
+<a href="/download/c-ares-1.15.0.tar.gz">c-ares 1.15.0</a> (23-oct-2018)
+<a href="/download/c-ares-1.15.0.tar.gz.asc">GPG</a> <a href="/changelog.html#1_15_0">Changelog</a>
+<br>
 <a href="/download/c-ares-1.14.0.tar.gz">c-ares 1.14.0</a> (16-feb-2018)
 <a href="/download/c-ares-1.14.0.tar.gz.asc">GPG</a> <a href="/changelog.html#1_14_0">Changelog</a>
 <br>
@@ -58,7 +67,7 @@ href="https://github.com/bagder/c-ares/raw/cares-1_7_3/RELEASE-NOTES">RELEASE-NO
 <br>
  <a href="c-ares-1.7.2.tar.gz">c-ares 1.7.2</a>, 615KB (10-jun-2010) <a
 href="c-ares-1.7.2.tar.gz.asc">GPG</a> <a
-href="https://github.com/bagder/c-ares/raw/cares-1_7_2/RELEASE-NOTES">RELEASE-NOTES</a> (doesn't build, lacks a file that is added in 1.7.3)
+href="https://github.com/bagder/c-ares/raw/cares-1_7_2/RELEASE-NOTES">RELEASE-NOTES</a> (doesn't build)
 <br>
  <a href="c-ares-1.7.1.tar.gz">c-ares 1.7.1</a>, 613KB (23-mar-2010) <a
 href="c-ares-1.7.1.tar.gz.asc">GPG</a> <a
@@ -76,7 +85,7 @@ href="https://github.com/bagder/c-ares/raw/cares-1_7_0/RELEASE-NOTES">RELEASE-NO
 <br>
  <a href="c-ares-1.5.1.tar.gz">c-ares 1.5.1</a>, 435KB (21-nov-2007) <a href="c-ares-1.5.1.tar.gz.asc">GPG</a>
 <br>
- <a href="c-ares-1.5.0.tar.gz">c-ares 1.5.0</a>, 435KB (21-nov-2007) <a href="c-ares-1.5.0.tar.gz.asc">GPG</a> (doesn't build, lacks a file that is added in 1.5.1)
+ <a href="c-ares-1.5.0.tar.gz">c-ares 1.5.0</a>, 435KB (21-nov-2007) <a href="c-ares-1.5.0.tar.gz.asc">GPG</a> (doesn't build)
 <br>
  <a href="c-ares-1.4.0.tar.gz">c-ares 1.4.0</a>, 421KB (8-jun-2007) <a href="c-ares-1.4.0.tar.gz.asc">GPG</a>
 <br>
