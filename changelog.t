@@ -13,6 +13,36 @@ BOXTOP
 The full changelog of the c-ares project's history.
 
 <p>
+<a name="1_17_0"></a>
+SUBTITLE(c-ares version 1.17.0 - Nov 16 2020)
+<p>
+Security:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/333">avoid read-heap-buffer-overflow in ares_parse_soa_reply found during fuzzing</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/336">Avoid theoretical buffer overflow in RC4 loop comparison</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/367">Empty hquery->name could lead to invalid memory access</a>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/371">ares_parse_{a,aaaa}_reply() could return a larger *naddrttls than was passed in</a>
+</ul>
+Changes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/334">Update help information for adig, acountry, and ahost</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/346">Test Suite now uses dynamic system-assigned ports rather than hardcoded ports to prevent failures in containers</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/244">Detect remote DNS server does not support EDNS using rules from RFC 6891</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/349">Source tree has been reorganized to use a more modern layout</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/360">Allow parsing of CAA Resource Record</a>
+</ul>
+<p>
+  Bug fixes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/331">readaddrinfo bad sizeof()</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/344">Test cases should honor HAVE_WRITEV flag, not depend on WIN32</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/345">FQDN with trailing period should be queried first</a>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/317">ares_getaddrinfo() was returning members of the struct as garbage values if unset, and was not honoring ai_socktype and ai_protocol hints.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/204">ares_gethostbyname() with AF_UNSPEC and an ip address would fail</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/368">Properly document ares_set_local_ip4() uses host byte order</a>
+</ul>
+
+<p>
 <a name="1_16_1"></a>
 SUBTITLE(c-ares version 1.16.1 - May 11 2020)
 <p>
