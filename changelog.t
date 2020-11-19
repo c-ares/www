@@ -13,6 +13,12 @@ BOXTOP
 The full changelog of the c-ares project's history.
 
 <p>
+<a name="1_17_1"></a>
+SUBTITLE(c-ares version 1.17.1 - Nov 19 2020)
+<p>
+ Fixes packaging issues in 1.17.0.
+
+<p>
 <a name="1_17_0"></a>
 SUBTITLE(c-ares version 1.17.0 - Nov 16 2020)
 <p>
