@@ -43,8 +43,7 @@ BOXTOP
   GPL. We asked the author about reconsidering the license. No luck.
 </td></tr>
 <tr><td><a href="http://cr.yp.to/djbdns.html">djbdns</a></td>
-<td> Written by Dan Bernstein. The package is not allowed to be redistributed
-  modified.
+<td> Written by Dan Bernstein and dedicated to the public domain.
 </td></tr>
 <tr><td><a href="http://www.posadis.org/">Poslib</a></td>
 <td>
