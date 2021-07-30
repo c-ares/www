@@ -13,6 +13,7 @@ MARKDOWN=markdown
 PAGES = 					\
  adv_20160929.html				\
  adv_20170620.html				\
+ adv_20210810.html				\
  ares_cancel.html				\
  ares_create_query.html				\
  ares_destroy.html				\
@@ -113,6 +114,11 @@ adv_20160929.gen: adv_20160929.md
 adv_20170620.html: adv_20170620.t $(MAINPARTS) adv_20170620.gen
 	$(ACTION)
 adv_20170620.gen: adv_20170620.md
+	$(MARKDOWN) < $< > $@
+
+adv_20210810.html: adv_20210810.t $(MAINPARTS) adv_20210810.gen
+	$(ACTION)
+adv_20210810.gen: adv_20210810.md
 	$(MARKDOWN) < $< > $@
 
 old.html: old.t $(MAINPARTS)

@@ -14,6 +14,11 @@ BOXTOP
  href="security.html">security incident process</a>.
 
 <p>
+SUBTITLE(CVE-2021-3672 - August 10 2021)
+<p>
+ <a href="adv_20210810.html">Missing input validation on hostnames returned by DNS servers</a>
+
+<p>
 SUBTITLE(CVE-2017-1000381 - June 20 2017)
 <p>
  <a href="adv_20170620.html">NAPTR parser out of bounds access</a>
