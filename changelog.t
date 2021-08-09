@@ -13,6 +13,54 @@ BOXTOP
 The full changelog of the c-ares project's history.
 
 <p>
+<a name="1_17_2"></a>
+SUBTITLE(c-ares version 1.17.2 - Aug 10 2021)
+<p>
+Security:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/392">NodeJS passes NULL for addr and 0 for addrlen to ares_parse_ptr_reply() on
+   systems where malloc(0) returns NULL.  This would cause a crash.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/397">When building c-ares with CMake, the RANDOM_FILE would not be set and
+   therefore downgrade to the less secure random number generator</a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/df94703">If ares_getaddrinfo() was terminated by an ares_destroy(), it would cause
+   a crash</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/400">Crash in sortaddrinfo() if the list size equals 0 due to an unexpected
+   DNS response</a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/362f91d">Expand number of escaped characters in DNS replies as per RFC1035 5.1 to
+   prevent spoofing</a> <a href="https://github.com/c-ares/c-ares/commit/44c009b">follow-up</a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/c9b6c60">Perform validation on hostnames to prevent possible XSS due to applications
+   not performing valiation themselves</a>
+</ul>
+
+Changes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/391">Use non-blocking /dev/urandom for random data to prevent early startup
+   performance issues</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/390">z/OS port</a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/485fb66">ares_malloc(0) is now defined behavior (returns NULL) rather than
+   system-specific to catch edge cases</a>
+</ul>
+Bug fixes:
+</ul>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/379">Fuzz testing files were not distributed with official archives</a>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/380">Building tests should not force building of static libraries except on
+   Windows</a>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/384">Windows builds of the tools would fail if built as static due to a missing
+   CARES_STATICLIB definition</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/386">Relative headers must use double quotes to prevent pulling in a system
+   library</a>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/388">Fix OpenBSD building by implementing portability updates for including
+   arpa/nameser.h</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/394">Fix building out-of-tree for autotools</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/395">Make install on MacOS/iOS with CMake was missing the bundle destination so
+   libraries weren't actually installed</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/401">Fix retrieving DNS server configuration on MacOS and iOS if the configuration
+   did not include search domains</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/408">ares_parse_a_reply and ares_parse_aaa_reply were erroneously using strdup()
+   instead of ares_strdup()</a>
+</ul>
+
+<p>
 <a name="1_17_1"></a>
 SUBTITLE(c-ares version 1.17.1 - Nov 19 2020)
 <p>
