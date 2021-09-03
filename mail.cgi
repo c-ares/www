@@ -87,7 +87,7 @@ archive(-1);
 
 print <<MOO
 
-<p> <a href="http://cool.haxx.se/mailman/listinfo/c-ares">susbcribe
+<p> <a href="http://lists.haxx.se/listinfo/c-ares">susbcribe
  here</a>
 
 </div>
