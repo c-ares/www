@@ -182,8 +182,8 @@ Bug fixes:
  <li> <a href="https://github.com/c-ares/c-ares/pull/192">Fix warnings emitted by MSVC when using -W4</a>
  <li> <a href="https://github.com/c-ares/c-ares/pull/191">Prevent changing name servers while queries are outstanding</a>
  <li> <a href="https://github.com/c-ares/c-ares/pull/187">Harden and rationalize c-ares timeout computation</a>
- <li> <a href="https://c-ares.haxx.se/mail/c-ares-archive-2018-04/0000.shtml">Distribute ares_android.h</a>
- <li> <a href="https://c-ares.haxx.se/mail/c-ares-archive-2018-03/0000.shtml">ares_set_servers_csv() on failure should not leave channel in a bad state</a>
+ <li> <a href="https://c-ares.org/mail/c-ares-archive-2018-04/0000.shtml">Distribute ares_android.h</a>
+ <li> <a href="https://c-ares.org/mail/c-ares-archive-2018-03/0000.shtml">ares_set_servers_csv() on failure should not leave channel in a bad state</a>
  <li> Add missing docs to distribution
 </ul>
 
@@ -207,7 +207,7 @@ Bug fixes:
  <li> <a href=https://github.com/c-ares/c-ares/pull/175"">android: Applications compiled for Oreo can no longer use __system_property_get and must use Java calls to retrieve DNS servers</a>
  <li> <a href="https://github.com/c-ares/c-ares/pull/142">win32: Force use of ANSI functions</a>
  <li> CMake minimum version is now 3.1
- <li> <a href="https://c-ares.haxx.se/mail/c-ares-archive-2011-06/0012.shtml">ares_gethostbyname.3: fix callback status values</a>
+ <li> <a href="https://c-ares.org/mail/c-ares-archive-2011-06/0012.shtml">ares_gethostbyname.3: fix callback status values</a>
  <li> <a href="https://github.com/c-ares/c-ares/pull/180">docs: Document WSAStartup requirement</a>
  <li> <a href="https://github.com/c-ares/c-ares/pull/160">Fix a typo in init_by_resolv_conf</a>
  <li> <a href="https://github.com/c-ares/c-ares/pull/175">Android JNI code leaks local references in some cases</a>
@@ -225,7 +225,7 @@ Changes:
 <p>
 Bug fixes:
 <ul>
- <li> <a href="https://c-ares.haxx.se/adv_20170620.html">CVE-2017-1000381: c-ares NAPTR parser out of bounds access</a>
+ <li> <a href="https://c-ares.org/adv_20170620.html">CVE-2017-1000381: c-ares NAPTR parser out of bounds access</a>
  <li> macos: do not set HAVE_CLOCK_GETTIME_MONOTONIC
  <li> test: check ares_create_query with too-long name
  <li> dist: add ares_library_initialized.* to the tarball
@@ -258,7 +258,7 @@ Changes:
 <p>
 Bug fixes:
 <ul>
- <li> <a href="https://c-ares.haxx.se/adv_20160929.html">CVE-2016-5180: ares_create_query single byte out of buffer write</a>
+ <li> <a href="https://c-ares.org/adv_20160929.html">CVE-2016-5180: ares_create_query single byte out of buffer write</a>
  <li> configure: acknowledge --disable-tests [1]
  <li> man pages: fix typos detected by Lintian
  <li> test: add missing #includes for dns-proto.cc

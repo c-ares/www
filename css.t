@@ -1,1 +1,1 @@
-<link rel="STYLESHEET" type="text/css" href="https://c-ares.haxx.se/cares.css">
+<link rel="STYLESHEET" type="text/css" href="/cares.css">

@@ -35,7 +35,7 @@ SUBTITLE(CVE-2007-3153 - Jun 8 2007)
  The ares_init:randomize_key function uses the rand command to produce random
 numbers. A remote attacker could exploit this vulnerability to possibly spoof
 hostnames and addresses in the DNS cache. <a
-href="https://c-ares.haxx.se/mail/c-ares-archive-2007-06/0011.shtml">project
+href="https://c-ares.org/mail/c-ares-archive-2007-06/0011.shtml">project
 advisory</a>.
 
 <p> For unknown reasons, it seems CVE-2007-3152 is also often used to refer to
