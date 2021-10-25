@@ -13,6 +13,56 @@ BOXTOP
 The full changelog of the c-ares project's history.
 
 <p>
+<a name="1_18_9"></a>
+SUBTITLE(c-ares version 1.18.0 - Oct 25 2021)
+<p>
+Changes:
+<ul>
+ <li> Add support for URI(Uniform Resource Identifier) records via
+   ares_parse_uri_reply()
+ <li> Provide ares_nameser.h as a public interface as needed by NodeJS
+ <li> Update URLs from c-ares.haxx.se to c-ares.org
+ <li> During a domain search, treat ARES_ENODATA as ARES_NXDOMAIN so that the
+   search process will continue to the next domain in the search.
+ <li> Turn ares_gethostbyname() into a wrapper for ares_getaddrinfo() as they
+   followed very similar code paths and ares_gethostbyaddr() has some more
+   desirable features such as priority sorting and parallel queries for
+   AF_UNSPEC.
+ <li> ares_getaddrinfo() now contains a name element in the address info
+   structure as the last element.  This is not an API or ABI break due to
+   the structure always being internally allocated and it being the last
+   element.
+ <li> ares_parse_a_reply() and ares_parse_aaaa_reply() were nearly identical, those
+   now use the same helper functions for parsing rather than having their own
+   code.
+ <li> RFC6761 Section 6.3 says "localhost" lookups need to be special cased to
+   return loopback addresses, and not forward queries to recursive dns servers.
+   On Windows this now returns all loopback addresses, on other systems it
+   returns 127.0.0.1 or ::1 always, and will never forward a request for
+   "localhost" to outside DNS servers.
+ <li> Haiki: port
+</ul>
+Bug fixes:
+<ul>
+ <li> add build to .gitignore
+ <li> z/OS minor update, add missing semicolon in ares_init.c
+ <li> Fix building when latest ax_code_coverage.m4 is imported
+ <li> Work around autotools 'error: too many loops' and other newer autotools
+   import related bugs.
+ <li> MinGW cross builds need advapi32 link as lower case
+ <li> Cygwin build fix due to containing both socket.h and winsock2.h
+ <li> ares_expand_name should allow underscores (_) as SRV records legitimately use
+   them
+ <li> Allow '/' as a valid character for a returned name for CNAME in-addr.arpa
+   delegation
+ <li> ares_getaddrinfo() was not honoring HOSTALIASES
+ <li> ares_getaddrinfo() had some test cases disabled due to a bug in the test
+   framework itself which has now been resolved
+ <li> Due to Travis-CI becoming unfriendly to open-source, Cirrus-CI has now been
+   brought online for automated unit testing.
+ </ul>
+
+<p>
 <a name="1_17_2"></a>
 SUBTITLE(c-ares version 1.17.2 - Aug 10 2021)
 <p>
