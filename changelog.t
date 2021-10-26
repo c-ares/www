@@ -7,60 +7,42 @@
 #include "setup.t"
 #include "menu.t"
 
+#define CHG <li>
+#define BGF <li>
+
 TITLE(c-ares changes over time)
 BOXTOP
 
 The full changelog of the c-ares project's history.
 
 <p>
-<a name="1_18_9"></a>
+<a name="1_18_0"></a>
 SUBTITLE(c-ares version 1.18.0 - Oct 25 2021)
-<p>
-Changes:
-<ul>
- <li> Add support for URI(Uniform Resource Identifier) records via
-   ares_parse_uri_reply()
- <li> Provide ares_nameser.h as a public interface as needed by NodeJS
- <li> Update URLs from c-ares.haxx.se to c-ares.org
- <li> During a domain search, treat ARES_ENODATA as ARES_NXDOMAIN so that the
-   search process will continue to the next domain in the search.
- <li> Turn ares_gethostbyname() into a wrapper for ares_getaddrinfo() as they
-   followed very similar code paths and ares_gethostbyaddr() has some more
-   desirable features such as priority sorting and parallel queries for
-   AF_UNSPEC.
- <li> ares_getaddrinfo() now contains a name element in the address info
-   structure as the last element.  This is not an API or ABI break due to
-   the structure always being internally allocated and it being the last
-   element.
- <li> ares_parse_a_reply() and ares_parse_aaaa_reply() were nearly identical, those
-   now use the same helper functions for parsing rather than having their own
-   code.
- <li> RFC6761 Section 6.3 says "localhost" lookups need to be special cased to
-   return loopback addresses, and not forward queries to recursive dns servers.
-   On Windows this now returns all loopback addresses, on other systems it
-   returns 127.0.0.1 or ::1 always, and will never forward a request for
-   "localhost" to outside DNS servers.
- <li> Haiki: port
+<p> Changes:
+<ul class="Changes">
+ CHG <a href="https://github.com/c-ares/c-ares/pull/411">Add support for URI(Uniform Resource Identifier) records via ares_parse_uri_reply()</a>
+ CHG <a href="https://github.com/c-ares/c-ares/pull/417">Provide ares_nameser.h as a public interface as needed by NodeJS</a>
+ CHG <a href="https://github.com/c-ares/c-ares/issues/423">Update URLs from c-ares.haxx.se to c-ares.org</a>
+ CHG <a href="https://github.com/c-ares/c-ares/issues/426">During a domain search, treat ARES_ENODATA as ARES_NXDOMAIN so that the search process will continue to the next domain in the search.</a>
+ CHG <a href="https://github.com/c-ares/c-ares/pull/428">Turn ares_gethostbyname() into a wrapper for ares_getaddrinfo() as they followed very similar code paths and ares_gethostbyaddr() has some more desirable features such as priority sorting and parallel queries for AF_UNSPEC.</a>
+ CHG <a href="https://github.com/c-ares/c-ares/pull/428">ares_getaddrinfo() now contains a name element in the address info structure as the last element. This is not an API or ABI break due to the structure always being internally allocated and it being the last element.</a>
+ CHG <a href="https://github.com/c-ares/c-ares/pull/428">ares_parse_a_reply() and ares_parse_aaaa_reply() were nearly identical, those now use the same helper functions for parsing rather than having their own code.</a>
+ CHG <a href="https://github.com/c-ares/c-ares/pull/430">RFC6761 Section 6.3 says &quot;localhost&quot; lookups need to be special cased to return loopback addresses, and not forward queries to recursive dns servers. On Windows this now returns all loopback addresses, on other systems it returns 127.0.0.1 or ::1 always, and will never forward a request for &quot;localhost&quot; to outside DNS servers.</a>
+ CHG <a href="https://github.com/c-ares/c-ares/pull/431">Haiki: port</a>
 </ul>
-Bug fixes:
-<ul>
- <li> add build to .gitignore
- <li> z/OS minor update, add missing semicolon in ares_init.c
- <li> Fix building when latest ax_code_coverage.m4 is imported
- <li> Work around autotools 'error: too many loops' and other newer autotools
-   import related bugs.
- <li> MinGW cross builds need advapi32 link as lower case
- <li> Cygwin build fix due to containing both socket.h and winsock2.h
- <li> ares_expand_name should allow underscores (_) as SRV records legitimately use
-   them
- <li> Allow '/' as a valid character for a returned name for CNAME in-addr.arpa
-   delegation
- <li> ares_getaddrinfo() was not honoring HOSTALIASES
- <li> ares_getaddrinfo() had some test cases disabled due to a bug in the test
-   framework itself which has now been resolved
- <li> Due to Travis-CI becoming unfriendly to open-source, Cirrus-CI has now been
-   brought online for automated unit testing.
- </ul>
+<p> Bug fixes:
+<ul class="Bug fixes">
+ BGF <a href="https://github.com/c-ares/c-ares/pull/410">add build to .gitignore</a>
+ BGF <a href="https://github.com/c-ares/c-ares/pull/414">z/OS minor update, add missing semicolon in ares_init.c</a>
+ BGF <a href="https://github.com/c-ares/c-ares/pull/418">Fix building when latest ax_code_coverage.m4 is imported</a>
+ BGF <a href="">Work around autotools &apos;error: too many loops&apos; and other newer autotools    import related bugs.</a>
+ BGF <a href="https://github.com/c-ares/c-ares/pull/420">MinGW cross builds need advapi32 link as lower case</a>
+ BGF <a href="https://github.com/c-ares/c-ares/pull/422">Cygwin build fix due to containing both socket.h and winsock2.h</a>
+ BGF <a href="https://github.com/c-ares/c-ares/issues/424">ares_expand_name should allow underscores (_) as SRV records legitimately use them</a>
+ BGF <a href="https://github.com/c-ares/c-ares/issues/427">Allow &apos;/&apos; as a valid character for a returned name for CNAME in-addr.arpa delegation</a>
+ BGF <a href="https://github.com/c-ares/c-ares/pull/428">ares_getaddrinfo() was not honoring HOSTALIASES</a>
+ BGF <a href="https://github.com/c-ares/c-ares/pull/428">ares_getaddrinfo() had some test cases disabled due to a bug in the test framework itself which has now been resolved</a>
+</ul>
 
 <p>
 <a name="1_17_2"></a>
@@ -91,7 +73,7 @@ Changes:
    system-specific to catch edge cases</a>
 </ul>
 Bug fixes:
-</ul>
+<ul>
  <li> <a href="https://github.com/c-ares/c-ares/issues/379">Fuzz testing files were not distributed with official archives</a>
  <li> <a href="https://github.com/c-ares/c-ares/issues/380">Building tests should not force building of static libraries except on
    Windows</a>
