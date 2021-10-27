@@ -16,6 +16,14 @@ BOXTOP
 The full changelog of the c-ares project's history.
 
 <p>
+<a name="1_18_1"></a>
+SUBTITLE(c-ares version 1.18.1 - Oct 27 2021)
+<p> Bug fixes:
+<ul>
+ BGF ares_getaddrinfo() would return ai_addrlen of 16 for ipv6 adddresses rather than the sizeof(struct sockaddr_in6)
+</ul>
+
+<p>
 <a name="1_18_0"></a>
 SUBTITLE(c-ares version 1.18.0 - Oct 25 2021)
 <p> Changes:

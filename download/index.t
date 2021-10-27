@@ -15,8 +15,11 @@ BOXTOP
  version. We're a small project, we can't provide "support" for old releases.
 
 <p>
+ <a href="/download/c-ares-1.18.1.tar.gz">c-ares 1.18.1</a> (27-oct-2021)
+<a href="/download/c-ares-1.18.1.tar.gz.asc">GPG</a> <a href="changelog.html#1_18_1">Changelog</a>
+<br>
  <a href="/download/c-ares-1.18.0.tar.gz">c-ares 1.18.0</a> (25-oct-2021)
-<a href="/download/c-ares-1.18.0.tar.gz.asc">GPG</a> <a href="changelog.html">Changelog</a>
+<a href="/download/c-ares-1.18.0.tar.gz.asc">GPG</a> <a href="changelog.html#1_18_0">Changelog</a>
 <br>
  <a href="/download/c-ares-1.17.2.tar.gz">c-ares 1.17.2</a> (10-aug-2021)
 <a href="/download/c-ares-1.17.2.tar.gz.asc">GPG</a> <a href="/changelog.html#1_17_2">Changelog</a>
