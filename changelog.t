@@ -16,6 +16,52 @@ BOXTOP
 The full changelog of the c-ares project's history.
 
 <p>
+<a name="1_19_0"></a>
+SUBTITLE(c-ares version 1.19.0 - Jan 28 2023)
+<p> Security:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/497">Low. Stack overflow in ares_set_sortlist() which is used during c-ares
+   initialization and typically provided by an administrator and not an
+   end user.</a>
+</ul>
+
+<p> Changes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/445">Windows: Drop support for XP and derivatives which greatly cleans up
+   initialization code.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/465">Add ARES_OPT_HOSTS_FILE similar to ARES_OPT_RESOLVCONF for specifying a
+   custom hosts file location.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/478">Add vcpkg installation instructions</a>
+</ul>
+<p> Bug fixes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/436">Fix cross-compilation from Windows to Linux due to CPACK logic.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/439">Fix memory leak in reading /etc/hosts when using localhost fallback.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/451">Fix chain building c-ares when libresolv is already included by another
+   project</a>
+ <li> File lookup should not immediately abort as there may be other tries due to
+   search criteria.
+ <li> <a href="https://github.com/c-ares/c-ares/issues/457">Asterisks should be allowed in host validation as CNAMEs may reference
+   wildcard domains</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/459">AutoTools build system referenced bad STDC_HEADERS macro</a>
+ <li> Even if one address class returns a failure for ares_getaddrinfo() we should
+   still return the results we have
+ <li> <a href="https://github.com/c-ares/c-ares/issues/460">CMake Windows: DLLs did not include resource file to include versions</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/464">CMake: Guard target creation in exported config</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/469">Fix ares_getaddrinfo() numerical address resolution with AF_UNSPEC</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/467">Apple: fix libresolv configured query times.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/479">Fix tools and help information</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/490">Various documentation fixes and cleanups</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/491">Add include guards to ares_data.h</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/489">c-ares could try to exceed maximum number of iovec entries supported by
+   system</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/486">CMake package config generation allow for absolute install paths</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/485">Intel compiler fixes</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/492">ares_strsplit bugs</a>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/477">The RFC6761 6.3 states localhost subdomains must be offline too.</a>
+ </ul>
+
+<p>
 <a name="1_18_1"></a>
 SUBTITLE(c-ares version 1.18.1 - Oct 27 2021)
 <p> Bug fixes:
