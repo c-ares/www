@@ -79,7 +79,11 @@ print <<END;
 <div class=title align=left> c-ares Mailing List Archives</div>
 <div class="box">
 
- This is the mails sent to the c-ares mailing list.
+ Recent mails are <a href="https://lists.haxx.se/pipermail/c-ares/">archived
+ here</a>.
+
+<p>
+ Mails from August 2021 and earlier are found here:
 
 END
 
