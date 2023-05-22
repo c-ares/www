@@ -30,13 +30,13 @@ SUBTITLE(CVE-2023-31124 - May 22 2023)
 <p>
  Low. AutoTools does not set CARES_RANDOM_FILE during cross compilation. Fixed in 1.19.1. <a href="https://github.com/c-ares/c-ares/security/advisories/GHSA-54xr-f67r-4pc4">CVE-2023-31124</a>
 <p>
-SUBTITLE(CVE-2022-4094 - Feb 17 2023)
+SUBTITLE(CVE-2022-4904 - Feb 17 2023)
 <p>
 The ares_set_sortlist is missing checks about the validity of the input
 string, which allows a possible arbitrary length stack overflow. This issue
 may cause a denial of service or a limited impact on confidentiality and
 integrity. Fixed in 1.19.0
-<a href="https://access.redhat.com/security/cve/cve-2022-4904">CVE-2022-4094</a>
+<a href="https://access.redhat.com/security/cve/cve-2022-4904">CVE-2022-4904</a>
 
 <p>
 SUBTITLE(CVE-2021-3672 - August 10 2021)
