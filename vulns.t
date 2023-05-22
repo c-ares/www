@@ -16,19 +16,19 @@ BOXTOP
 <p>
 SUBTITLE(CVE-2023-32067 - May 22 2023)
 <p>
-  High. 0-byte UDP payload causes Denial of Service. Fixed in 1.19.1
+  High. 0-byte UDP payload causes Denial of Service. Fixed in 1.19.1. <a href="https://github.com/c-ares/c-ares/security/advisories/GHSA-9g78-jv2r-p7vc">CVE-2023-32067</a>
 <p>
 SUBTITLE(CVE-2023-31147 - May 22 2023)
 <p>
- Moderate. Insufficient randomness in generation of DNS query IDs. Fixed in 1.19.1
+ Moderate. Insufficient randomness in generation of DNS query IDs. Fixed in 1.19.1. <a href="https://github.com/c-ares/c-ares/security/advisories/GHSA-8r8p-23f3-64c2">CVE-2023-31147</a>
 <p>
 SUBTITLE(CVE-2023-31130 - May 22 2023)
 <p>
- Moderate. Buffer Underwrite in ares_inet_net_pton(). Fixed in 1.19.1
+ Moderate. Buffer Underwrite in ares_inet_net_pton(). Fixed in 1.19.1. <a href="https://github.com/c-ares/c-ares/security/advisories/GHSA-x6mf-cxr9-8q6v">CVE-2023-31130</a>
 <p>
 SUBTITLE(CVE-2023-31124 - May 22 2023)
 <p>
- Low. AutoTools does not set CARES_RANDOM_FILE during cross compilation. Fixed in 1.19.1
+ Low. AutoTools does not set CARES_RANDOM_FILE during cross compilation. Fixed in 1.19.1. <a href="https://github.com/c-ares/c-ares/security/advisories/GHSA-54xr-f67r-4pc4">CVE-2023-31124</a>
 <p>
 SUBTITLE(CVE-2022-4094 - Feb 17 2023)
 <p>

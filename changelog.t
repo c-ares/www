@@ -20,12 +20,12 @@ The full changelog of the c-ares project's history.
 SUBTITLE(c-ares version 1.19.1 - May 22 2023)
 <p> Security:
 <ul>
- <li> CVE-2023-32067. High. 0-byte UDP payload causes Denial of Service [12]
- <li> CVE-2023-31147. Moderate. Insufficient randomness in generation of DNS
-   query IDs [13]
- <li> CVE-2023-31130. Moderate. Buffer Underwrite in ares_inet_net_pton() [14]
- <li> CVE-2023-31124. Low. AutoTools does not set CARES_RANDOM_FILE during cross
-   compilation [15]
+ <li> <a href="https://github.com/c-ares/c-ares/security/advisories/GHSA-9g78-jv2r-p7vc">CVE-2023-32067</a>. High. 0-byte UDP payload causes Denial of Service</a>
+ <li> <a href="https://github.com/c-ares/c-ares/security/advisories/GHSA-8r8p-23f3-64c2">CVE-2023-31147</a> Moderate. Insufficient randomness in generation of DNS
+   query IDs
+ <li> <a href="https://github.com/c-ares/c-ares/security/advisories/GHSA-x6mf-cxr9-8q6v">CVE-2023-31130</a>. Moderate. Buffer Underwrite in ares_inet_net_pton()
+ <li> <a href="https://github.com/c-ares/c-ares/security/advisories/GHSA-54xr-f67r-4pc4">CVE-2023-31124</a>. Low. AutoTools does not set CARES_RANDOM_FILE during cross
+   compilation
 </ul>
 
 <p> Bug fixes:
