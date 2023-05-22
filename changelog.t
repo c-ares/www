@@ -16,6 +16,34 @@ BOXTOP
 The full changelog of the c-ares project's history.
 
 <p>
+<a name="1_19_1"></a>
+SUBTITLE(c-ares version 1.19.1 - May 22 2023)
+<p> Security:
+<ul>
+ <li> CVE-2023-32067. High. 0-byte UDP payload causes Denial of Service [12]
+ <li> CVE-2023-31147. Moderate. Insufficient randomness in generation of DNS
+   query IDs [13]
+ <li> CVE-2023-31130. Moderate. Buffer Underwrite in ares_inet_net_pton() [14]
+ <li> CVE-2023-31124. Low. AutoTools does not set CARES_RANDOM_FILE during cross
+   compilation [15]
+</ul>
+
+<p> Bug fixes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/515">Fix uninitialized memory warning in test</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/520">Turn off IPV6_V6ONLY on Windows to allow IPv4-mapped IPv6 addresses</a>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/517">ares_getaddrinfo() should allow a port of 0</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/511">Fix memory leak in ares_send() on error</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/513">Fix comment style in ares_data.h</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/512">Remove unneeded ifdef for Windows</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/510">Fix typo in ares_init_options.3</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/509">Re-add support for Watcom compiler</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/507">Sync ax_pthread.m4 with upstream</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/502">Windows: Invalid stack variable used out of scope for HOSTS path</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/505">Sync ax_cxx_compile_stdcxx_11.m4 with upstream to fix uclibc support</a>
+</ul>
+
+<p>
 <a name="1_19_0"></a>
 SUBTITLE(c-ares version 1.19.0 - Jan 28 2023)
 <p> Security:

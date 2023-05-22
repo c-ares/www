@@ -14,12 +14,28 @@ BOXTOP
  href="security.html">security incident process</a>.
 
 <p>
+SUBTITLE(CVE-2023-32067 - May 22 2023)
+<p>
+  High. 0-byte UDP payload causes Denial of Service. Fixed in 1.19.1
+<p>
+SUBTITLE(CVE-2023-31147 - May 22 2023)
+<p>
+ Moderate. Insufficient randomness in generation of DNS query IDs. Fixed in 1.19.1
+<p>
+SUBTITLE(CVE-2023-31130 - May 22 2023)
+<p>
+ Moderate. Buffer Underwrite in ares_inet_net_pton(). Fixed in 1.19.1
+<p>
+SUBTITLE(CVE-2023-31124 - May 22 2023)
+<p>
+ Low. AutoTools does not set CARES_RANDOM_FILE during cross compilation. Fixed in 1.19.1
+<p>
 SUBTITLE(CVE-2022-4094 - Feb 17 2023)
 <p>
 The ares_set_sortlist is missing checks about the validity of the input
 string, which allows a possible arbitrary length stack overflow. This issue
 may cause a denial of service or a limited impact on confidentiality and
-integrity.
+integrity. Fixed in 1.19.0
 <a href="https://access.redhat.com/security/cve/cve-2022-4904">CVE-2022-4094</a>
 
 <p>
