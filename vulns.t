@@ -14,6 +14,15 @@ BOXTOP
  href="security.html">security incident process</a>.
 
 <p>
+SUBTITLE(CVE-2022-4094 - Feb 17 2023)
+<p>
+The ares_set_sortlist is missing checks about the validity of the input
+string, which allows a possible arbitrary length stack overflow. This issue
+may cause a denial of service or a limited impact on confidentiality and
+integrity.
+<a href="https://access.redhat.com/security/cve/cve-2022-4904">CVE-2022-4094</a>
+
+<p>
 SUBTITLE(CVE-2021-3672 - August 10 2021)
 <p>
  <a href="adv_20210810.html">Missing input validation on hostnames returned by DNS servers</a>
