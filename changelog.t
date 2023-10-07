@@ -16,6 +16,37 @@ BOXTOP
 The full changelog of the c-ares project's history.
 
 <p>
+<a name="1_20_0"></a>
+SUBTITLE(c-ares version 1.20.0 - Oct 7 2023)
+<p>Changes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/556">Update from 1989 MIT license text to modern MIT license text</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/554">Remove acountry from built tools as nerd.dk is gone</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/549">Add new ARES_OPT_UDP_MAX_QUERIES configuration option to limit the number of queries that can be made from a single ephemeral port</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/542">Default per-query timeout has been reduced to 2s with a 3x retry count</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/540">Modernization: start implementing some common data structures that are easy
+   to use and hard to misuse.  This will make code refactoring easier and remove
+   some varied implementations in use.  This change also makes ares_timeout()
+   more efficient</a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/c1b00c41">Use SPDX identifiers and a REUSE CI job to verify</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/526">rand: add support for getrandom()</a>
+</ul>
+<p> Bug fixes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/552">TCP back to back queries were broken</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/553">Ensure queries for ares_getaddrinfo() are not requeued during destruction</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/551">ares_getaddrinfo() should not retry other address classes if one address
+   class has already been returned</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/546">Avoid production ill-formed result when qualifying a name with the root
+   domain</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/530">Fix missing prefix for CMake generated libcares.pc</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/534">DNS server ports will now be read from system configuration instead of
+   defaulting to port 53</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/527">Remove some unreachable code</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/525">Replace usages of sprintf with snprintf</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/524">Fix Watcom instructions and update Windows URLs</a>
+</ul>
+<p>
 <a name="1_19_1"></a>
 SUBTITLE(c-ares version 1.19.1 - May 22 2023)
 <p> Security:
