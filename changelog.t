@@ -16,6 +16,18 @@ BOXTOP
 The full changelog of the c-ares project's history.
 
 <p>
+<a name="1_20_1"></a>
+SUBTITLE(c-ares version 1.20.1 - Oct 8 2023)
+<p>Bugfixes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/562">Resolve use-after-free issue when TCP connection is terminated before a
+   response is returned</a>
+ <li> Reduce number of queries for a load test case to prevent overloading some
+   build systems
+ <li> <a href="https://github.com/c-ares/c-ares/pull/559">Fix fuzz test build target</a>
+</ul>
+
+<p>
 <a name="1_20_0"></a>
 SUBTITLE(c-ares version 1.20.0 - Oct 7 2023)
 <p>Changes:
