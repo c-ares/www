@@ -78,9 +78,6 @@ BOXTOP
 <li> <a href="ares_version.html">ares_version</a>
 </ul>
 
-#endif
-
-
 BOXBOT
 
 #include "footer.t"
