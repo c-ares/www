@@ -53,6 +53,7 @@ PAGES = 					\
  ares_parse_soa_reply.html			\
  ares_parse_srv_reply.html			\
  ares_parse_txt_reply.html			\
+ ares_parse_uri_reply.html			\
  ares_process.html				\
  ares_process_fd.html				\
  ares_query.html				\
@@ -234,6 +235,8 @@ ares_parse_soa_reply.html: ares_func.t ares_parse_soa_reply.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_parse_soa_reply -Ddocs_ares_parse_soa_reply -Dfuncinc=\"ares_parse_soa_reply.raw\" $< $@
 ares_parse_txt_reply.html: ares_func.t ares_parse_txt_reply.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_parse_txt_reply -Ddocs_ares_parse_txt_reply -Dfuncinc=\"ares_parse_txt_reply.raw\" $< $@
+ares_parse_uri_reply.html: ares_func.t ares_parse_uri_reply.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_parse_uri_reply -Ddocs_ares_parse_uri_reply -Dfuncinc=\"ares_parse_uri_reply.raw\" $< $@
 ares_inet_pton.html: ares_func.t ares_inet_pton.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_inet_pton -Ddocs_ares_inet_pton -Dfuncinc=\"ares_inet_pton.raw\" $< $@
 ares_inet_ntop.html: ares_func.t ares_inet_ntop.raw $(MAINPARTS)
@@ -349,6 +352,8 @@ ares_parse_soa_reply.raw: $(DOCSDIR)/ares_parse_soa_reply.3
 ares_parse_srv_reply.raw: $(DOCSDIR)/ares_parse_srv_reply.3
 	$(MAN2HTML) < $< >$@
 ares_parse_txt_reply.raw: $(DOCSDIR)/ares_parse_txt_reply.3
+	$(MAN2HTML) < $< >$@
+ares_parse_uri_reply.raw: $(DOCSDIR)/ares_parse_uri_reply.3
 	$(MAN2HTML) < $< >$@
 ares_inet_pton.raw: $(DOCSDIR)/ares_inet_pton.3
 	$(MAN2HTML) < $< >$@

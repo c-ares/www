@@ -55,6 +55,7 @@ BOXTOP
 <li> <a href="ares_parse_srv_reply.html">ares_parse_srv_reply</a>
 <li> <a href="ares_parse_txt_reply.html">ares_parse_txt_reply</a>
 <li> <a href="ares_parse_txt_reply.html">ares_parse_txt_reply_ext</a>
+<li> <a href="ares_parse_uri_reply.html">ares_parse_uri_reply</a>
 <li> <a href="ares_process.html">ares_process</a>
 <li> <a href="ares_process_fd.html">ares_process_fd</a>
 <li> <a href="ares_query.html">ares_query</a>
