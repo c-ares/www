@@ -16,16 +16,16 @@ BOXTOP
 
 <p>
  <a href="/download/c-ares-1.21.0.tar.gz">c-ares 1.21.0</a> (27-oct-2023)
-<a href="/download/c-ares-1.21.0.tar.gz.asc">GPG</a> <a href="changelog.html#1_21_0">Changelog</a>
+<a href="/download/c-ares-1.21.0.tar.gz.asc">GPG</a> <a href="/changelog.html#1_21_0">Changelog</a>
 <p>
  <a href="/download/c-ares-1.20.1.tar.gz">c-ares 1.20.1</a> (8-oct-2023)
-<a href="/download/c-ares-1.20.1.tar.gz.asc">GPG</a> <a href="changelog.html#1_20_1">Changelog</a>
+<a href="/download/c-ares-1.20.1.tar.gz.asc">GPG</a> <a href="/changelog.html#1_20_1">Changelog</a>
 <br>
  <a href="/download/c-ares-1.20.0.tar.gz">c-ares 1.20.0</a> (7-oct-2023)
-<a href="/download/c-ares-1.20.0.tar.gz.asc">GPG</a> <a href="changelog.html#1_20_0">Changelog</a>
+<a href="/download/c-ares-1.20.0.tar.gz.asc">GPG</a> <a href="/changelog.html#1_20_0">Changelog</a>
 <br>
  <a href="/download/c-ares-1.19.1.tar.gz">c-ares 1.19.1</a> (22-may-2023)
-<a href="/download/c-ares-1.19.1.tar.gz.asc">GPG</a> <a href="changelog.html#1_19_1">Changelog</a>
+<a href="/download/c-ares-1.19.1.tar.gz.asc">GPG</a> <a href="/changelog.html#1_19_1">Changelog</a>
 <br>
  <a href="/download/c-ares-1.19.0.tar.gz">c-ares 1.19.0</a> (28-jan-2023)
 <a href="/download/c-ares-1.19.0.tar.gz.asc">GPG</a> <a href="/changelog.html#1_19_0">Changelog</a>
