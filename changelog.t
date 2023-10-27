@@ -13,7 +13,30 @@
 TITLE(c-ares changes over time)
 BOXTOP
 
-The full changelog of the c-ares project's history.
+<p>
+<a name="1_21_0"></a>
+SUBTITLE(c-ares version 1.21.0 - Oct 27 2023)
+<p>Changes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/565">Provide better man page cross-links.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/567">Introduce ares_status_t as an enum rather than using #define list and
+   integer data type for internal functions.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/570">Introduce ares_bool_t datatype rather than using an integer with 0/1 so
+   it is clear based on the function prototype what it returns.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/568">Increase compiler warning levels by default.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/573">Use size_t and other more proper datatypes internally (rather than int).</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/579">Many developers have used different code styles over the years, standardize
+   on one and use clang-format to enforce the style.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/574">CMake can now control symbol visibility</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/581">Replace multiple DNS hand-made parsers with new memory-safe DNS message
+ parser.</a>
+</ul>
+
+<p>Bugfixes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/569">Tools: STAYOPEN flag could make tools not terminate.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/a070d78">Socket callbacks were passed SOCK_STREAM instead of SOCK_DGRAM on udp.</a>
+</ul>
 
 <p>
 <a name="1_20_1"></a>
