@@ -10,14 +10,14 @@ DOCSDIR=$(SRCDIR)/docs
 MAN2HTML= roffit --bare --mandir=$(DOCSDIR) --hrefdir=.
 MARKDOWN=markdown
 
-PAGES = 					\
- adv_20160929.html				\
- adv_20170620.html				\
- adv_20210810.html				\
+MANPAGES = \
  ares_cancel.html				\
  ares_create_query.html				\
  ares_destroy.html				\
  ares_destroy_options.html			\
+ ares_dns_mapping.html 				\
+ ares_dns_record.html				\
+ ares_dns_rr.html				\
  ares_dup.html					\
  ares_expand_name.html				\
  ares_expand_string.html			\
@@ -45,10 +45,10 @@ PAGES = 					\
  ares_mkquery.html				\
  ares_parse_a_reply.html			\
  ares_parse_aaaa_reply.html			\
+ ares_parse_caa_reply.html			\
  ares_parse_mx_reply.html			\
  ares_parse_naptr_reply.html			\
  ares_parse_ns_reply.html			\
- ares_parse_ptr_reply.html			\
  ares_parse_ptr_reply.html			\
  ares_parse_soa_reply.html			\
  ares_parse_srv_reply.html			\
@@ -57,6 +57,7 @@ PAGES = 					\
  ares_process.html				\
  ares_process_fd.html				\
  ares_query.html				\
+ ares_reinit.html				\
  ares_save_options.html				\
  ares_search.html				\
  ares_send.html					\
@@ -73,7 +74,12 @@ PAGES = 					\
  ares_set_sortlist.html				\
  ares_strerror.html				\
  ares_timeout.html				\
- ares_version.html				\
+ ares_version.html
+
+PAGES = 					\
+ adv_20160929.html				\
+ adv_20170620.html				\
+ adv_20210810.html				\
  changelog.html					\
  docs.html					\
  index.html					\
@@ -87,7 +93,8 @@ PAGES = 					\
  otherlibs.html					\
  security.html					\
  vulns.html					\
- why.html
+ why.html 					\
+ $(MANPAGES)
 
 all: $(PAGES)
 	make -C download
@@ -167,12 +174,16 @@ ares_parse_naptr_reply.html: ares_func.t ares_parse_naptr_reply.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_parse_naptr_reply -Ddocs_ares_parse_naptr_reply -Dfuncinc=\"ares_parse_naptr_reply.raw\" $< $@
 ares_parse_aaaa_reply.html: ares_func.t ares_parse_aaaa_reply.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_parse_aaaa_reply -Ddocs_ares_parse_aaaa_reply -Dfuncinc=\"ares_parse_aaaa_reply.raw\" $< $@
+ares_parse_caa_reply.html: ares_func.t ares_parse_caa_reply.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_parse_caa_reply -Ddocs_ares_parse_caa_reply -Dfuncinc=\"ares_parse_caa_reply.raw\" $< $@
 ares_parse_ptr_reply.html: ares_func.t ares_parse_ptr_reply.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_parse_ptr_reply -Ddocs_ares_parse_ptr_reply -Dfuncinc=\"ares_parse_ptr_reply.raw\" $< $@
 ares_process.html: ares_func.t ares_process.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_process -Ddocs_ares_process -Dfuncinc=\"ares_process.raw\" $< $@
 ares_query.html: ares_func.t ares_query.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_query -Ddocs_ares_query -Dfuncinc=\"ares_query.raw\" $< $@
+ares_reinit.html: ares_func.t ares_reinit.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_reinit -Ddocs_ares_reinit -Dfuncinc=\"ares_reinit.raw\" $< $@
 ares_search.html: ares_func.t ares_search.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_search -Ddocs_ares_search -Dfuncinc=\"ares_search.raw\" $< $@
 ares_send.html: ares_func.t ares_send.raw $(MAINPARTS)
@@ -217,6 +228,12 @@ ares_process_fd.html: ares_func.t ares_process.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_process_fd -Ddocs_ares_process_fd -Dfuncinc=\"ares_process.raw\" $< $@
 ares_destroy_options.html: ares_func.t ares_destroy_options.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_destroy_options -Ddocs_ares_destroy_options -Dfuncinc=\"ares_destroy_options.raw\" $< $@
+ares_dns_mapping.html: ares_func.t ares_dns_mapping.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_dns_mapping -Ddocs_ares_dns_mapping -Dfuncinc=\"ares_dns_mapping.raw\" $< $@
+ares_dns_record.html: ares_func.t ares_dns_record.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_dns_record -Ddocs_ares_dns_record -Dfuncinc=\"ares_dns_record.raw\" $< $@
+ares_dns_rr.html: ares_func.t ares_dns_rr.raw $(MAINPARTS)
+	$(FCPP) $(OPTS) -Dfunc=ares_dns_rr -Ddocs_ares_dns_rr -Dfuncinc=\"ares_dns_rr.raw\" $< $@
 ares_save_options.html: ares_func.t ares_save_options.raw $(MAINPARTS)
 	$(FCPP) $(OPTS) -Dfunc=ares_save_options -Ddocs_ares_save_options -Dfuncinc=\"ares_save_options.raw\" $< $@
 ares_parse_ns_reply.html: ares_func.t ares_parse_ns_reply.raw $(MAINPARTS)
@@ -287,11 +304,15 @@ ares_parse_naptr_reply.raw: $(DOCSDIR)/ares_parse_naptr_reply.3
 	$(MAN2HTML) < $< >$@
 ares_parse_aaaa_reply.raw: $(DOCSDIR)/ares_parse_aaaa_reply.3
 	$(MAN2HTML) < $< >$@
+ares_parse_caa_reply.raw: $(DOCSDIR)/ares_parse_caa_reply.3
+	$(MAN2HTML) < $< >$@
 ares_parse_ptr_reply.raw: $(DOCSDIR)/ares_parse_ptr_reply.3
 	$(MAN2HTML) < $< >$@
 ares_process.raw: $(DOCSDIR)/ares_process.3
 	$(MAN2HTML) < $< >$@
 ares_query.raw: $(DOCSDIR)/ares_query.3
+	$(MAN2HTML) < $< >$@
+ares_reinit.raw: $(DOCSDIR)/ares_reinit.3
 	$(MAN2HTML) < $< >$@
 ares_search.raw: $(DOCSDIR)/ares_search.3
 	$(MAN2HTML) < $< >$@
@@ -334,6 +355,12 @@ ares_expand_name.raw: $(DOCSDIR)/ares_expand_name.3
 ares_expand_string.raw: $(DOCSDIR)/ares_expand_string.3
 	$(MAN2HTML) < $< >$@
 ares_destroy_options.raw: $(DOCSDIR)/ares_destroy_options.3
+	$(MAN2HTML) < $< >$@
+ares_dns_mapping.raw: $(DOCSDIR)/ares_dns_mapping.3
+	$(MAN2HTML) < $< >$@
+ares_dns_record.raw: $(DOCSDIR)/ares_dns_record.3
+	$(MAN2HTML) < $< >$@
+ares_dns_rr.raw: $(DOCSDIR)/ares_dns_rr.3
 	$(MAN2HTML) < $< >$@
 ares_save_options.raw: $(DOCSDIR)/ares_save_options.3
 	$(MAN2HTML) < $< >$@
