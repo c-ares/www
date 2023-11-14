@@ -12,6 +12,30 @@
 
 TITLE(c-ares changes over time)
 BOXTOP
+<p>
+<a name="1_22_0"></a>
+SUBTITLE(c-ares version 1.22.0 - Nov 14 2023)
+<p>Features:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/614">ares_reinit() is now implemented to re-read any system configuration and immediately apply to an existing ares channel </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/607">The adig command line program has been rewritten and its format now more closely matches that of BIND&apos;s dig utility </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/604">The new DNS message parser and writer functions have now been made public</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/603">RFC9460 HTTPS and SVCB records are now supported</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/600">RFC6698 TLSA records are now supported</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/594">The server list is now internally dynamic and can be changed without impacting existing queries </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/591">Hosts file processing is now cached until the file is detected to be changed to speed up repetitive lookups of large hosts files </a>
+</ul>
+<p>Changes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/598">Internally all DNS messages are now written using the new DNS writing functions </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/596">EDNS is now enabled by default</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/595">Internal cleanups in function prototypes</a>
+</ul>
+<p>Bugfixes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/606">Randomize retry penalties to prevent thundering herd issues when dns servers throttle requests </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/594">Fix Windows build error for missing if_indextoname()</a>
+</ul>
 
 <p>
 <a name="1_21_0"></a>
