@@ -21,7 +21,6 @@ BOXTOP
 <li> <a href="ares_destroy_options.html">ares_destroy_options</a>
 <li> <a href="ares_dns_mapping.html">ares_dns_mapping</a>
 <li> <a href="ares_dns_record.html">ares_dns_record</a>
-<li> <a href="ares_dns_record.html">ares_dns_record</a>
 <li> <a href="ares_dns_rr.html">ares_dns_rr</a>
 <li> <a href="ares_dup.html">ares_dup</a>
 <li> <a href="ares_expand_name.html">ares_expand_name</a>
