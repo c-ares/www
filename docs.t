@@ -19,6 +19,10 @@ BOXTOP
 <li> <a href="ares_create_query.html">ares_create_query</a>
 <li> <a href="ares_destroy.html">ares_destroy</a>
 <li> <a href="ares_destroy_options.html">ares_destroy_options</a>
+<li> <a href="ares_dns_mapping.html">ares_dns_mapping</a>
+<li> <a href="ares_dns_record.html">ares_dns_record</a>
+<li> <a href="ares_dns_record.html">ares_dns_record</a>
+<li> <a href="ares_dns_rr.html">ares_dns_rr</a>
 <li> <a href="ares_dup.html">ares_dup</a>
 <li> <a href="ares_expand_name.html">ares_expand_name</a>
 <li> <a href="ares_expand_string.html">ares_expand_string</a>
@@ -47,6 +51,7 @@ BOXTOP
 <li> <a href="ares_mkquery.html">ares_mkquery</a>
 <li> <a href="ares_parse_a_reply.html">ares_parse_a_reply</a>
 <li> <a href="ares_parse_aaaa_reply.html">ares_parse_aaaa_reply</a>
+<li> <a href="ares_parse_caa_reply.html">ares_parse_caa_reply</a>
 <li> <a href="ares_parse_mx_reply.html">ares_parse_mx_reply</a>
 <li> <a href="ares_parse_naptr_reply.html">ares_parse_naptr_reply</a>
 <li> <a href="ares_parse_ns_reply.html">ares_parse_ns_reply</a>
@@ -59,6 +64,7 @@ BOXTOP
 <li> <a href="ares_process.html">ares_process</a>
 <li> <a href="ares_process_fd.html">ares_process_fd</a>
 <li> <a href="ares_query.html">ares_query</a>
+<li> <a href="ares_reinit.html">ares_reinit</a>
 <li> <a href="ares_save_options.html">ares_save_options</a>
 <li> <a href="ares_search.html">ares_search</a>
 <li> <a href="ares_send.html">ares_send</a>
