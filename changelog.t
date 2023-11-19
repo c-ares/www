@@ -13,6 +13,16 @@
 TITLE(c-ares changes over time)
 BOXTOP
 <p>
+<a name="1_22_1"></a>
+SUBTITLE(c-ares version 1.22.1 - Nov 19 2023)
+<p>Bugfixes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/a36317">Fix /etc/hosts processing performance with all entries using same IPaddress. Large hosts files using the same IP address for all entries  could use exponential time. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/619">Fix typos in manpages</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/623">Fix OpenWatcom building</a>
+</ul>
+
+<p>
 <a name="1_22_0"></a>
 SUBTITLE(c-ares version 1.22.0 - Nov 14 2023)
 <p>Features:
