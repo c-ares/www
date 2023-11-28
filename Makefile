@@ -11,6 +11,7 @@ MAN2HTML= roffit --bare --mandir=$(DOCSDIR) --hrefdir=.
 MARKDOWN=markdown
 MANPAGES_SRC=$(shell find $(DOCSDIR) -name "*.3")
 MANPAGES=$(notdir $(MANPAGES_SRC:.3=.html))
+MANPAGES_HTMLLIST=$(shell echo $(MANPAGES) | sed 's/\([a-zA-Z0-9_]*\)\.html/<li><a href="\1.html">\1<\/a>\n/g')
 
 PAGES = 					\
  adv_20160929.html				\
@@ -35,6 +36,7 @@ PAGES = 					\
 %.html: $(DOCSDIR)/%.3
 	$(MAN2HTML) < $< >$@.raw
 	$(FCPP) $(OPTS) -Dfunc=$* -Ddocs_$* -Dfuncinc=\"$@.raw\" $@.raw $@
+
 
 all: $(PAGES)
 	make -C download
@@ -78,7 +80,10 @@ otherlibs.html: otherlibs.t $(MAINPARTS)
 why.html: why.t $(MAINPARTS)
 	$(ACTION)
 
-docs.html: docs.t $(MAINPARTS)
+docs.gen:
+	@echo $(MANPAGES) | sed 's/\([a-zA-Z0-9_]*\)\.html/<li><a href="\1.html">\1<\/a>\n/g' > $@
+
+docs.html: docs.t docs.gen $(MAINPARTS)
 	$(ACTION)
 
 license.html: license.t $(MAINPARTS)
@@ -98,4 +103,4 @@ indexbot.html: indexbot.t $(MAINPARTS)
 
 clean:
 	find . -name "*~" -exec rm {} \;
-	rm -f *raw
+	rm -f *.raw *.html *.gen
