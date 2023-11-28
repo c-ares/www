@@ -11,8 +11,9 @@
 TITLE(c-ares documentation)
 BOXTOP
 
-<p> c-ares provides a set of library functions.  When you install c-ares, you
- get man pages for all these functions installed.
+<p>c-ares provides a set of library functions, datatypes, and enumerations
+which integrators will use for their implementations.  When you install c-ares,
+you get man pages which describe their use and meanings.
 
 <ul>
 #include "docs.gen"
