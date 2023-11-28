@@ -33,12 +33,11 @@ PAGES = 					\
  $(MANPAGES)
 
 %.html: $(DOCSDIR)/%.3
-	$(MAN2HTML) < $< >$@.raw
-	$(FCPP) $(OPTS) -Dfunc=$* -Ddocs_$* -Dfuncinc=\"$@.raw\" $@.raw $@
+	$(MAN2HTML) < $< >$*.raw
+	$(FCPP) $(OPTS) -Dfunc=$* -Ddocs_$* -Dfuncinc=\"$*.raw\" ares_func.t $@
 
 all: $(PAGES)
 	make -C download
-	echo $(MANPAGES)
 
 index.html: index.t $(MAINPARTS)
 	$(ACTION)
