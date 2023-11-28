@@ -9,9 +9,8 @@ SRCDIR=ares-cvs
 DOCSDIR=$(SRCDIR)/docs
 MAN2HTML= roffit --bare --mandir=$(DOCSDIR) --hrefdir=.
 MARKDOWN=markdown
-MANPAGES_SRC=$(shell find $(DOCSDIR) -name "*.3")
-MANPAGES=$(notdir $(MANPAGES_SRC:.3=.html))
-MANPAGES_HTMLLIST=$(shell echo $(MANPAGES) | sed 's/\([a-zA-Z0-9_]*\)\.html/<li><a href="\1.html">\1<\/a>\n/g')
+MANPAGES_SRC=$(sort $(shell find $(DOCSDIR) -name "*.3"))
+MANPAGES=$(sort $(notdir $(MANPAGES_SRC:.3=.html)))
 
 PAGES = 					\
  adv_20160929.html				\
@@ -37,9 +36,9 @@ PAGES = 					\
 	$(MAN2HTML) < $< >$@.raw
 	$(FCPP) $(OPTS) -Dfunc=$* -Ddocs_$* -Dfuncinc=\"$@.raw\" $@.raw $@
 
-
 all: $(PAGES)
 	make -C download
+	echo $(MANPAGES)
 
 index.html: index.t $(MAINPARTS)
 	$(ACTION)
@@ -81,7 +80,7 @@ why.html: why.t $(MAINPARTS)
 	$(ACTION)
 
 docs.gen:
-	@echo $(MANPAGES) | sed 's/\([a-zA-Z0-9_]*\)\.html/<li><a href="\1.html">\1<\/a>\n/g' > $@
+	@echo "$(MANPAGES)" | sed 's/\([a-zA-Z0-9_]*\)\.html/<li><a href="\1.html">\1<\/a>\n/g' > $@
 
 docs.html: docs.t docs.gen $(MAINPARTS)
 	$(ACTION)
