@@ -13,6 +13,27 @@
 TITLE(c-ares changes over time)
 BOXTOP
 <p>
+<a name="1_23_0"></a>
+SUBTITLE(c-ares version 1.23.0 - Nov 30 2023)
+<p>Features:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/636">Introduce optional (but on by default) thread-safety for the c-ares library.  This has no API nor ABI implications. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/632">resolv.conf in modern systems uses attempts and timeouts options instead of the old retrans and retry options. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/625">Query caching support based on TTL of responses. Can be enabled via ares_init_options() with ARES_OPT_QUERY_CACHE. </a>
+</ul>
+<p>Bugfixes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/fb52c3f">ares_init_options() for ARES_OPT_UDP_PORT and ARES_OPT_TCP_PORT accept theport in host byte order, but it was reading it as network byte order.  Regression introduced in 1.20.0. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/638">ares_init_options() for ARES_FLAG_NOSEARCH was not being honored forares_getaddrinfo() or ares_gethostbyname().  Regression introduced in  1.16.0. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/f4d8c9a">Autotools MacOS and iOS version check was failing</a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/b674abd">Environment variables passed to c-ares are meant to be an override for system configuration. Regression introduced in 1.22.0. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/634">Spelling fixes as detected by codespell.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/633">The timeout returned by ares_timeout() was truncated to milliseconds butvalidated to microseconds which could cause a user to attempt to process  timeouts prior to the timeout actually expiring. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/33ee6c0">CMake was not honoring CXXFLAGS passed in via the environment which couldcause compile and link errors with distribution hardening flags during  packaging. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/627">Fix Windows UWP and Cygwin compilation.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/320cefe">ares_set_servers_*() for legacy reasons needs to accept an empty server listand zero out all servers. This results in an inoperable channel and thus is only used in simulation testing, but we don&apos;t want to break users.  Regression introduced in 1.21.0. </a>
+</ul>
+<p>
 <a name="1_22_1"></a>
 SUBTITLE(c-ares version 1.22.1 - Nov 19 2023)
 <p>Bugfixes:
