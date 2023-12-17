@@ -78,7 +78,7 @@ otherlibs.html: otherlibs.t $(MAINPARTS)
 why.html: why.t $(MAINPARTS)
 	$(ACTION)
 
-docs.gen:
+docs.gen: $(MANPAGES)
 	@echo "$(MANPAGES)" | sed 's/\([a-zA-Z0-9_]*\)\.html/<li><a href="\1.html">\1<\/a>\n/g' > $@
 
 docs.html: docs.t docs.gen $(MAINPARTS)
