@@ -13,6 +13,28 @@
 TITLE(c-ares changes over time)
 BOXTOP
 <p>
+<a name="1_24_0"></a>
+SUBTITLE(c-ares version 1.24.0 - Dec 17 2023)
+<p>Features:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/646">Add support for IPv6 link-local DNS servers.  Nameserver formats can nowaccept the 0face suffix, and a new ares_get_servers_csv() function was  added to return servers that can contain the link-local interface name. </a>
+</ul>
+<p>Changes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/655">Unbundle GoogleTest for test cases.  Package maintainers will now need torequire GoogleTest (GMock) as a build dependency if building tests. New  GoogleTest versions require C++14 or later. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/643">Replace nameserver parsing code to use new memory-safe functions.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/653">Replace the sortlist parser with new memory-safe functions.</a>
+ <li> Various warning fixes and dead code removal.
+</ul>
+<p>Bugfixes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/644">Old Linux versions require POSIX_C_SOURCE or _GNU_SOURCE to compile with thread safety support. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/650">A non-responsive DNS server that caused timeouts wouldn&apos;t increment thefailure count, this would lead to other servers not being tried.  Regression introduced in 1.22.0. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/c982bf4">Some projects that depend on c-ares expect invalid parameter option valuespassed into ares_init_options() to simply be ignored.  This behavior has  been restored. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/661">On linux getrandom() can fail if the kernel doesn&apos;t support the syscall, fall back to another random source. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/663">ares_cancel() when performing ares_gethostbyname() or ares_getaddrinfo()with AF_UNSPEC, if called after one address class was returned but before the other address class, it would return ARES_SUCCESS rather than  ARES_ECANCELLED. </a>
+</ul>
+<p>
 <a name="1_23_0"></a>
 SUBTITLE(c-ares version 1.23.0 - Nov 30 2023)
 <p>Features:
