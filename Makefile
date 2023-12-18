@@ -1,4 +1,6 @@
+.DEFAULT_GOAL := all
 ROOT=.
+DEPDIR=.deps
 
 MAINPARTS= $(ROOT)/doctype.t body.t footer.t $(ROOT)/setup.t \
  menu.t Makefile docmenu.t css.t
@@ -11,6 +13,7 @@ MAN2HTML= roffit --bare --mandir=$(DOCSDIR) --hrefdir=.
 MARKDOWN=markdown
 MANPAGES_SRC=$(sort $(shell find $(DOCSDIR) -name "*.3"))
 MANPAGES=$(sort $(notdir $(MANPAGES_SRC:.3=.html)))
+DEPFILES=$(MANPAGES:%.html=$(DEPDIR)/%.d)
 
 PAGES = 					\
  adv_20160929.html				\
@@ -32,12 +35,21 @@ PAGES = 					\
  why.html 					\
  $(MANPAGES)
 
-%.html: $(DOCSDIR)/%.3
+$(DEPDIR):
+	mkdir -p $@
+
+$(DEPDIR)/%.d: $(DOCSDIR)/%.3
+	sed -n -e 's|^\.so man[0-9]/\(.*\.[0-9]\).*|$*.html: $(DOCSDIR)/\1|p' < $< > $@
+
+%.html: $(DOCSDIR)/%.3 $(DEPDIR)/%.d
 	$(MAN2HTML) < $< >$*.raw
 	$(FCPP) $(OPTS) -Dfunc=$* -Ddocs_$* -Dfuncinc=\"$*.raw\" ares_func.t $@
 
+$(DEPFILES): $(DEPDIR)
+include $(DEPFILES)
+
 all: $(PAGES)
-	make -C download
+.PHONY: all
 
 index.html: index.t $(MAINPARTS)
 	$(ACTION)
@@ -102,3 +114,4 @@ indexbot.html: indexbot.t $(MAINPARTS)
 clean:
 	find . -name "*~" -exec rm {} \;
 	rm -f *.raw *.html *.gen
+	rm -rf $(DEPDIR)
