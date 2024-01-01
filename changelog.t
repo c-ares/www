@@ -17,11 +17,11 @@ BOXTOP
 SUBTITLE(c-ares version 1.24.0 - Dec 17 2023)
 <p>Features:
 <ul>
- <li> <a href="https://github.com/c-ares/c-ares/pull/646">Add support for IPv6 link-local DNS servers.  Nameserver formats can nowaccept the 0face suffix, and a new ares_get_servers_csv() function was  added to return servers that can contain the link-local interface name. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/646">Add support for IPv6 link-local DNS servers.  Nameserver formats can nowaccept the &percnt;iface suffix, and a new ares_get_servers_csv() function was added to return servers that can contain the link-local interface name. </a>
 </ul>
 <p>Changes:
 <ul>
- <li> <a href="https://github.com/c-ares/c-ares/pull/655">Unbundle GoogleTest for test cases.  Package maintainers will now need torequire GoogleTest (GMock) as a build dependency if building tests. New  GoogleTest versions require C++14 or later. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/655">Unbundle GoogleTest for test cases.  Package maintainers will now need to require GoogleTest (GMock) as a build dependency if building tests. New GoogleTest versions require C++14 or later. </a>
  <li> <a href="https://github.com/c-ares/c-ares/pull/643">Replace nameserver parsing code to use new memory-safe functions.</a>
  <li> <a href="https://github.com/c-ares/c-ares/pull/653">Replace the sortlist parser with new memory-safe functions.</a>
  <li> Various warning fixes and dead code removal.
@@ -29,10 +29,10 @@ SUBTITLE(c-ares version 1.24.0 - Dec 17 2023)
 <p>Bugfixes:
 <ul>
  <li> <a href="https://github.com/c-ares/c-ares/issues/644">Old Linux versions require POSIX_C_SOURCE or _GNU_SOURCE to compile with thread safety support. </a>
- <li> <a href="https://github.com/c-ares/c-ares/pull/650">A non-responsive DNS server that caused timeouts wouldn&apos;t increment thefailure count, this would lead to other servers not being tried.  Regression introduced in 1.22.0. </a>
- <li> <a href="https://github.com/c-ares/c-ares/commit/c982bf4">Some projects that depend on c-ares expect invalid parameter option valuespassed into ares_init_options() to simply be ignored.  This behavior has  been restored. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/650">A non-responsive DNS server that caused timeouts wouldn&apos;t increment the failure count, this would lead to other servers not being tried.  Regression introduced in 1.22.0. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/c982bf4">Some projects that depend on c-ares expect invalid parameter option values passed into ares_init_options() to simply be ignored.  This behavior has been restored. </a>
  <li> <a href="https://github.com/c-ares/c-ares/pull/661">On linux getrandom() can fail if the kernel doesn&apos;t support the syscall, fall back to another random source. </a>
- <li> <a href="https://github.com/c-ares/c-ares/pull/663">ares_cancel() when performing ares_gethostbyname() or ares_getaddrinfo()with AF_UNSPEC, if called after one address class was returned but before the other address class, it would return ARES_SUCCESS rather than  ARES_ECANCELLED. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/663">ares_cancel() when performing ares_gethostbyname() or ares_getaddrinfo() with AF_UNSPEC, if called after one address class was returned but before the other address class, it would return ARES_SUCCESS rather than ARES_ECANCELLED. </a>
 </ul>
 <p>
 <a name="1_23_0"></a>
@@ -45,13 +45,13 @@ SUBTITLE(c-ares version 1.23.0 - Nov 30 2023)
 </ul>
 <p>Bugfixes:
 <ul>
- <li> <a href="https://github.com/c-ares/c-ares/commit/fb52c3f">ares_init_options() for ARES_OPT_UDP_PORT and ARES_OPT_TCP_PORT accept theport in host byte order, but it was reading it as network byte order.  Regression introduced in 1.20.0. </a>
- <li> <a href="https://github.com/c-ares/c-ares/pull/638">ares_init_options() for ARES_FLAG_NOSEARCH was not being honored forares_getaddrinfo() or ares_gethostbyname().  Regression introduced in  1.16.0. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/fb52c3f">ares_init_options() for ARES_OPT_UDP_PORT and ARES_OPT_TCP_PORT accept the port in host byte order, but it was reading it as network byte order.  Regression introduced in 1.20.0. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/638">ares_init_options() for ARES_FLAG_NOSEARCH was not being honored for ares_getaddrinfo() or ares_gethostbyname().  Regression introduced in  1.16.0. </a>
  <li> <a href="https://github.com/c-ares/c-ares/commit/f4d8c9a">Autotools MacOS and iOS version check was failing</a>
  <li> <a href="https://github.com/c-ares/c-ares/commit/b674abd">Environment variables passed to c-ares are meant to be an override for system configuration. Regression introduced in 1.22.0. </a>
  <li> <a href="https://github.com/c-ares/c-ares/pull/634">Spelling fixes as detected by codespell.</a>
- <li> <a href="https://github.com/c-ares/c-ares/pull/633">The timeout returned by ares_timeout() was truncated to milliseconds butvalidated to microseconds which could cause a user to attempt to process  timeouts prior to the timeout actually expiring. </a>
- <li> <a href="https://github.com/c-ares/c-ares/commit/33ee6c0">CMake was not honoring CXXFLAGS passed in via the environment which couldcause compile and link errors with distribution hardening flags during  packaging. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/633">The timeout returned by ares_timeout() was truncated to milliseconds but validated to microseconds which could cause a user to attempt to process timeouts prior to the timeout actually expiring. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/33ee6c0">CMake was not honoring CXXFLAGS passed in via the environment which could cause compile and link errors with distribution hardening flags during packaging. </a>
  <li> <a href="https://github.com/c-ares/c-ares/pull/627">Fix Windows UWP and Cygwin compilation.</a>
  <li> <a href="https://github.com/c-ares/c-ares/commit/320cefe">ares_set_servers_*() for legacy reasons needs to accept an empty server listand zero out all servers. This results in an inoperable channel and thus is only used in simulation testing, but we don&apos;t want to break users.  Regression introduced in 1.21.0. </a>
 </ul>
