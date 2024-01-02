@@ -13,6 +13,27 @@
 TITLE(c-ares changes over time)
 BOXTOP
 <p>
+<a name="1_25_0"></a>
+SUBTITLE(c-ares version 1.25.0 - Jan 3 2024)
+<p>Changes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/674">AutoTools: rewrite build system to be lighter weight and fix issues in some semi-modern systems. It is likely this has broken building on some less common and legacy OSs, please report issues. </a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/88c444d">Rewrite ares_strsplit() as a wrapper for ares__buf_split() for memory safety reasons.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/669">The ahost utility now uses ares_getaddrinfo() and returns both IPv4 and IPv6 addresses by default.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/659">OpenBSD: Add SOCK_DNS flag when creating socket.</a>
+</ul>
+<p>Bugfixes:
+<ul>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/1231aa7">Tests: Live reverse lookups for Google's public DNS servers no longer return results, replace with CloudFlare pubic DNS servers.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/673">MacOS legacy SDKs require sys/socket.h before net/if.h</a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/05181a6">Connection failures should increment the server failure count first or a retry might be enqueued to the same server.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/eebfe0c">On systems that don't implement the ability to enumerate network interfaces the stubs used the wrong prototype.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/pull/666">Fix minor warnings and documentation typos.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/commit/d186f11">Fix support for older GoogleTest versions.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/665">getrandom() may require sys/random.h on some systems.</a>
+ <li> <a href="https://github.com/c-ares/c-ares/issues/664">Fix building tests with symbol hiding enabled.</a>
+</ul>
+<p>
 <a name="1_24_0"></a>
 SUBTITLE(c-ares version 1.24.0 - Dec 17 2023)
 <p>Features:
