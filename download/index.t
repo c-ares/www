@@ -15,6 +15,9 @@ BOXTOP
  version. We're a small project, we can't provide "support" for old releases.
 
 <p>
+ <a href="/download/c-ares-1.25.0.tar.gz">c-ares 1.25.0</a> (3-jan-2024)
+<a href="/download/c-ares-1.25.0.tar.gz.asc">GPG</a> <a href="/changelog.html#1_25_0">Changelog</a>
+<p>
  <a href="/download/c-ares-1.24.0.tar.gz">c-ares 1.24.0</a> (17-dec-2023)
 <a href="/download/c-ares-1.24.0.tar.gz.asc">GPG</a> <a href="/changelog.html#1_24_0">Changelog</a>
 <p>
