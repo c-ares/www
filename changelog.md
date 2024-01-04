@@ -1,5 +1,4 @@
 <a name="1_25_0"></a>
-
 ## c-ares version 1.25.0 - Jan 3 2024
 
 Changes:
@@ -20,8 +19,8 @@ Bugfixes:
 *    [getrandom() may require sys/random.h on some systems.](https://github.com/c-ares/c-ares/issues/665)
 *    [Fix building tests with symbol hiding enabled.](https://github.com/c-ares/c-ares/issues/664)
 
-<a name="1_24_0"></a>
 
+<a name="1_24_0"></a>
 ## c-ares version 1.24.0 - Dec 17 2023
 
 Features:
@@ -43,8 +42,8 @@ Bugfixes:
 *    [On linux getrandom() can fail if the kernel doesn't support the syscall, fall back to another random source. ](https://github.com/c-ares/c-ares/pull/661)
 *    [ares\_cancel() when performing ares\_gethostbyname() or ares\_getaddrinfo() with AF\_UNSPEC, if called after one address class was returned but before the other address class, it would return ARES\_SUCCESS rather than ARES\_ECANCELLED. ](https://github.com/c-ares/c-ares/pull/663)
 
-<a name="1_23_0"></a>
 
+<a name="1_23_0"></a>
 ## c-ares version 1.23.0 - Nov 30 2023
 
 Features:
@@ -65,8 +64,8 @@ Bugfixes:
 *    [Fix Windows UWP and Cygwin compilation.](https://github.com/c-ares/c-ares/pull/627)
 *    [ares\_set\_servers\_\*() for legacy reasons needs to accept an empty server listand zero out all servers. This results in an inoperable channel and thus is only used in simulation testing, but we don't want to break users. Regression introduced in 1.21.0. ](https://github.com/c-ares/c-ares/commit/320cefe)
 
-<a name="1_22_1"></a>
 
+<a name="1_22_1"></a>
 ## c-ares version 1.22.1 - Nov 19 2023
 
 Bugfixes:
@@ -75,8 +74,8 @@ Bugfixes:
 *    [Fix typos in manpages](https://github.com/c-ares/c-ares/pull/619)
 *    [Fix OpenWatcom building](https://github.com/c-ares/c-ares/pull/623)
 
-<a name="1_22_0"></a>
 
+<a name="1_22_0"></a>
 ## c-ares version 1.22.0 - Nov 14 2023
 
 Features:
@@ -230,28 +229,28 @@ Bug fixes:
 ## c-ares version 1.18.0 - Oct 25 2021
 
 Changes:
-*     [Add support for URI(Uniform Resource Identifier) records via ares\_parse\_uri\_reply()](https://github.com/c-ares/c-ares/pull/411)
-*     [Provide ares\_nameser.h as a public interface as needed by NodeJS](https://github.com/c-ares/c-ares/pull/417)
-*     [Update URLs from c-ares.haxx.se to c-ares.org](https://github.com/c-ares/c-ares/issues/423)
-*     [During a domain search, treat ARES\_ENODATA as ARES\_NXDOMAIN so that the search process will continue to the next domain in the search.](https://github.com/c-ares/c-ares/issues/426)
-*     [Turn ares\_gethostbyname() into a wrapper for ares\_getaddrinfo() as they followed very similar code paths and ares\_gethostbyaddr() has some more desirable features such as priority sorting and parallel queries for AF\_UNSPEC.](https://github.com/c-ares/c-ares/pull/428)
-*     [ares\_getaddrinfo() now contains a name element in the address info structure as the last element. This is not an API or ABI break due to the structure always being internally allocated and it being the last element.](https://github.com/c-ares/c-ares/pull/428)
-*     [ares\_parse\_a\_reply() and ares\_parse\_aaaa\_reply() were nearly identical, those now use the same helper functions for parsing rather than having their own code.](https://github.com/c-ares/c-ares/pull/428)
-*     [RFC6761 Section 6.3 says "localhost" lookups need to be special cased to return loopback addresses, and not forward queries to recursive dns servers. On Windows this now returns all loopback addresses, on other systems it returns 127.0.0.1 or ::1 always, and will never forward a request for "localhost" to outside DNS servers.](https://github.com/c-ares/c-ares/pull/430)
-*     [Haiki: port](https://github.com/c-ares/c-ares/pull/431)
+*    [Add support for URI(Uniform Resource Identifier) records via ares\_parse\_uri\_reply()](https://github.com/c-ares/c-ares/pull/411)
+*    [Provide ares\_nameser.h as a public interface as needed by NodeJS](https://github.com/c-ares/c-ares/pull/417)
+*    [Update URLs from c-ares.haxx.se to c-ares.org](https://github.com/c-ares/c-ares/issues/423)
+*    [During a domain search, treat ARES\_ENODATA as ARES\_NXDOMAIN so that the search process will continue to the next domain in the search.](https://github.com/c-ares/c-ares/issues/426)
+*    [Turn ares\_gethostbyname() into a wrapper for ares\_getaddrinfo() as they followed very similar code paths and ares\_gethostbyaddr() has some more desirable features such as priority sorting and parallel queries for AF\_UNSPEC.](https://github.com/c-ares/c-ares/pull/428)
+*    [ares\_getaddrinfo() now contains a name element in the address info structure as the last element. This is not an API or ABI break due to the structure always being internally allocated and it being the last element.](https://github.com/c-ares/c-ares/pull/428)
+*    [ares\_parse\_a\_reply() and ares\_parse\_aaaa\_reply() were nearly identical, those now use the same helper functions for parsing rather than having their own code.](https://github.com/c-ares/c-ares/pull/428)
+*    [RFC6761 Section 6.3 says "localhost" lookups need to be special cased to return loopback addresses, and not forward queries to recursive dns servers. On Windows this now returns all loopback addresses, on other systems it returns 127.0.0.1 or ::1 always, and will never forward a request for "localhost" to outside DNS servers.](https://github.com/c-ares/c-ares/pull/430)
+*    [Haiku: port](https://github.com/c-ares/c-ares/pull/431)
 
 
 Bug fixes:
-*     [add build to .gitignore](https://github.com/c-ares/c-ares/pull/410)
-*     [z/OS minor update, add missing semicolon in ares_init.c](https://github.com/c-ares/c-ares/pull/414)
-*     [Fix building when latest ax\_code\_coverage.m4 is imported](https://github.com/c-ares/c-ares/pull/418)
-*     [Work around autotools 'error: too many loops' and other newer autotools import related bugs.]()
-*     [MinGW cross builds need advapi32 link as lower case](https://github.com/c-ares/c-ares/pull/420)
-*     [Cygwin build fix due to containing both socket.h and winsock2.h](https://github.com/c-ares/c-ares/pull/422)
-*     [ares\_expand\_name should allow underscores (\_) as SRV records legitimately use them](https://github.com/c-ares/c-ares/issues/424)
-*     [Allow '/' as a valid character for a returned name for CNAME in-addr.arpa delegation](https://github.com/c-ares/c-ares/issues/427)
-*     [ares\_getaddrinfo() was not honoring HOSTALIASES](https://github.com/c-ares/c-ares/pull/428)
-*     [ares\_getaddrinfo() had some test cases disabled due to a bug in the test framework itself which has now been resolved](https://github.com/c-ares/c-ares/pull/428)
+*    [add build to .gitignore](https://github.com/c-ares/c-ares/pull/410)
+*    [z/OS minor update, add missing semicolon in ares_init.c](https://github.com/c-ares/c-ares/pull/414)
+*    [Fix building when latest ax\_code\_coverage.m4 is imported](https://github.com/c-ares/c-ares/pull/418)
+*    [Work around autotools 'error: too many loops' and other newer autotools import related bugs.]()
+*    [MinGW cross builds need advapi32 link as lower case](https://github.com/c-ares/c-ares/pull/420)
+*    [Cygwin build fix due to containing both socket.h and winsock2.h](https://github.com/c-ares/c-ares/pull/422)
+*    [ares\_expand\_name should allow underscores (\_) as SRV records legitimately use them](https://github.com/c-ares/c-ares/issues/424)
+*    [Allow '/' as a valid character for a returned name for CNAME in-addr.arpa delegation](https://github.com/c-ares/c-ares/issues/427)
+*    [ares\_getaddrinfo() was not honoring HOSTALIASES](https://github.com/c-ares/c-ares/pull/428)
+*    [ares\_getaddrinfo() had some test cases disabled due to a bug in the test framework itself which has now been resolved](https://github.com/c-ares/c-ares/pull/428)
 
 
 <a name="1_17_2"></a>
@@ -482,52 +481,52 @@ Changes:
 *    api: Add ares\_set\_socket\_configure\_callback()
 
 Bug fixes:
-*     timeadd: make static
-*     timeoffset: made static and private
-*     nowarn: use limits.h instead of configure for size of long
-*     single_domain: Invalid memory access for empty string input
-*     ares_build.h: fix building on 64-bit powerpc
-*     Allow specification of search domain in ahost
-*     Don't override explicitly specified search domains
-*     ares_parse_soa_reply: Do not leak rr_name on allocation failure
-*     Update ahost man page to describe -s option
-*     host_callback: Fall back to AF_INET on searching with AF_UNSPEC
-*     Add -t u option to ahost
-*     CONTRIBUTING: added
-*     ares_set_servers_csv: fix NULL dereference
-*     Fix integer shift overflow if both tcp_socket and udp_socket are set
-*     fix acountry memory leak
-*     lookup_service: prevent tmpbuf from overrunning
-*     ares_getnameinfo.3: there is no ares_getaddrinfo
-*     init_by_defaults: Continue loop if space for hostname not large enough
-*     Destroy options if ares_save_options fails
-*     ares__read_line: free buf on realloc failure
-*     added define for visual studio 2013
-*     windows: fix slow DNS lookup issue
-*     Use libresolv to initialize cares on iPhone targets
-*     buildconf: remove check for libtool, it only requires libtoolize
-*     init_by_resolv_conf: Don't exit loop early leaving uninitialized entries
-*     ahost: check the select() return code
-*     configure_socket: explicitly ignore return code
-*     read_tcp_data: don't try to use NULL pointer after malloc failure
-*     Distribute all man pages
-*     ares_expand_name: check for valid bits in label length
-*     ares__read_line: clear buf pointer on realloc failure
-*     process_answer: fix things up correctly when removing EDNS option
-*     ares_parse_txt_reply: propagate errors from per-substring loop
-*     ares_gethostbyname: don't leak valid-but-empty hostent
-*     ares_init_options: don't lose init failure
-*     ares_dup: clear new channel on failure
-*     config_sortlist: free any existing sortlist on (re)alloc failure
-*     ares_striendstr: fix so non-NULL return can happen
-*     bitncmp: update comment to match code behaviour
-*     ares_set_servers_csv.3: make return type match code
-*     init_by_resolv_conf: ignore `fopen` errors to use default values
-*     Use "resolve" as synonym of "dns" in nsswitch.conf
-*     ares_win32_init: make LoadLibrary work when using UNICODE too
-*     dist: Distribute README.md
-*     configure: build silently by default
-*     ares_dup.3: remove mention of nonexistent function
+*    timeadd: make static
+*    timeoffset: made static and private
+*    nowarn: use limits.h instead of configure for size of long
+*    single\_domain: Invalid memory access for empty string input
+*    ares\_build.h: fix building on 64-bit powerpc
+*    Allow specification of search domain in ahost
+*    Don't override explicitly specified search domains
+*    ares\_parse\_soa\_reply: Do not leak rr\_name on allocation failure
+*    Update ahost man page to describe -s option
+*    host\_callback: Fall back to AF\_INET on searching with AF\_UNSPEC
+*    Add -t u option to ahost
+*    CONTRIBUTING: added
+*    ares\_set\_servers\_csv: fix NULL dereference
+*    Fix integer shift overflow if both tcp\_socket and udp\_socket are set
+*    fix acountry memory leak
+*    lookup\_service: prevent tmpbuf from overrunning
+*    ares\_getnameinfo.3: there is no ares_getaddrinfo
+*    init\_by\_defaults: Continue loop if space for hostname not large enough
+*    Destroy options if ares_save_options fails
+*    ares\_\_read\_line: free buf on realloc failure
+*    added define for visual studio 2013
+*    windows: fix slow DNS lookup issue
+*    Use libresolv to initialize cares on iPhone targets
+*    buildconf: remove check for libtool, it only requires libtoolize
+*    init\_by\_resolv\_conf: Don't exit loop early leaving uninitialized entries
+*    ahost: check the select() return code
+*    configure\_socket: explicitly ignore return code
+*    read\_tcp\_data: don't try to use NULL pointer after malloc failure
+*    Distribute all man pages
+*    ares_expand_name: check for valid bits in label length
+*    ares\_\_read\_line: clear buf pointer on realloc failure
+*    process\_answer: fix things up correctly when removing EDNS option
+*    ares\_parse\_txt\_reply: propagate errors from per-substring loop
+*    ares\_gethostbyname: don't leak valid-but-empty hostent
+*    ares\_init\_options: don't lose init failure
+*    ares\_dup: clear new channel on failure
+*    config\_sortlist: free any existing sortlist on (re)alloc failure
+*    ares\_striendstr: fix so non-NULL return can happen
+*    bitncmp: update comment to match code behaviour
+*    ares\_set\_servers\_csv.3: make return type match code
+*    init\_by\_resolv\_conf: ignore `fopen` errors to use default values
+*    Use "resolve" as synonym of "dns" in nsswitch.conf
+*    ares\_win32\_init: make LoadLibrary work when using UNICODE too
+*    dist: Distribute README.md
+*    configure: build silently by default
+*    ares\_dup.3: remove mention of nonexistent function
 
 
 <a name="1_10_0"></a>
@@ -539,23 +538,23 @@ Changes:
 *    ares\_inet\_ntop() and ares\_inet\_pton() are now recognized c-ares functions 
 
 Bug fixes:
-*     include the ares_parse_soa_reply.* files in the tarball
-*     read_udp_packets: bail out loop on bad sockets
-*     get_DNS_AdaptersAddresses: fix IPv6 parsing
-*     adig: perror() doesn't work for socket errors on windows
-*     ares_parse_aaaa_reply: fix memory leak
-*     setup_once.h: HP-UX sys/socket.h issue workaround
-*     configure: several fixes
-*     config-dos.h: define strerror() to strerror_s_() for High-C
-*     config-dos.h: define HAVE_CLOSE_S for MSDOS/Watt-32
-*     ares_build.h.dist: enhance non-configure GCC ABI detection logic
-*     ares.h: stricter CARES_EXTERN linkage decorations logic
-*     ares_cancel(): cancel requests safely
-*     protocol parsing: check input data stricter
-*     library init: be recursive, reference count inits/cleanups
-*     ares_parse_txt_reply: return a ares_txt_reply node for each sub-string
-*     ares_set_servers_csv: fixed IPv6 address parsing
-*     build: fix build on msvc11
+*    include the ares\_parse\_soa\_reply.\* files in the tarball
+*    read\_udp\_packets: bail out loop on bad sockets
+*    get\_DNS\_AdaptersAddresses: fix IPv6 parsing
+*    adig: perror() doesn't work for socket errors on windows
+*    ares\_parse\_aaaa\_reply: fix memory leak
+*    setup\_once.h: HP-UX sys/socket.h issue workaround
+*    configure: several fixes
+*    config-dos.h: define strerror() to strerror\_s\_() for High-C
+*    config-dos.h: define HAVE_CLOSE_S for MSDOS/Watt-32
+*    ares\_build.h.dist: enhance non-configure GCC ABI detection logic
+*    ares.h: stricter CARES_EXTERN linkage decorations logic
+*    ares\_cancel(): cancel requests safely
+*    protocol parsing: check input data stricter
+*    library init: be recursive, reference count inits/cleanups
+*    ares\_parse\_txt\_reply: return a ares_txt_reply node for each sub-string
+*    ares\_set\_servers\_csv: fixed IPv6 address parsing
+*    build: fix build on msvc11
 
 
 ## c-ares version 1.9.1 - Jun 18 2012
