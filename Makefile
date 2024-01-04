@@ -54,8 +54,11 @@ all: $(PAGES)
 index.html: index.t $(MAINPARTS)
 	$(ACTION)
 
-changelog.html: changelog.t $(MAINPARTS)
+changelog.html: changelog.t $(MAINPARTS) changelog.gen
 	$(ACTION)
+
+changelog.gen: changelog.md
+	$(MARKDOWN) < $< > $@
 
 vulns.html: vulns.t $(MAINPARTS)
 	$(ACTION)
