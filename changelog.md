@@ -2,14 +2,12 @@
 ## c-ares version 1.25.0 - Jan 3 2024
 
 Changes:
-
 *    [AutoTools: rewrite build system to be lighter weight and fix issues in some semi-modern systems. It is likely this has broken building on some less common and legacy OSs, please report issues. ](https://github.com/c-ares/c-ares/pull/674)
 *    [Rewrite ares\_strsplit() as a wrapper for ares\_\_buf\_split() for memory safety reasons.](https://github.com/c-ares/c-ares/commit/88c444d)
 *    [The ahost utility now uses ares\_getaddrinfo() and returns both IPv4 and IPv6 addresses by default.](https://github.com/c-ares/c-ares/pull/669)
 *    [OpenBSD: Add SOCK\_DNS flag when creating socket.](https://github.com/c-ares/c-ares/pull/659)
 
 Bugfixes:
-
 *    [Tests: Live reverse lookups for Google's public DNS servers no longer return results, replace with CloudFlare pubic DNS servers.](https://github.com/c-ares/c-ares/commit/1231aa7)
 *    [MacOS legacy SDKs require sys/socket.h before net/if.h](https://github.com/c-ares/c-ares/pull/673)
 *    [Connection failures should increment the server failure count first or a retry might be enqueued to the same server.](https://github.com/c-ares/c-ares/commit/05181a6)
@@ -24,18 +22,15 @@ Bugfixes:
 ## c-ares version 1.24.0 - Dec 17 2023
 
 Features:
-
 *    [Add support for IPv6 link-local DNS servers. Nameserver formats can nowaccept the %iface suffix, and a new ares\_get\_servers\_csv() function was added to return servers that can contain the link-local interface name. ](https://github.com/c-ares/c-ares/pull/646)
 
 Changes:
-
 *    [Unbundle GoogleTest for test cases. Package maintainers will now need to require GoogleTest (GMock) as a build dependency if building tests. New GoogleTest versions require C++14 or later. ](https://github.com/c-ares/c-ares/pull/655)
 *    [Replace nameserver parsing code to use new memory-safe functions.](https://github.com/c-ares/c-ares/pull/643)
 *    [Replace the sortlist parser with new memory-safe functions.](https://github.com/c-ares/c-ares/pull/653)
 *    Various warning fixes and dead code removal.
 
 Bugfixes:
-
 *    [Old Linux versions require POSIX\_C\_SOURCE or \_GNU\_SOURCE to compile with thread safety support. ](https://github.com/c-ares/c-ares/issues/644)
 *    [A non-responsive DNS server that caused timeouts wouldn't increment the failure count, this would lead to other servers not being tried. Regression introduced in 1.22.0. ](https://github.com/c-ares/c-ares/pull/650)
 *    [Some projects that depend on c-ares expect invalid parameter option values passed into ares\_init\_options() to simply be ignored. This behavior has been restored. ](https://github.com/c-ares/c-ares/commit/c982bf4)
@@ -47,13 +42,11 @@ Bugfixes:
 ## c-ares version 1.23.0 - Nov 30 2023
 
 Features:
-
 *    [Introduce optional (but on by default) thread-safety for the c-ares library. This has no API nor ABI implications. ](https://github.com/c-ares/c-ares/pull/636)
 *    [resolv.conf in modern systems uses attempts and timeouts options instead of the old retrans and retry options. ](https://github.com/c-ares/c-ares/pull/632)
 *    [Query caching support based on TTL of responses. Can be enabled via ares\_init\_options() with ARES\_OPT\_QUERY\_CACHE. ](https://github.com/c-ares/c-ares/pull/625)
 
 Bugfixes:
-
 *    [ares\_init\_options() for ARES\_OPT\_UDP\_PORT and ARES\_OPT\_TCP\_PORT accept the port in host byte order, but it was reading it as network byte order. Regression introduced in 1.20.0. ](https://github.com/c-ares/c-ares/commit/fb52c3f)
 *    [ares\_init\_options() for ARES\_FLAG\_NOSEARCH was not being honored for ares\_getaddrinfo() or ares\_gethostbyname(). Regression introduced in 1.16.0. ](https://github.com/c-ares/c-ares/pull/638)
 *    [Autotools MacOS and iOS version check was failing](https://github.com/c-ares/c-ares/commit/f4d8c9a)
@@ -69,7 +62,6 @@ Bugfixes:
 ## c-ares version 1.22.1 - Nov 19 2023
 
 Bugfixes:
-
 *    [Fix /etc/hosts processing performance with all entries using same IPaddress. Large hosts files using the same IP address for all entries could use exponential time. ](https://github.com/c-ares/c-ares/commit/a36317)
 *    [Fix typos in manpages](https://github.com/c-ares/c-ares/pull/619)
 *    [Fix OpenWatcom building](https://github.com/c-ares/c-ares/pull/623)
@@ -79,7 +71,6 @@ Bugfixes:
 ## c-ares version 1.22.0 - Nov 14 2023
 
 Features:
-
 *    [ares\_reinit() is now implemented to re-read any system configuration and immediately apply to an existing ares channel ](https://github.com/c-ares/c-ares/pull/614)
 *    [The adig command line program has been rewritten and its format now more closely matches that of BIND's dig utility ](https://github.com/c-ares/c-ares/pull/607)
 *    [The new DNS message parser and writer functions have now been made public](https://github.com/c-ares/c-ares/pull/604)
@@ -89,22 +80,19 @@ Features:
 *    [Hosts file processing is now cached until the file is detected to be changed to speed up repetitive lookups of large hosts files ](https://github.com/c-ares/c-ares/pull/591)
 
 Changes:
-
 *    [Internally all DNS messages are now written using the new DNS writing functions ](https://github.com/c-ares/c-ares/pull/598)
 *    [EDNS is now enabled by default](https://github.com/c-ares/c-ares/pull/596)
 *    [Internal cleanups in function prototypes](https://github.com/c-ares/c-ares/pull/595)
 
 Bugfixes:
-
 *    [Randomize retry penalties to prevent thundering herd issues when dns servers throttle requests ](https://github.com/c-ares/c-ares/pull/606)
 *    [Fix Windows build error for missing if\_indextoname()](https://github.com/c-ares/c-ares/pull/594)
 
-<a name="1_21_0"></a>
 
+<a name="1_21_0"></a>
 ## c-ares version 1.21.0 - Oct 27 2023
 
 Changes:
-
 *    [Provide better man page cross-links.](https://github.com/c-ares/c-ares/pull/565)
 *    [Introduce ares\_status\_t as an enum rather than using \#define list and integer data type for internal functions.](https://github.com/c-ares/c-ares/pull/567)
 *    [Introduce ares\_bool\_t datatype rather than using an integer with 0/1 so it is clear based on the function prototype what it returns.](https://github.com/c-ares/c-ares/pull/570)
@@ -115,26 +103,23 @@ Changes:
 *    [Replace multiple DNS hand-made parsers with new memory-safe DNS message parser.](https://github.com/c-ares/c-ares/pull/581)
 
 Bugfixes:
-
 *    [Tools: STAYOPEN flag could make tools not terminate.](https://github.com/c-ares/c-ares/pull/569)
 *    [Socket callbacks were passed SOCK\_STREAM instead of SOCK\_DGRAM on udp.](https://github.com/c-ares/c-ares/commit/a070d78)
 
-<a name="1_20_1"></a>
 
+<a name="1_20_1"></a>
 ## c-ares version 1.20.1 - Oct 8 2023
 
 Bugfixes:
-
 *    [Resolve use-after-free issue when TCP connection is terminated before a response is returned](https://github.com/c-ares/c-ares/pull/562)
 *    Reduce number of queries for a load test case to prevent overloading some build systems 
 *    [Fix fuzz test build target](https://github.com/c-ares/c-ares/pull/559)
 
-<a name="1_20_0"></a>
 
+<a name="1_20_0"></a>
 ## c-ares version 1.20.0 - Oct 7 2023
 
 Changes:
-
 *    [Update from 1989 MIT license text to modern MIT license text](https://github.com/c-ares/c-ares/pull/556)
 *    [Remove acountry from built tools as nerd.dk is gone](https://github.com/c-ares/c-ares/pull/554)
 *    [Add new ARES\_OPT\_UDP\_MAX\_QUERIES configuration option to limit the number of queries that can be made from a single ephemeral port](https://github.com/c-ares/c-ares/pull/549)
@@ -144,7 +129,6 @@ Changes:
 *    [rand: add support for getrandom()](https://github.com/c-ares/c-ares/pull/526)
 
 Bug fixes:
-
 *    [TCP back to back queries were broken](https://github.com/c-ares/c-ares/pull/552)
 *    [Ensure queries for ares\_getaddrinfo() are not requeued during destruction](https://github.com/c-ares/c-ares/pull/553)
 *    [ares\_getaddrinfo() should not retry other address classes if one address class has already been returned](https://github.com/c-ares/c-ares/pull/551)
@@ -155,19 +139,17 @@ Bug fixes:
 *    [Replace usages of sprintf with snprintf](https://github.com/c-ares/c-ares/pull/525)
 *    [Fix Watcom instructions and update Windows URLs](https://github.com/c-ares/c-ares/pull/524)
 
-<a name="1_19_1"></a>
 
+<a name="1_19_1"></a>
 ## c-ares version 1.19.1 - May 22 2023
 
 Security:
-
 *    [CVE-2023-32067](https://github.com/c-ares/c-ares/security/advisories/GHSA-9g78-jv2r-p7vc). High. 0-byte UDP payload causes Denial of Service 
 *    [CVE-2023-31147](https://github.com/c-ares/c-ares/security/advisories/GHSA-8r8p-23f3-64c2) Moderate. Insufficient randomness in generation of DNS query IDs 
 *    [CVE-2023-31130](https://github.com/c-ares/c-ares/security/advisories/GHSA-x6mf-cxr9-8q6v). Moderate. Buffer Underwrite in ares\_inet\_net\_pton() 
 *    [CVE-2023-31124](https://github.com/c-ares/c-ares/security/advisories/GHSA-54xr-f67r-4pc4). Low. AutoTools does not set CARES\_RANDOM\_FILE during cross compilation
 
 Bug fixes:
-
 *    [Fix uninitialized memory warning in test](https://github.com/c-ares/c-ares/pull/515)
 *    [Turn off IPV6\_V6ONLY on Windows to allow IPv4-mapped IPv6 addresses](https://github.com/c-ares/c-ares/pull/520)
 *    [ares\_getaddrinfo() should allow a port of 0](https://github.com/c-ares/c-ares/issues/517)
@@ -180,22 +162,19 @@ Bug fixes:
 *    [Windows: Invalid stack variable used out of scope for HOSTS path](https://github.com/c-ares/c-ares/pull/502)
 *    [Sync ax\_cxx\_compile\_stdcxx\_11.m4 with upstream to fix uclibc support](https://github.com/c-ares/c-ares/pull/505)
 
-<a name="1_19_0"></a>
 
+<a name="1_19_0"></a>
 ## c-ares version 1.19.0 - Jan 28 2023
 
 Security:
-
 *    [Low. Stack overflow in ares\_set\_sortlist() which is used during c-ares initialization and typically provided by an administrator and not an end user.](https://github.com/c-ares/c-ares/pull/497)
 
 Changes:
-
 *    [Windows: Drop support for XP and derivatives which greatly cleans up initialization code.](https://github.com/c-ares/c-ares/pull/445)
 *    [Add ARES\_OPT\_HOSTS\_FILE similar to ARES\_OPT\_RESOLVCONF for specifying a custom hosts file location.](https://github.com/c-ares/c-ares/pull/465)
 *    [Add vcpkg installation instructions](https://github.com/c-ares/c-ares/pull/478)
 
 Bug fixes:
-
 *    [Fix cross-compilation from Windows to Linux due to CPACK logic.](https://github.com/c-ares/c-ares/pull/436)
 *    [Fix memory leak in reading /etc/hosts when using localhost fallback.](https://github.com/c-ares/c-ares/issues/439)
 *    [Fix chain building c-ares when libresolv is already included by another project](https://github.com/c-ares/c-ares/pull/451)
@@ -216,16 +195,15 @@ Bug fixes:
 *    [ares\_strsplit bugs](https://github.com/c-ares/c-ares/pull/492)
 *    [The RFC6761 6.3 states localhost subdomains must be offline too.](https://github.com/c-ares/c-ares/issues/477)
 
-<a name="1_18_1"></a>
 
+<a name="1_18_1"></a>
 ## c-ares version 1.18.1 - Oct 27 2021
 
 Bug fixes:
-
 *    ares\_getaddrinfo() would return ai\_addrlen of 16 for ipv6 adddresses rather than the sizeof(struct sockaddr\_in6)
 
-<a name="1_18_0"></a>
 
+<a name="1_18_0"></a>
 ## c-ares version 1.18.0 - Oct 25 2021
 
 Changes:
@@ -238,7 +216,6 @@ Changes:
 *    [ares\_parse\_a\_reply() and ares\_parse\_aaaa\_reply() were nearly identical, those now use the same helper functions for parsing rather than having their own code.](https://github.com/c-ares/c-ares/pull/428)
 *    [RFC6761 Section 6.3 says "localhost" lookups need to be special cased to return loopback addresses, and not forward queries to recursive dns servers. On Windows this now returns all loopback addresses, on other systems it returns 127.0.0.1 or ::1 always, and will never forward a request for "localhost" to outside DNS servers.](https://github.com/c-ares/c-ares/pull/430)
 *    [Haiku: port](https://github.com/c-ares/c-ares/pull/431)
-
 
 Bug fixes:
 *    [add build to .gitignore](https://github.com/c-ares/c-ares/pull/410)
@@ -254,7 +231,6 @@ Bug fixes:
 
 
 <a name="1_17_2"></a>
-
 ## c-ares version 1.17.2 - Aug 10 2021
 
 Security:
@@ -281,14 +257,14 @@ Bug fixes:
 *    [Fix retrieving DNS server configuration on MacOS and iOS if the configuration did not include search domains](https://github.com/c-ares/c-ares/pull/401)
 *    [ares\_parse\_a\_reply and ares\_parse\_aaa\_reply were erroneously using strdup() instead of ares\_strdup()](https://github.com/c-ares/c-ares/pull/408)
 
-<a name="1_17_1"></a>
 
+<a name="1_17_1"></a>
 ## c-ares version 1.17.1 - Nov 19 2020
 
 Fixes packaging issues in 1.17.0.
 
-<a name="1_17_0"></a>
 
+<a name="1_17_0"></a>
 ## c-ares version 1.17.0 - Nov 16 2020
 
 Security:
@@ -312,8 +288,8 @@ Bug fixes:
 *    [ares\_gethostbyname() with AF\_UNSPEC and an ip address would fail](https://github.com/c-ares/c-ares/pull/204)
 *    [Properly document ares\_set\_local\_ip4() uses host byte order](https://github.com/c-ares/c-ares/pull/368)
 
-<a name="1_16_1"></a>
 
+<a name="1_16_1"></a>
 ## c-ares version 1.16.1 - May 11 2020
 
 Security:
@@ -329,8 +305,8 @@ Bug fixes:
 *    CMake build system should populate the INCLUDE\_DIRECTORIES property of installed targets \[2\] 
 *    Correct macros in use for the ares\_getaddrinfo.3 man page
 
-<a name="1_16_0"></a>
 
+<a name="1_16_0"></a>
 ## c-ares version 1.16.0 - March 13 2020
 
 Changes:
@@ -355,8 +331,8 @@ Bug fixes:
 *    Due to use of inet\_addr() it was not possible to return 255.255.255.255 from ares\_gethostbyname(). 
 *    CMake: Fix building of tests on Windows
 
-<a name="1_15_0"></a>
 
+<a name="1_15_0"></a>
 ## c-ares version 1.15.0 - October 23 2018
 
 Changes:
@@ -377,8 +353,8 @@ Bug fixes:
 *    [ares\_set\_servers\_csv() on failure should not leave channel in a bad state](https://c-ares.org/mail/c-ares-archive-2018-03/0000.shtml)
 *    Add missing docs to distribution
 
-<a name="1_14_0"></a>
 
+<a name="1_14_0"></a>
 ## c-ares version 1.14.0 - February 16 2018
 
 Changes:
@@ -399,8 +375,8 @@ Bug fixes:
 *    [Android JNI code leaks local references in some cases](https://github.com/c-ares/c-ares/pull/175)
 *    [Force using the ANSI versions of WinAPI functions](https://github.com/c-ares/c-ares/pull/142)
 
-<a name="1_13_0"></a>
 
+<a name="1_13_0"></a>
 ## c-ares version 1.13.0 - June 20 2017
 
 Changes:
@@ -430,8 +406,8 @@ Bug fixes:
 *    Added support for Windows DNS Suffix Search List 
 *    ares.h: support compiling with QNX
 
-<a name="1_12_0"></a>
 
+<a name="1_12_0"></a>
 ## c-ares version 1.12.0 - Sep 29 2016
 
 Changes:
@@ -465,8 +441,8 @@ Bug fixes:
 *    headers: remove checks for and defines of variable sizes 
 *    test: fix gMock to work with gcc &gt;= 6.x \[3\]
 
-<a name="1_11_0"></a>
 
+<a name="1_11_0"></a>
 ## c-ares version 1.11.0 - Feb 19 2016
 
 Changes:
@@ -530,7 +506,6 @@ Bug fixes:
 
 
 <a name="1_10_0"></a>
-
 ## c-ares version 1.10.0 - May 12 2013
 
 Changes:
@@ -557,11 +532,14 @@ Bug fixes:
 *    build: fix build on msvc11
 
 
+<a name="1_9_1"></a>
 ## c-ares version 1.9.1 - Jun 18 2012
 
 Fixed:
 *    include the ares\_parse\_soa\_reply.\* files in the tarball
 
+
+<a name="1_9_0"></a>
 ## c-ares version 1.9.0 - Jun 17 2012
 
 Changed:
@@ -571,6 +549,8 @@ Fixed:
 *    libcares.pc generation for static MingW\* cross builds 
 *    ares\_dup: UDP and TCP port byte order in saved options
 
+
+<a name="1_8_0"></a>
 ## c-ares version 1.8.0 - Apr 27 2012
 
 Changed:
@@ -589,6 +569,8 @@ Fixed:
 *    CHANGES: generate from script 
 *    configure: fix symbol hiding usability check
 
+
+<a name="1_7_5"></a>
 ## c-ares version 1.7.5 - Aug 16 2011
 
 Fixed:
@@ -608,6 +590,8 @@ Fixed:
 *    configure: fix a bashism 
 *    ares\_expand\_name: Fix encoded length for indirect root
 
+
+<a name="1_7_4"></a>
 ## c-ares version 1.7.4 - Dec 9 2010
 
 Changed:
@@ -623,12 +607,16 @@ Fixed:
 *    adig: fix NAPTR parsing 
 *    compiler warning cleanups
 
+
+<a name="1_7_3"></a>
 ## c-ares version 1.7.3 - Jun 11 2010
 
 Fixed:
 *    builds on Android 
 *    now includes all files necessary to build it (1.7.2 lacked a file)
 
+
+<a name="1_7_2"></a>
 ## c-ares version 1.7.2 - Jun 10 2010
 
 Changed:
@@ -639,6 +627,8 @@ Fixed:
 *    improve alternative definition of bool 
 *    fix VS2010 compiler warnings
 
+
+<a name="1_7_1"></a>
 ## c-ares version 1.7.1 - Mar 23 2010
 
 Changed:
@@ -650,6 +640,8 @@ Fixed:
 *    MSVC deprecated compiler options warnings 
 *    ares\_process\_fd() didn't check broken connections
 
+
+<a name="1_7_0"></a>
 ## c-ares version 1.7.0 - Nov 30 2009
 
 Changed:
@@ -675,6 +667,8 @@ Fixed:
 *    out of bounds memory overwrite triggered with malformed /etc/hosts file 
 *    function prototypes in man pages out of sync with ares.h
 
+
+<a name="1_6_0"></a>
 ## c-ares version 1.6.0 - Dec 9 2008
 
 Changed:
@@ -691,6 +685,8 @@ Fixed:
 *    ares\_parse\_ptr\_reply() would cause a buffer to shrink instead of expand if a reply contained 8 or more records 
 *    buildconf works on OS X
 
+
+<a name="1_5_3"></a>
 ## c-ares version 1.5.3 - Aug 29 2008
 
 *    fix adig sample application compilation failure on some systems 
@@ -705,6 +701,8 @@ Fixed:
 *    Validate that DNS response address matches the request address 
 *    fix acountry sample application compilation failure on some systems
 
+
+<a name="1_5_2"></a>
 ## c-ares version 1.5.2 - May 29 2008
 
 *    code refactoring in ares\_gethostbyaddr 
@@ -719,10 +717,14 @@ Fixed:
 *    return all PTR-records when doing reverse lookups 
 *    millisecond resolution support for the timeout option
 
+
+<a name="1_5_1"></a>
 ## c-ares version 1.5.1 - Nov 21 2007
 
 *    added the ares\_llist.h header that was missing in the 1.5.0 release
 
+
+<a name="1_5_0"></a>
 ## c-ares version 1.5.0 - Nov 21 2007
 
 *    SONAME bump to a few API and ABI breaking changes: - ares\_host\_callback() - ares\_nameinfo\_callback() - ares\_parse\_a\_reply() - ares\_parse\_aaaa\_reply() 
@@ -738,6 +740,8 @@ Fixed:
 *    ares\_strerror() segfault fix 
 *    added copyright texts to a few places that were missing them
 
+
+<a name="1_4_0"></a>
 ## c-ares version 1.4.0 - Jun 8 2007
 
 *    fixed VS2005 compiler warnings due to time\_t being 64bit 
