@@ -17,13 +17,13 @@ BOXTOP
 <p>
  <a href="/download/c-ares-1.26.0.tar.gz">c-ares 1.26.0</a> (26-jan-2024)
 <a href="/download/c-ares-1.26.0.tar.gz.asc">GPG</a> <a href="/changelog.html#1_26_0">Changelog</a>
-<p>
+<br>
  <a href="/download/c-ares-1.25.0.tar.gz">c-ares 1.25.0</a> (3-jan-2024)
 <a href="/download/c-ares-1.25.0.tar.gz.asc">GPG</a> <a href="/changelog.html#1_25_0">Changelog</a>
-<p>
+<br>
  <a href="/download/c-ares-1.24.0.tar.gz">c-ares 1.24.0</a> (17-dec-2023)
 <a href="/download/c-ares-1.24.0.tar.gz.asc">GPG</a> <a href="/changelog.html#1_24_0">Changelog</a>
-<p>
+<br>
  <a href="/download/c-ares-1.23.0.tar.gz">c-ares 1.23.0</a> (30-nov-2023)
 <a href="/download/c-ares-1.23.0.tar.gz.asc">GPG</a> <a href="/changelog.html#1_23_0">Changelog</a>
 <br>
