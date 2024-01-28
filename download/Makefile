@@ -14,4 +14,4 @@ index.html: index.t $(MAINPARTS)
 
 clean:
 	find . -name "*~" -exec rm {} \;
-	rm -f *raw
+	rm -f *.raw *.html

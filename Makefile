@@ -49,6 +49,8 @@ $(DEPFILES): $(DEPDIR)
 include $(DEPFILES)
 
 all: $(PAGES)
+	make -C download
+
 .PHONY: all
 
 index.html: index.t $(MAINPARTS)
@@ -118,3 +120,5 @@ clean:
 	find . -name "*~" -exec rm {} \;
 	rm -f *.raw *.html *.gen
 	rm -rf $(DEPDIR)
+	make -C download clean
+
