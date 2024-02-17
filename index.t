@@ -9,7 +9,7 @@
 
 BOXTOP
 <p>
-<center><img src="cares-big.png"></center>
+<center><img width=480 src="cares-big.png"></center>
 
 <p>
  <b>c-ares</b> is a C library for asynchronous DNS requests (including name
@@ -50,7 +50,7 @@ href="https://github.com/c-ares/c-ares">github</a>.
  git clone https://github.com/c-ares/c-ares.git
 </pre>
 
-SUBTITLE(Who c-ares?)
+SUBTITLE(Who is c-ares?)
 
 <p> Contributions have been made by <a
 href="https://github.com/c-ares/c-ares/blob/master/AUTHORS">these friendly
