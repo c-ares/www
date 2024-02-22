@@ -14,6 +14,10 @@ BOXTOP
  href="security.html">security incident process</a>.
 
 <p>
+SUBTITLE(CVE-2024-25629 - Feb 23 2024)
+<p>
+  Moderate. Reading malformatted <pre>/etc/resolv.conf</pre>, <pre>/etc/nsswitch.conf</pre> or the <pre>HOSTALIASES</pre> file could result in a crash. Fixed in 1.27.0. <a href="https://github.com/c-ares/c-ares/security/advisories/GHSA-mg26-v6qh-x48q">CVE-2024-25629</a>
+<p>
 SUBTITLE(CVE-2023-32067 - May 22 2023)
 <p>
   High. 0-byte UDP payload causes Denial of Service. Fixed in 1.19.1. <a href="https://github.com/c-ares/c-ares/security/advisories/GHSA-9g78-jv2r-p7vc">CVE-2023-32067</a>
